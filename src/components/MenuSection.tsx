@@ -18,6 +18,7 @@ import winoImg from "@/assets/wino.jpg";
 import prosciuttoImg from "@/assets/prosciutto.jpg";
 import pannaCottaImg from "@/assets/panna-cotta.jpg";
 import espressoImg from "@/assets/espresso.jpg";
+import prosciuttoRucolaImg from "@/assets/prosciutto-rucola.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
