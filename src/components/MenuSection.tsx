@@ -198,7 +198,7 @@ const MenuSection = () => {
                 <AnimatedSection key={drink.name} delay={i * 0.03} className="card-warm p-4 flex items-center gap-4">
                   {drink.image ? (
                     <div className="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden">
-                      <img src={drink.image} alt={drink.name} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={drink.image} alt={`${drink.name} – napój w Pizzerii Osielsko`} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   ) : (
                     <ImagePlaceholder label={drink.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
