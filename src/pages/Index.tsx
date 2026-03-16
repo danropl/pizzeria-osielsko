@@ -42,8 +42,9 @@ const jsonLd = {
   ],
   "hasMenu": "https://[DOMENA]/#menu",
   "sameAs": [
-    "https://www.facebook.com/[PROFIL]",
-    "https://www.instagram.com/[PROFIL]"
+    "https://www.facebook.com/pizzeriaosielsko/",
+    "https://www.instagram.com/pizzeriaosielsko/",
+    "https://www.tiktok.com/@pizzeria_osielsko"
   ]
 };
 
