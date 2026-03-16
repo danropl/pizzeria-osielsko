@@ -3,8 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import ImagePlaceholder from "./ImagePlaceholder";
 import AnimatedSection from "./AnimatedSection";
 import margheritaImg from "@/assets/margherita.jpg";
-import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
-import pizzaOutdoorImg from "@/assets/pizza-outdoor.jpg";
+import pepperoniImg from "@/assets/pepperoni.jpg";
+import quattroFormaggiImg from "@/assets/quattro-formaggi.jpg";
+import capricciosaImg from "@/assets/capricciosa.jpg";
+import diavolaImg from "@/assets/diavola.jpg";
+import bambinoImg from "@/assets/bambino.jpg";
+import vegetarianaImg from "@/assets/vegetariana.jpg";
+import pizzaDelGiornoImg from "@/assets/pizza-del-giorno.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
