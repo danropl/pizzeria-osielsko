@@ -25,6 +25,20 @@ import sosCzosnkowyImg from "@/assets/sos-czosnkowy.jpg";
 import sosBbqImg from "@/assets/sos-bbq.jpg";
 import burrataImg from "@/assets/burrata.jpg";
 import bruschettaImg from "@/assets/bruschetta.jpg";
+import vezuvioImg from "@/assets/vezuvio.jpg";
+import veneziaImg from "@/assets/venezia.jpg";
+import romanaImg from "@/assets/romana.jpg";
+import hawaiiImg from "@/assets/hawaii.jpg";
+import fetaImg from "@/assets/feta.jpg";
+import amerykanskaImg from "@/assets/amerykanska.jpg";
+import miesnaImg from "@/assets/miesna.jpg";
+import oliveCarciofiImg from "@/assets/olive-carciofi.jpg";
+import ndujaImg from "@/assets/nduja.jpg";
+import bbqChickenImg from "@/assets/bbq-chicken.jpg";
+import peraNociImg from "@/assets/pera-noci.jpg";
+import truflowaImg from "@/assets/truflowa.jpg";
+import carbonaraImg from "@/assets/carbonara.jpg";
+import wujkaPaoloImg from "@/assets/wujka-paolo.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
