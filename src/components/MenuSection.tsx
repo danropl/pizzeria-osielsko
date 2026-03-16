@@ -166,7 +166,13 @@ const MenuSection = () => {
             >
               {drinks.map((drink, i) => (
                 <AnimatedSection key={drink.name} delay={i * 0.03} className="card-warm p-4 flex items-center gap-4">
-                  <ImagePlaceholder label={drink.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  {drink.image ? (
+                    <div className="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden">
+                      <img src={drink.image} alt={drink.name} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder label={drink.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  )}
                   <div className="flex-1 min-w-0">
                     <h3 className="font-body font-semibold text-foreground text-sm truncate">{drink.name}</h3>
                     <p className="price-tag text-primary text-sm mt-1">{drink.price} zł</p>
