@@ -55,7 +55,7 @@ const drinks: Drink[] = [
   { name: "Prosecco kieliszek", price: "[CENA]", placeholder: "Kieliszek prosecco — bąbelki, złocista barwa" },
   { name: "Espresso", price: "[CENA]", placeholder: "Filiżanka espresso — intensywna czarna kawa, crema" },
   { name: "Cappuccino", price: "[CENA]", placeholder: "Cappuccino z pianką mleczną i latte art" },
-  { name: "Herbata", price: "[CENA]", placeholder: "Szklanka lub czajniczek herbaty" },
+  { name: "Herbata", price: "[CENA]", placeholder: "Szklanka lub czajniczek herbaty", image: herbataImg },
   { name: "Sok owocowy dla dzieci", price: "[CENA]", placeholder: "Kolorowy kartonik soku owocowego dla dzieci" },
 ];
 
