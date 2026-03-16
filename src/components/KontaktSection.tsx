@@ -62,7 +62,7 @@ const KontaktSection = () => {
                 <span className="text-xl">✉️</span>
                 <div>
                   <p className="font-body font-semibold text-foreground text-sm">Email</p>
-                  <a href="mailto:[EMAIL]" className="font-body text-sm text-primary hover:underline">[EMAIL — WYPEŁNIĆ]</a>
+                  <a href="mailto:pizzasielsko@gmail.com" className="font-body text-sm text-primary hover:underline">pizzasielsko@gmail.com</a>
                 </div>
               </div>
             </div>
