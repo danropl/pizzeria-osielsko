@@ -1,7 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
 import interiorImg from "@/assets/interior.jpg";
 import pizzaOvenImg from "@/assets/hero-pizza-oven.jpg";
-import pizzasTopImg from "@/assets/pizzas-top.jpg";
+import italianProductsImg from "@/assets/italian-products.jpg";
 
 const amenities = [
   { icon: "🍕", label: "Pizza na miejscu" },
