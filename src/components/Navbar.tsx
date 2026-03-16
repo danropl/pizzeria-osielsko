@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "@/assets/logo.svg";
 
 const navLinks = [
   { href: "#hero", label: "Start" },
@@ -50,8 +51,7 @@ const Navbar = () => {
       <div className="container-custom h-full flex items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <button onClick={() => handleClick("#hero")} className="flex items-center gap-2 group" aria-label="Pizzeria Osielsko — strona główna">
-          <span className="text-2xl">🔥</span>
-          <span className="font-display text-xl font-bold text-primary">Pizzeria Osielsko</span>
+          <img src={logoImg} alt="Pizzeria Osielsko" className="h-10 w-auto" />
         </button>
 
         {/* Desktop nav */}
