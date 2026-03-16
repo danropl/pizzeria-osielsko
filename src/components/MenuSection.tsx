@@ -59,7 +59,7 @@ const drinks: Drink[] = [
   { name: "Sok owocowy dla dzieci", price: "[CENA]", placeholder: "Kolorowy kartonik soku owocowego dla dzieci" },
 ];
 
-interface Addon { name: string; desc: string; price: string; placeholder: string; }
+interface Addon { name: string; desc: string; price: string; placeholder: string; image?: string; }
 const addons: Addon[] = [
   { name: "Sos czosnkowy", desc: "Kremowy sos na bazie czosnku", price: "[CENA]", placeholder: "Miseczka kremowego sosu czosnkowego" },
   { name: "Sos BBQ", desc: "Klasyczny sos barbecue", price: "[CENA]", placeholder: "Miseczka sosu barbecue — ciemnobrązowy, błyszczący" },
