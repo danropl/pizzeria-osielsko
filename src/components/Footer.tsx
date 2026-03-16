@@ -15,9 +15,9 @@ const Footer = () => {
           {/* Col 1 - Logo */}
           <div>
             <img
-              src={logoLightImg}
+              src={logoImg}
               alt="Logo Pizzeria Osielsko"
-              className="w-48 rounded-lg mb-3"
+              className="w-48 mb-3 invert"
             />
             <p className="font-body text-sm text-background/60 mb-4">
               Autentyczna włoska pizza z pieca opalanego drewnem
