@@ -161,7 +161,7 @@ const MenuSection = () => {
                   <div className="relative">
                     {pizza.image ? (
                       <div className="aspect-[4/3] w-full overflow-hidden rounded-t-3xl">
-                        <img src={pizza.image} alt={pizza.name} className="w-full h-full object-cover" loading="lazy" />
+                        <img src={pizza.image} alt={`Pizza ${pizza.name} – ${pizza.ingredients} | Pizzeria Osielsko`} className="w-full h-full object-cover" loading="lazy" />
                       </div>
                     ) : (
                       <ImagePlaceholder label={pizza.placeholder} aspectRatio="aspect-[4/3]" className="rounded-none rounded-t-3xl" />
