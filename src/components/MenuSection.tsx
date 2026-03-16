@@ -17,6 +17,7 @@ import cannoloImg from "@/assets/cannolo.jpg";
 import winoImg from "@/assets/wino.jpg";
 import prosciuttoImg from "@/assets/prosciutto.jpg";
 import pannaCottaImg from "@/assets/panna-cotta.jpg";
+import espressoImg from "@/assets/espresso.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
@@ -56,7 +57,7 @@ const drinks: Drink[] = [
   { name: "Wino Chianti kieliszek", price: "[CENA]", placeholder: "Kieliszek czerwonego wina Chianti", image: winoImg },
   { name: "Wino Pinot Grigio kieliszek", price: "[CENA]", placeholder: "Kieliszek białego wina Pinot Grigio", image: winoImg },
   { name: "Prosecco kieliszek", price: "[CENA]", placeholder: "Kieliszek prosecco — bąbelki, złocista barwa" },
-  { name: "Espresso", price: "[CENA]", placeholder: "Filiżanka espresso — intensywna czarna kawa, crema" },
+  { name: "Espresso", price: "[CENA]", placeholder: "Filiżanka espresso — intensywna czarna kawa, crema", image: espressoImg },
   { name: "Cappuccino", price: "[CENA]", placeholder: "Cappuccino z pianką mleczną i latte art" },
   { name: "Herbata", price: "[CENA]", placeholder: "Szklanka lub czajniczek herbaty", image: herbataImg },
   { name: "Sok owocowy dla dzieci", price: "[CENA]", placeholder: "Kolorowy kartonik soku owocowego dla dzieci" },
