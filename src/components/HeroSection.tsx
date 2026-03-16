@@ -19,7 +19,7 @@ const HeroSection = () => (
             Smak Włoch w sercu Osielska
           </p>
           <p className="font-body text-foreground/60 text-lg leading-relaxed mb-8 max-w-xl">
-            [OPIS RESTAURACJI — 2-3 zdania o autentycznej włoskiej pizzy z pieca opalanego drewnem, naturalnych składnikach i pasji do gotowania. WYPEŁNIĆ]
+            Odkryj ciepłą atmosferę i gościnność naszej pizzerii w Osielsku. Serwujemy autentyczną włoską pizzę z pieca opalanego drewnem, przygotowaną z naturalnych składników i pasją do włoskiej kuchni.
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
             <a href="#menu" className="btn-primary text-base px-8 py-4">

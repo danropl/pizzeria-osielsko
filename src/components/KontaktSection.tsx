@@ -152,7 +152,7 @@ const KontaktSection = () => {
               </div>
             </div>
             <a
-              href="https://maps.google.com/?q=[ADRES]"
+              href="https://www.google.com/maps/search/?api=1&query=Akacjowa%202,%2086-031%20Osielsko"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block font-body text-sm font-semibold text-primary hover:underline"

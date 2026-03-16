@@ -80,7 +80,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-background/40">
-            © [ROK] Pizzeria Osielsko. Wszelkie prawa zastrzeżone.
+            © 2025 Pizzeria Osielsko. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4 font-body text-xs text-background/40">
             <a href="#" className="hover:text-background transition-colors">Polityka prywatności</a>

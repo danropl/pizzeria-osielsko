@@ -24,9 +24,9 @@ const jsonLd = {
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "[ULICA I NUMER]",
+    "streetAddress": "Akacjowa 2",
     "addressLocality": "Osielsko",
-    "postalCode": "[KOD POCZTOWY]",
+    "postalCode": "86-031",
     "addressCountry": "PL"
   },
   "geo": {
