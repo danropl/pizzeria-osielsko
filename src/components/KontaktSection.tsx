@@ -79,7 +79,9 @@ const KontaktSection = () => {
                     }`}
                   >
                     <span>{h.day}</span>
-                    <span className="font-data tabular-nums">{h.open} – {h.close}</span>
+                    <span className="font-data tabular-nums">
+                      {h.close ? `${h.open} – ${h.close}` : h.open}
+                    </span>
                   </div>
                 ))}
               </div>
