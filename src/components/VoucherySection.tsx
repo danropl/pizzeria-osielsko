@@ -4,15 +4,19 @@ interface Voucher {
   emoji: string;
   title: string;
   contents: string;
-  price: string;
-  validity: string;
+  image?: string;
 }
 
+import heartPizzaImg from "@/assets/heart-pizza.jpg";
+import eventKidsImg from "@/assets/event-kids.jpg";
+import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
+import interior2Img from "@/assets/interior-2.jpg";
+
 const vouchers: Voucher[] = [
-  { emoji: "💑", title: "Randka w Kuchni", contents: "Warsztaty dla 2 osób, butelka wina, deser Tiramisu, zdjęcie pamiątkowe", price: "[CENA]", validity: "[OKRES]" },
-  { emoji: "🎂", title: "Urodziny Małego Pizzaiolo", contents: "Warsztaty, fartuszek + czapka, pizza + napój, dyplom Pizzaiolo", price: "[CENA]", validity: "[OKRES]" },
-  { emoji: "🍷", title: "Pizza & Wino z Sommelierem", contents: "Degustacja win, pizze, materiały edukacyjne, certyfikat", price: "[CENA]", validity: "[OKRES]" },
-  { emoji: "🎤", title: "Wieczór Karaoke Italiano", contents: "Wstęp dla 2, pizza Margherita, 2 napoje, priorytetowe piosenki", price: "[CENA]", validity: "[OKRES]" },
+  { emoji: "💑", title: "Randka w Kuchni", contents: "Romantyczny prezent dla pary.", image: heartPizzaImg },
+  { emoji: "🎂", title: "Urodziny Pizzaiolo", contents: "Niezapomniane urodziny w klimacie włoskim.", image: eventKidsImg },
+  { emoji: "🍷", title: "Pizza & Wino z Sommelierem", contents: "Ekskluzywna degustacja dla koneserów.", image: pizzasVarietyImg },
+  { emoji: "🎤", title: "Wieczór Karaoke", contents: "Zabawa z włoskimi klasykami i pyszną pizzą.", image: interior2Img },
 ];
 
 const VoucherySection = () => (
