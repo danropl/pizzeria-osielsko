@@ -16,7 +16,7 @@ const Footer = () => {
           <div>
             <img
               src={logoImg}
-              alt="Logo Pizzeria Osielsko"
+              alt="Pizzeria Osielsko – logo"
               className="w-48 mb-3 invert"
             />
             <p className="font-body text-sm text-background/60 mb-4">

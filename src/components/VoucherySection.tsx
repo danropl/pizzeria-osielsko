@@ -34,7 +34,7 @@ const VoucherySection = () => (
           <AnimatedSection key={v.title} delay={i * 0.1} className="card-warm overflow-hidden flex flex-col">
             {v.image && (
               <div className="aspect-[4/3] w-full overflow-hidden">
-                <img src={v.image} alt={v.title} className="w-full h-full object-cover" loading="lazy" />
+                <img src={v.image} alt={`Voucher ${v.title} – Pizzeria Osielsko`} className="w-full h-full object-cover" loading="lazy" />
               </div>
             )}
             <div className="p-5 flex flex-col flex-1">
@@ -53,8 +53,8 @@ const VoucherySection = () => (
             Skontaktuj się z nami, aby zamówić.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="tel:[NUMER_TELEFONU]" className="btn-ghost text-sm py-2 px-6">📞 Zadzwoń</a>
-            <a href="mailto:[EMAIL]" className="btn-primary text-sm py-2 px-6">✉️ Napisz email</a>
+            <a href="tel:+48500384100" className="btn-ghost text-sm py-2 px-6">📞 Zadzwoń</a>
+            <a href="mailto:pizzasielsko@gmail.com" className="btn-primary text-sm py-2 px-6">✉️ Napisz email</a>
           </div>
         </div>
       </AnimatedSection>
