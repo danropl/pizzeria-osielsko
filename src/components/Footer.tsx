@@ -1,5 +1,5 @@
-import ImagePlaceholder from "./ImagePlaceholder";
 import { useState } from "react";
+import logoLightImg from "@/assets/logo-light.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -14,9 +14,9 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Col 1 - Logo */}
           <div>
-            <ImagePlaceholder
-              label="Logo Pizzeria Osielsko — wersja jasna/kremowa do ciemnego tła stopki."
-              aspectRatio="aspect-[3/1]"
+            <img
+              src={logoLightImg}
+              alt="Logo Pizzeria Osielsko"
               className="w-48 rounded-lg mb-3"
             />
             <p className="font-body text-sm text-background/60 mb-4">

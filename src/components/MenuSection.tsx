@@ -19,6 +19,22 @@ import prosciuttoImg from "@/assets/prosciutto.jpg";
 import pannaCottaImg from "@/assets/panna-cotta.jpg";
 import espressoImg from "@/assets/espresso.jpg";
 import prosciuttoRucolaImg from "@/assets/prosciutto-rucola.jpg";
+import wodaGazowanaImg from "@/assets/woda-gazowana.jpg";
+import cocaColaImg from "@/assets/coca-cola.jpg";
+import lemoniadaImg from "@/assets/lemoniada.jpg";
+import sokPomaranczowyImg from "@/assets/sok-pomaranczowy.jpg";
+import piwoPeroniImg from "@/assets/piwo-peroni.jpg";
+import piwoMorettiImg from "@/assets/piwo-moretti.jpg";
+import proseccoImg from "@/assets/prosecco.jpg";
+import cappuccinoImg from "@/assets/cappuccino.jpg";
+import sokDzieciecyImg from "@/assets/sok-dzieciecy.jpg";
+import sosCzosnkowyImg from "@/assets/sos-czosnkowy.jpg";
+import sosBbqImg from "@/assets/sos-bbq.jpg";
+import rukolaImg from "@/assets/rukola.jpg";
+import oliwkiImg from "@/assets/oliwki.jpg";
+import burrataImg from "@/assets/burrata.jpg";
+import bruschettaImg from "@/assets/bruschetta.jpg";
+import zupaPomidorowaImg from "@/assets/zupa-pomidorowa.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
@@ -47,34 +63,34 @@ const pizzas: Pizza[] = [
 
 interface Drink { name: string; price: string; placeholder: string; image?: string; }
 const drinks: Drink[] = [
-  { name: "Woda mineralna gazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej gazowanej 0.5l" },
-  { name: "Woda mineralna niegazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej niegazowanej 0.5l" },
-  { name: "Woda mineralna 1l", price: "[CENA]", placeholder: "Butelka wody mineralnej 1 litr" },
-  { name: "Coca-Cola 0.33l", price: "[CENA]", placeholder: "Puszka lub butelka Coca-Cola 0.33l — czerwona" },
-  { name: "Lemoniada domowa", price: "[CENA]", placeholder: "Szklanka domowej lemonady z cytryną i miętą, z lodem" },
-  { name: "Świeżo wyciskany sok pomarańczowy", price: "[CENA]", placeholder: "Szklanka świeżo wyciśniętego soku pomarańczowego" },
-  { name: "Piwo Peroni Nastro Azzurro", price: "[CENA]", placeholder: "Butelka piwa Peroni Nastro Azzurro — zielona butelka" },
-  { name: "Piwo Moretti butelka", price: "[CENA]", placeholder: "Butelka piwa Birra Moretti — charakterystyczna etykieta" },
+  { name: "Woda mineralna gazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej gazowanej 0.5l", image: wodaGazowanaImg },
+  { name: "Woda mineralna niegazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej niegazowanej 0.5l", image: wodaGazowanaImg },
+  { name: "Woda mineralna 1l", price: "[CENA]", placeholder: "Butelka wody mineralnej 1 litr", image: wodaGazowanaImg },
+  { name: "Coca-Cola 0.33l", price: "[CENA]", placeholder: "Puszka lub butelka Coca-Cola 0.33l — czerwona", image: cocaColaImg },
+  { name: "Lemoniada domowa", price: "[CENA]", placeholder: "Szklanka domowej lemonady z cytryną i miętą, z lodem", image: lemoniadaImg },
+  { name: "Świeżo wyciskany sok pomarańczowy", price: "[CENA]", placeholder: "Szklanka świeżo wyciśniętego soku pomarańczowego", image: sokPomaranczowyImg },
+  { name: "Piwo Peroni Nastro Azzurro", price: "[CENA]", placeholder: "Butelka piwa Peroni Nastro Azzurro — zielona butelka", image: piwoPeroniImg },
+  { name: "Piwo Moretti butelka", price: "[CENA]", placeholder: "Butelka piwa Birra Moretti — charakterystyczna etykieta", image: piwoMorettiImg },
   { name: "Wino Chianti kieliszek", price: "[CENA]", placeholder: "Kieliszek czerwonego wina Chianti", image: winoImg },
   { name: "Wino Pinot Grigio kieliszek", price: "[CENA]", placeholder: "Kieliszek białego wina Pinot Grigio", image: winoImg },
-  { name: "Prosecco kieliszek", price: "[CENA]", placeholder: "Kieliszek prosecco — bąbelki, złocista barwa" },
+  { name: "Prosecco kieliszek", price: "[CENA]", placeholder: "Kieliszek prosecco — bąbelki, złocista barwa", image: proseccoImg },
   { name: "Espresso", price: "[CENA]", placeholder: "Filiżanka espresso — intensywna czarna kawa, crema", image: espressoImg },
-  { name: "Cappuccino", price: "[CENA]", placeholder: "Cappuccino z pianką mleczną i latte art" },
+  { name: "Cappuccino", price: "[CENA]", placeholder: "Cappuccino z pianką mleczną i latte art", image: cappuccinoImg },
   { name: "Herbata", price: "[CENA]", placeholder: "Szklanka lub czajniczek herbaty", image: herbataImg },
-  { name: "Sok owocowy dla dzieci", price: "[CENA]", placeholder: "Kolorowy kartonik soku owocowego dla dzieci" },
+  { name: "Sok owocowy dla dzieci", price: "[CENA]", placeholder: "Kolorowy kartonik soku owocowego dla dzieci", image: sokDzieciecyImg },
 ];
 
 interface Addon { name: string; desc: string; price: string; placeholder: string; image?: string; }
 const addons: Addon[] = [
-  { name: "Sos czosnkowy", desc: "Kremowy sos na bazie czosnku", price: "[CENA]", placeholder: "Miseczka kremowego sosu czosnkowego" },
-  { name: "Sos BBQ", desc: "Klasyczny sos barbecue", price: "[CENA]", placeholder: "Miseczka sosu barbecue — ciemnobrązowy, błyszczący" },
-  { name: "Rukola (porcja)", desc: "Świeża, zielona rukola", price: "[CENA]", placeholder: "Porcja świeżej rukoli na białym talerzu" },
-  { name: "Oliwki marynowane", desc: "Czarne i zielone oliwki", price: "[CENA]", placeholder: "Miseczka marynowanych oliwek czarnych i zielonych" },
-  { name: "Burrata świeża", desc: "Kremowa kula sera z Puglii", price: "[CENA]", placeholder: "Świeża burrata — kremowa biała kula sera, z pomidorkami i bazylią" },
-  { name: "Bruschetta (2 szt.)", desc: "Pomidory, czosnek, bazylia", price: "[CENA]", placeholder: "Dwie bruschetty z pomidorami, czosnkiem i bazylią" },
+  { name: "Sos czosnkowy", desc: "Kremowy sos na bazie czosnku", price: "[CENA]", placeholder: "Miseczka kremowego sosu czosnkowego", image: sosCzosnkowyImg },
+  { name: "Sos BBQ", desc: "Klasyczny sos barbecue", price: "[CENA]", placeholder: "Miseczka sosu barbecue — ciemnobrązowy, błyszczący", image: sosBbqImg },
+  { name: "Rukola (porcja)", desc: "Świeża, zielona rukola", price: "[CENA]", placeholder: "Porcja świeżej rukoli na białym talerzu", image: rukolaImg },
+  { name: "Oliwki marynowane", desc: "Czarne i zielone oliwki", price: "[CENA]", placeholder: "Miseczka marynowanych oliwek czarnych i zielonych", image: oliwkiImg },
+  { name: "Burrata świeża", desc: "Kremowa kula sera z Puglii", price: "[CENA]", placeholder: "Świeża burrata — kremowa biała kula sera, z pomidorkami i bazylią", image: burrataImg },
+  { name: "Bruschetta (2 szt.)", desc: "Pomidory, czosnek, bazylia", price: "[CENA]", placeholder: "Dwie bruschetty z pomidorami, czosnkiem i bazylią", image: bruschettaImg },
   { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "[CENA]", placeholder: "Deska serów", image: deskaSerowImg },
   { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Prosciutto crudo", image: prosciuttoImg },
-  { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią" },
+  { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią", image: zupaPomidorowaImg },
   { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu", image: cannoloImg },
   { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym", image: pannaCottaImg },
 ];
