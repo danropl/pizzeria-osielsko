@@ -80,7 +80,7 @@ const Navbar = () => {
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:[NUMER_TELEFONU]" className="btn-ghost text-sm py-2 px-4">
+          <a href="tel:+48500384100" className="btn-ghost text-sm py-2 px-4">
             📞 Rezerwacja
           </a>
           <a href="#menu" className="btn-primary text-sm py-2 px-4">
