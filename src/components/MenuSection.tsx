@@ -129,8 +129,8 @@ const MenuSection = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative px-6 py-3 rounded-2xl font-body font-medium text-sm transition-colors ${
-                activeTab === tab.id ? "text-primary-foreground" : "text-foreground/60 hover:text-foreground bg-card border border-border/30"
+              className={`relative px-8 py-3.5 rounded-2xl font-body font-semibold text-sm transition-colors ${
+                activeTab === tab.id ? "text-primary-foreground" : "text-foreground hover:text-primary bg-card border-2 border-border/50"
               }`}
             >
               {activeTab === tab.id && (
