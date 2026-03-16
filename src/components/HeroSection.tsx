@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import ImagePlaceholder from "./ImagePlaceholder";
 import AnimatedSection from "./AnimatedSection";
+import heroPizzaOven from "@/assets/hero-pizza-oven.jpg";
 
 const HeroSection = () => (
   <section id="hero" className="relative min-h-screen flex items-center bg-gradient-to-b from-background to-bg-dark overflow-hidden pt-[72px]">
@@ -36,11 +36,14 @@ const HeroSection = () => (
 
         {/* Hero image */}
         <AnimatedSection delay={0.2} className="relative">
-          <ImagePlaceholder
-            label="Pizza z pieca opalanego drewnem — złocisty, bąblujący ser, chrupiące ciasto, świeża bazylia. Dramatyczne oświetlenie, ciemne tło. Widok z góry pod kątem."
-            aspectRatio="aspect-square"
-            className="rounded-3xl"
-          />
+          <div className="aspect-square w-full overflow-hidden rounded-3xl">
+            <img
+              src={heroPizzaOven}
+              alt="Pizza z pieca opalanego drewnem — złocisty ser, chrupiące ciasto, świeża bazylia, płomienie w tle"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              loading="eager"
+            />
+          </div>
           {/* Floating card */}
           <motion.div
             animate={{ y: [0, -12, 0] }}
