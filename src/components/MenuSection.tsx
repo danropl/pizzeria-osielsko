@@ -40,7 +40,7 @@ const pizzas: Pizza[] = [
   { name: "Pizza del Giorno", ingredients: "zmieniają się codziennie — sezonowe propozycje szefa kuchni", price: "[CENA]", badge: "Sezonowa 🍂", badgeColor: "bg-orange-500/10 text-orange-700", placeholder: "Pizza del Giorno", image: pizzaDelGiornoImg },
 ];
 
-interface Drink { name: string; price: string; placeholder: string; }
+interface Drink { name: string; price: string; placeholder: string; image?: string; }
 const drinks: Drink[] = [
   { name: "Woda mineralna gazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej gazowanej 0.5l" },
   { name: "Woda mineralna niegazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej niegazowanej 0.5l" },
