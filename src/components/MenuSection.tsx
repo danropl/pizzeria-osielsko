@@ -3,13 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import ImagePlaceholder from "./ImagePlaceholder";
 import AnimatedSection from "./AnimatedSection";
 import margheritaImg from "@/assets/margherita.jpg";
-import pepperoniImg from "@/assets/pepperoni.jpg";
+import pepperoniImg from "@/assets/pepperoni-2.jpg";
 import quattroFormaggiImg from "@/assets/quattro-formaggi.jpg";
 import capricciosaImg from "@/assets/capricciosa.jpg";
 import diavolaImg from "@/assets/diavola.jpg";
+import funghiPorciniImg from "@/assets/funghi-porcini.jpg";
 import bambinoImg from "@/assets/bambino.jpg";
 import vegetarianaImg from "@/assets/vegetariana.jpg";
 import pizzaDelGiornoImg from "@/assets/pizza-del-giorno.jpg";
+import deskaSerowImg from "@/assets/deska-serow.jpg";
+import herbataImg from "@/assets/herbata.jpg";
+import cannoloImg from "@/assets/cannolo.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
@@ -30,13 +34,13 @@ const pizzas: Pizza[] = [
   { name: "Capricciosa", ingredients: "sos pomidorowy, mozzarella, szynka parmeńska, pieczarki, karczochy, oliwki", price: "[CENA]", placeholder: "Pizza Capricciosa", image: capricciosaImg },
   { name: "Diavola", ingredients: "sos pomidorowy, mozzarella, nduja, salami piccante, papryczki chili", price: "[CENA]", badge: "Ostre 🌶️🌶️", badgeColor: "bg-red-500/10 text-red-600", placeholder: "Pizza Diavola", image: diavolaImg },
   { name: "Prosciutto e Rucola", ingredients: "sos pomidorowy, mozzarella, prosciutto crudo, rukola, parmezan, pomidorki", price: "[CENA]", placeholder: "Pizza Prosciutto e Rucola" },
-  { name: "Funghi Porcini", ingredients: "biała baza śmietanowa, mozzarella, grzyby porcini, czosnek, tymianek, truflowe olio", price: "[CENA]", badge: "Premium 👑", badgeColor: "bg-yellow-600/10 text-yellow-700", placeholder: "Pizza Funghi Porcini" },
+  { name: "Funghi Porcini", ingredients: "biała baza śmietanowa, mozzarella, grzyby porcini, czosnek, tymianek, truflowe olio", price: "[CENA]", badge: "Premium 👑", badgeColor: "bg-yellow-600/10 text-yellow-700", placeholder: "Pizza Funghi Porcini", image: funghiPorciniImg },
   { name: "Bambino", ingredients: "sos pomidorowy, mozzarella, szynka gotowana, kukurydza", price: "[CENA]", badge: "Dla dzieci 👶", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Bambino", image: bambinoImg },
   { name: "Vegetariana", ingredients: "sos pomidorowy, mozzarella, papryka, cukinia, bakłażan, rukola, pomidorki", price: "[CENA]", badge: "Vege 🌱", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Vegetariana", image: vegetarianaImg },
   { name: "Pizza del Giorno", ingredients: "zmieniają się codziennie — sezonowe propozycje szefa kuchni", price: "[CENA]", badge: "Sezonowa 🍂", badgeColor: "bg-orange-500/10 text-orange-700", placeholder: "Pizza del Giorno", image: pizzaDelGiornoImg },
 ];
 
-interface Drink { name: string; price: string; placeholder: string; }
+interface Drink { name: string; price: string; placeholder: string; image?: string; }
 const drinks: Drink[] = [
   { name: "Woda mineralna gazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej gazowanej 0.5l" },
   { name: "Woda mineralna niegazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej niegazowanej 0.5l" },
@@ -51,11 +55,11 @@ const drinks: Drink[] = [
   { name: "Prosecco kieliszek", price: "[CENA]", placeholder: "Kieliszek prosecco — bąbelki, złocista barwa" },
   { name: "Espresso", price: "[CENA]", placeholder: "Filiżanka espresso — intensywna czarna kawa, crema" },
   { name: "Cappuccino", price: "[CENA]", placeholder: "Cappuccino z pianką mleczną i latte art" },
-  { name: "Herbata", price: "[CENA]", placeholder: "Szklanka lub czajniczek herbaty" },
+  { name: "Herbata", price: "[CENA]", placeholder: "Szklanka lub czajniczek herbaty", image: herbataImg },
   { name: "Sok owocowy dla dzieci", price: "[CENA]", placeholder: "Kolorowy kartonik soku owocowego dla dzieci" },
 ];
 
-interface Addon { name: string; desc: string; price: string; placeholder: string; }
+interface Addon { name: string; desc: string; price: string; placeholder: string; image?: string; }
 const addons: Addon[] = [
   { name: "Sos czosnkowy", desc: "Kremowy sos na bazie czosnku", price: "[CENA]", placeholder: "Miseczka kremowego sosu czosnkowego" },
   { name: "Sos BBQ", desc: "Klasyczny sos barbecue", price: "[CENA]", placeholder: "Miseczka sosu barbecue — ciemnobrązowy, błyszczący" },
@@ -63,10 +67,10 @@ const addons: Addon[] = [
   { name: "Oliwki marynowane", desc: "Czarne i zielone oliwki", price: "[CENA]", placeholder: "Miseczka marynowanych oliwek czarnych i zielonych" },
   { name: "Burrata świeża", desc: "Kremowa kula sera z Puglii", price: "[CENA]", placeholder: "Świeża burrata — kremowa biała kula sera, z pomidorkami i bazylią" },
   { name: "Bruschetta (2 szt.)", desc: "Pomidory, czosnek, bazylia", price: "[CENA]", placeholder: "Dwie bruschetty z pomidorami, czosnkiem i bazylią" },
-  { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "[CENA]", placeholder: "Deska serów — parmezan, pecorino, gorgonzola na drewnianej desce" },
+  { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "[CENA]", placeholder: "Deska serów", image: deskaSerowImg },
   { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Cienkie plasterki prosciutto crudo na białym talerzu" },
   { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią" },
-  { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu w kieliszku lub na talerzu, posypane kakao" },
+  { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu", image: cannoloImg },
   { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym" },
 ];
 
@@ -162,7 +166,13 @@ const MenuSection = () => {
             >
               {drinks.map((drink, i) => (
                 <AnimatedSection key={drink.name} delay={i * 0.03} className="card-warm p-4 flex items-center gap-4">
-                  <ImagePlaceholder label={drink.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  {drink.image ? (
+                    <div className="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden">
+                      <img src={drink.image} alt={drink.name} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder label={drink.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  )}
                   <div className="flex-1 min-w-0">
                     <h3 className="font-body font-semibold text-foreground text-sm truncate">{drink.name}</h3>
                     <p className="price-tag text-primary text-sm mt-1">{drink.price} zł</p>
@@ -183,7 +193,13 @@ const MenuSection = () => {
             >
               {addons.map((addon, i) => (
                 <AnimatedSection key={addon.name} delay={i * 0.03} className="card-warm p-4 flex items-center gap-4">
-                  <ImagePlaceholder label={addon.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  {addon.image ? (
+                    <div className="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden">
+                      <img src={addon.image} alt={addon.name} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder label={addon.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  )}
                   <div className="flex-1 min-w-0">
                     <h3 className="font-body font-semibold text-foreground text-sm">{addon.name}</h3>
                     <p className="font-body text-xs text-muted-foreground">{addon.desc}</p>
