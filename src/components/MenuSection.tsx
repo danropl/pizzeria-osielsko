@@ -193,7 +193,13 @@ const MenuSection = () => {
             >
               {addons.map((addon, i) => (
                 <AnimatedSection key={addon.name} delay={i * 0.03} className="card-warm p-4 flex items-center gap-4">
-                  <ImagePlaceholder label={addon.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  {addon.image ? (
+                    <div className="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden">
+                      <img src={addon.image} alt={addon.name} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder label={addon.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  )}
                   <div className="flex-1 min-w-0">
                     <h3 className="font-body font-semibold text-foreground text-sm">{addon.name}</h3>
                     <p className="font-body text-xs text-muted-foreground">{addon.desc}</p>
