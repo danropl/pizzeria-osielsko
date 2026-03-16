@@ -34,7 +34,7 @@ const VoucherySection = () => (
           <AnimatedSection key={v.title} delay={i * 0.1} className="card-warm overflow-hidden flex flex-col">
             {v.image && (
               <div className="aspect-[4/3] w-full overflow-hidden">
-                <img src={v.image} alt={v.title} className="w-full h-full object-cover" loading="lazy" />
+                <img src={v.image} alt={`Voucher ${v.title} – Pizzeria Osielsko`} className="w-full h-full object-cover" loading="lazy" />
               </div>
             )}
             <div className="p-5 flex flex-col flex-1">
