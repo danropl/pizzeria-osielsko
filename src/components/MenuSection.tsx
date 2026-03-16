@@ -25,6 +25,20 @@ import sosCzosnkowyImg from "@/assets/sos-czosnkowy.jpg";
 import sosBbqImg from "@/assets/sos-bbq.jpg";
 import burrataImg from "@/assets/burrata.jpg";
 import bruschettaImg from "@/assets/bruschetta.jpg";
+import vezuvioImg from "@/assets/vezuvio.jpg";
+import veneziaImg from "@/assets/venezia.jpg";
+import romanaImg from "@/assets/romana.jpg";
+import hawaiiImg from "@/assets/hawaii.jpg";
+import fetaImg from "@/assets/feta.jpg";
+import amerykanskaImg from "@/assets/amerykanska.jpg";
+import miesnaImg from "@/assets/miesna.jpg";
+import oliveCarciofiImg from "@/assets/olive-carciofi.jpg";
+import ndujaImg from "@/assets/nduja.jpg";
+import bbqChickenImg from "@/assets/bbq-chicken.jpg";
+import peraNociImg from "@/assets/pera-noci.jpg";
+import truflowaImg from "@/assets/truflowa.jpg";
+import carbonaraImg from "@/assets/carbonara.jpg";
+import wujkaPaoloImg from "@/assets/wujka-paolo.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
@@ -41,27 +55,27 @@ interface Pizza {
 const pizzas: Pizza[] = [
   { name: "Margarita", ingredients: "sos pelati (pomidorowy), mozzarella, bazylia świeża, oliwa z oliwek", price: "32", badge: "Klasyczna", badgeColor: "bg-accent/80 text-accent-foreground", placeholder: "Pizza Margherita", image: margheritaImg },
   { name: "Funghi", ingredients: "sos pelati (pomidorowy), mozzarella, pieczarki", price: "36", placeholder: "Pizza Funghi", image: funghiPorciniImg },
-  { name: "Vezuvio", ingredients: "sos pelati (pomidorowy), mozzarella, szynka", price: "38", placeholder: "Pizza Vezuvio" },
+  { name: "Vezuvio", ingredients: "sos pelati (pomidorowy), mozzarella, szynka", price: "38", placeholder: "Pizza Vezuvio", image: vezuvioImg },
   { name: "Capriciossa", ingredients: "sos pelati (pomidorowy), mozzarella, szynka, pieczarki", price: "40", placeholder: "Pizza Capricciosa", image: capricciosaImg },
   { name: "Pepperoni", ingredients: "sos pelati (pomidorowy), mozzarella, Spianata - piccante salami", price: "40", badge: "Bestseller 🔥", badgeColor: "bg-primary/80 text-primary-foreground", placeholder: "Pizza Pepperoni", image: pepperoniImg },
-  { name: "Venezia", ingredients: "sos pelati (pomidorowy), mozzarella, salami, pieczarki, czosnek", price: "40", placeholder: "Pizza Venezia" },
-  { name: "Romana", ingredients: "sos pelati (pomidorowy), mozzarella, boczek, pieczarki, cebula czerwona", price: "42", placeholder: "Pizza Romana" },
-  { name: "Hawaii", ingredients: "sos pelati (pomidorowy), mozzarella, szynka, ananas", price: "40", placeholder: "Pizza Hawaii" },
+  { name: "Venezia", ingredients: "sos pelati (pomidorowy), mozzarella, salami, pieczarki, czosnek", price: "40", placeholder: "Pizza Venezia", image: veneziaImg },
+  { name: "Romana", ingredients: "sos pelati (pomidorowy), mozzarella, boczek, pieczarki, cebula czerwona", price: "42", placeholder: "Pizza Romana", image: romanaImg },
+  { name: "Hawaii", ingredients: "sos pelati (pomidorowy), mozzarella, szynka, ananas", price: "40", placeholder: "Pizza Hawaii", image: hawaiiImg },
   { name: "Jalapeno", ingredients: "sos pelati (pomidorowy), mozzarella, boczek, cebula czerwona, papryka jalapeno (ostra)", price: "42", badge: "Ostre 🌶️", badgeColor: "bg-red-500/80 text-white", placeholder: "Pizza Jalapeno", image: diavolaImg },
   { name: "Vegetariana", ingredients: "sos pelati (pomidorowy), mozzarella, pieczarki, cebula czerwona, papryka, oliwki", price: "42", badge: "Vege 🌱", badgeColor: "bg-accent/80 text-accent-foreground", placeholder: "Pizza Vegetariana", image: vegetarianaImg },
-  { name: "Feta", ingredients: "sos pelati (pomidorowy), mozzarella, szynka, ser typu feta, pomidorki koktajlowe, oliwki", price: "42", placeholder: "Pizza Feta" },
-  { name: "Amerykańska", ingredients: "sos pelati (pomidorowy), mozzarella, pieczarki, papryka, szynka, salami", price: "42", placeholder: "Pizza Amerykańska" },
-  { name: "Mięsna", ingredients: "sos pelati (pomidorowy), mozzarella, boczek, szynka, salami", price: "42", placeholder: "Pizza Mięsna" },
+  { name: "Feta", ingredients: "sos pelati (pomidorowy), mozzarella, szynka, ser typu feta, pomidorki koktajlowe, oliwki", price: "42", placeholder: "Pizza Feta", image: fetaImg },
+  { name: "Amerykańska", ingredients: "sos pelati (pomidorowy), mozzarella, pieczarki, papryka, szynka, salami", price: "42", placeholder: "Pizza Amerykańska", image: amerykanskaImg },
+  { name: "Mięsna", ingredients: "sos pelati (pomidorowy), mozzarella, boczek, szynka, salami", price: "42", placeholder: "Pizza Mięsna", image: miesnaImg },
   { name: "Prosciutto", ingredients: "sos pelati (pomidorowy), mozzarella, szynka wiejska, jajko, parmezan", price: "42", placeholder: "Pizza Prosciutto", image: prosciuttoRucolaImg },
   { name: "4 Sery", ingredients: "sos pelati (pomidorowy), mozzarella, ricotta, parmezan, gorgonzola (D.O.P.)", price: "44", badge: "Premium 👑", badgeColor: "bg-yellow-600/80 text-white", placeholder: "Pizza 4 Sery", image: quattroFormaggiImg },
-  { name: "Olive e carciofi", ingredients: "sos pelati (pomidorowy), mozzarella, pieczarki, karczochy, oliwki, szynka", price: "44", placeholder: "Pizza Olive e carciofi" },
-  { name: "Nduja", ingredients: "sos pelati (pomidorowy), mozzarella, gorgonzola (D.O.P.), Nduja (pikantna kiełbasa włoska), cebula czerwona", price: "45", badge: "Ostre 🌶️🌶️", badgeColor: "bg-red-500/80 text-white", placeholder: "Pizza Nduja" },
-  { name: "Barbecue Chicken", ingredients: "sos barbecue, mozzarella, kurczak, czerwona cebula, pieprz, papryka", price: "47", placeholder: "Pizza BBQ Chicken" },
+  { name: "Olive e carciofi", ingredients: "sos pelati (pomidorowy), mozzarella, pieczarki, karczochy, oliwki, szynka", price: "44", placeholder: "Pizza Olive e carciofi", image: oliveCarciofiImg },
+  { name: "Nduja", ingredients: "sos pelati (pomidorowy), mozzarella, gorgonzola (D.O.P.), Nduja (pikantna kiełbasa włoska), cebula czerwona", price: "45", badge: "Ostre 🌶️🌶️", badgeColor: "bg-red-500/80 text-white", placeholder: "Pizza Nduja", image: ndujaImg },
+  { name: "Barbecue Chicken", ingredients: "sos barbecue, mozzarella, kurczak, czerwona cebula, pieprz, papryka", price: "47", placeholder: "Pizza BBQ Chicken", image: bbqChickenImg },
   { name: "Parma", ingredients: "sos pelati (pomidorowy), mozzarella, szynka dojrzewająca, rukola, pomidorki koktajlowe, parmezan", price: "47", placeholder: "Pizza Parma", image: prosciuttoImg },
-  { name: "Pera e noci", ingredients: "sos pelati (pomidorowy), mozzarella, gorgonzola (D.O.P.), gruszka, orzechy włoskie, balsamico, rukola", price: "47", badge: "Nowość ✨", badgeColor: "bg-yellow-500/80 text-white", placeholder: "Pizza Pera e noci" },
-  { name: "Truflowa", ingredients: "krem truflowy, spinata pepperoni picante, mascarpone", price: "47", badge: "Premium 👑", badgeColor: "bg-yellow-600/80 text-white", placeholder: "Pizza Truflowa" },
-  { name: "Carbonara", ingredients: "sos czosnkowy, mozzarella, boczek, gorgonzola (D.O.P.), cebula czerwona, jajko, parmezan, pieprz", price: "47", placeholder: "Pizza Carbonara" },
-  { name: "Wujka Paolo", ingredients: "sos pelati (pomidorowy), mozzarella, papryka jalapeno, czerwona cebula, Spianata salami", price: "47", badge: "Ostre 🌶️", badgeColor: "bg-red-500/80 text-white", placeholder: "Pizza Wujka Paolo" },
+  { name: "Pera e noci", ingredients: "sos pelati (pomidorowy), mozzarella, gorgonzola (D.O.P.), gruszka, orzechy włoskie, balsamico, rukola", price: "47", badge: "Nowość ✨", badgeColor: "bg-yellow-500/80 text-white", placeholder: "Pizza Pera e noci", image: peraNociImg },
+  { name: "Truflowa", ingredients: "krem truflowy, spinata pepperoni picante, mascarpone", price: "47", badge: "Premium 👑", badgeColor: "bg-yellow-600/80 text-white", placeholder: "Pizza Truflowa", image: truflowaImg },
+  { name: "Carbonara", ingredients: "sos czosnkowy, mozzarella, boczek, gorgonzola (D.O.P.), cebula czerwona, jajko, parmezan, pieprz", price: "47", placeholder: "Pizza Carbonara", image: carbonaraImg },
+  { name: "Wujka Paolo", ingredients: "sos pelati (pomidorowy), mozzarella, papryka jalapeno, czerwona cebula, Spianata salami", price: "47", badge: "Ostre 🌶️", badgeColor: "bg-red-500/80 text-white", placeholder: "Pizza Wujka Paolo", image: wujkaPaoloImg },
   { name: "Pizza Specjalna", ingredients: "sos, mozzarella, max 3 składniki do wyboru", price: "47", badge: "Skomponuj sam 🎨", badgeColor: "bg-orange-500/80 text-white", placeholder: "Pizza Specjalna", image: pizzaDelGiornoImg },
 ];
 
