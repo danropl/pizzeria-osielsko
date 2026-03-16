@@ -46,8 +46,8 @@ const KontaktSection = () => {
                 <span className="text-xl">📍</span>
                 <div>
                   <p className="font-body font-semibold text-foreground text-sm">Adres</p>
-                  <a href="https://maps.google.com/?q=[ADRES]" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-primary hover:underline">
-                    [ADRES — WYPEŁNIĆ]
+                  <a href="https://www.google.com/maps/search/?api=1&query=Akacjowa%202,%2086-031%20Osielsko" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-primary hover:underline">
+                    Akacjowa 2, 86-031 Osielsko
                   </a>
                 </div>
               </div>
