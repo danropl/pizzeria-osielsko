@@ -77,21 +77,14 @@ const pizzas: Pizza[] = [
 
 interface Drink { name: string; price: string; placeholder: string; image?: string; }
 const drinks: Drink[] = [
-  { name: "Woda mineralna gazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej gazowanej 0.5l", image: wodaGazowanaImg },
-  { name: "Woda mineralna niegazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej niegazowanej 0.5l", image: wodaGazowanaImg },
-  { name: "Woda mineralna 1l", price: "[CENA]", placeholder: "Butelka wody mineralnej 1 litr", image: wodaGazowanaImg },
-  { name: "Coca-Cola 0.33l", price: "[CENA]", placeholder: "Puszka lub butelka Coca-Cola 0.33l — czerwona", image: cocaColaImg },
-  { name: "Lemoniada domowa", price: "[CENA]", placeholder: "Szklanka domowej lemonady z cytryną i miętą, z lodem", image: lemoniadaImg },
-  { name: "Świeżo wyciskany sok pomarańczowy", price: "[CENA]", placeholder: "Szklanka świeżo wyciśniętego soku pomarańczowego", image: sokPomaranczowyImg },
-  { name: "Piwo Peroni Nastro Azzurro", price: "[CENA]", placeholder: "Butelka piwa Peroni Nastro Azzurro — zielona butelka", image: piwoPeroniImg },
-  { name: "Piwo Moretti butelka", price: "[CENA]", placeholder: "Butelka piwa Birra Moretti — charakterystyczna etykieta", image: piwoMorettiImg },
-  { name: "Wino Chianti kieliszek", price: "[CENA]", placeholder: "Kieliszek czerwonego wina Chianti", image: winoImg },
-  { name: "Wino Pinot Grigio kieliszek", price: "[CENA]", placeholder: "Kieliszek białego wina Pinot Grigio", image: winoImg },
-  { name: "Prosecco kieliszek", price: "[CENA]", placeholder: "Kieliszek prosecco — bąbelki, złocista barwa", image: proseccoImg },
-  { name: "Espresso", price: "[CENA]", placeholder: "Filiżanka espresso — intensywna czarna kawa, crema", image: espressoImg },
-  { name: "Cappuccino", price: "[CENA]", placeholder: "Cappuccino z pianką mleczną i latte art", image: cappuccinoImg },
-  { name: "Herbata", price: "[CENA]", placeholder: "Szklanka lub czajniczek herbaty", image: herbataImg },
-  { name: "Sok owocowy dla dzieci", price: "[CENA]", placeholder: "Kolorowy kartonik soku owocowego dla dzieci", image: sokDzieciecyImg },
+  { name: "Woda mineralna szkło 0.33l", price: "5", placeholder: "Butelka wody mineralnej", image: wodaGazowanaImg },
+  { name: "Cappy Jabłko 0.25l", price: "6", placeholder: "Sok jabłkowy w butelce", image: sokDzieciecyImg },
+  { name: "Cappy Pomarańcza 0.25l", price: "6", placeholder: "Sok pomarańczowy w butelce", image: sokPomaranczowyImg },
+  { name: "Coca-Cola 0.5l", price: "8", placeholder: "Butelka Coca-Cola", image: cocaColaImg },
+  { name: "Lipton 0.5l", price: "8", placeholder: "Butelka Lipton Ice Tea", image: herbataImg },
+  { name: "SANPELLEGRINO 0.33l", price: "10", placeholder: "Puszka Sanpellegrino", image: lemoniadaImg },
+  { name: "Piwo 0%", price: "12", placeholder: "Butelka piwa bezalkoholowego", image: piwoPeroniImg },
+  { name: "Piwo (do wyboru)", price: "12", placeholder: "Butelka piwa", image: piwoMorettiImg },
 ];
 
 interface Addon { name: string; desc: string; price: string; placeholder: string; image?: string; }
