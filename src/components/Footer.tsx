@@ -48,10 +48,9 @@ const Footer = () => {
           <div>
             <h4 className="font-subhead text-lg font-semibold text-background mb-4">Kontakt</h4>
             <div className="space-y-2 font-body text-sm text-background/60">
-              <p>[ADRES — WYPEŁNIĆ]</p>
-              <p>[NUMER TELEFONU — WYPEŁNIĆ]</p>
-              <p>[EMAIL — WYPEŁNIĆ]</p>
-              <p className="mt-3 font-data text-xs uppercase tracking-wider">[GODZINY — WYPEŁNIĆ]</p>
+              <p>Akacjowa 2, 86-031 Osielsko</p>
+              <p>+48 500 384 100</p>
+              <p>pizzasielsko@gmail.com</p>
             </div>
           </div>
 
@@ -81,7 +80,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-background/40">
-            © [ROK] Pizzeria Osielsko. Wszelkie prawa zastrzeżone.
+            © 2025 Pizzeria Osielsko. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4 font-body text-xs text-background/40">
             <a href="#" className="hover:text-background transition-colors">Polityka prywatności</a>

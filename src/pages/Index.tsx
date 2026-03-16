@@ -17,16 +17,16 @@ const jsonLd = {
   "@type": "Restaurant",
   "name": "Pizzeria Osielsko",
   "url": "https://[DOMENA]",
-  "telephone": "[NUMER TELEFONU]",
-  "email": "[EMAIL]",
+  "telephone": "+48500384100",
+  "email": "pizzasielsko@gmail.com",
   "description": "Autentyczna włoska pizzeria z piecem opalanym drewnem w Osielsku koło Bydgoszczy.",
   "servesCuisine": "Italian",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "[ULICA I NUMER]",
+    "streetAddress": "Akacjowa 2",
     "addressLocality": "Osielsko",
-    "postalCode": "[KOD POCZTOWY]",
+    "postalCode": "86-031",
     "addressCountry": "PL"
   },
   "geo": {

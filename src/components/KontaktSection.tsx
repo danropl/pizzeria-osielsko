@@ -46,8 +46,8 @@ const KontaktSection = () => {
                 <span className="text-xl">📍</span>
                 <div>
                   <p className="font-body font-semibold text-foreground text-sm">Adres</p>
-                  <a href="https://maps.google.com/?q=[ADRES]" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-primary hover:underline">
-                    [ADRES — WYPEŁNIĆ]
+                  <a href="https://www.google.com/maps/search/?api=1&query=Akacjowa%202,%2086-031%20Osielsko" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-primary hover:underline">
+                    Akacjowa 2, 86-031 Osielsko
                   </a>
                 </div>
               </div>
@@ -55,14 +55,14 @@ const KontaktSection = () => {
                 <span className="text-xl">📞</span>
                 <div>
                   <p className="font-body font-semibold text-foreground text-sm">Telefon</p>
-                  <a href="tel:[NUMER_TELEFONU]" className="font-body text-sm text-primary hover:underline">[NUMER TELEFONU — WYPEŁNIĆ]</a>
+                  <a href="tel:+48500384100" className="font-body text-sm text-primary hover:underline">+48 500 384 100</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-xl">✉️</span>
                 <div>
                   <p className="font-body font-semibold text-foreground text-sm">Email</p>
-                  <a href="mailto:[EMAIL]" className="font-body text-sm text-primary hover:underline">[EMAIL — WYPEŁNIĆ]</a>
+                  <a href="mailto:pizzasielsko@gmail.com" className="font-body text-sm text-primary hover:underline">pizzasielsko@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@ const KontaktSection = () => {
               </div>
             </div>
             <a
-              href="https://maps.google.com/?q=[ADRES]"
+              href="https://www.google.com/maps/search/?api=1&query=Akacjowa%202,%2086-031%20Osielsko"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block font-body text-sm font-semibold text-primary hover:underline"
