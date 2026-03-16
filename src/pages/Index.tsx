@@ -31,13 +31,14 @@ const jsonLd = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 53.15,
-    "longitude": 17.95
+    "latitude": 53.1844016,
+    "longitude": 18.0846522
   },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "[GODZINA]", "closes": "[GODZINA]" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "[GODZINA]", "closes": "[GODZINA]" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "[GODZINA]", "closes": "[GODZINA]" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday"], "opens": "00:00", "closes": "00:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "13:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "13:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "13:00", "closes": "21:00" }
   ],
   "hasMenu": "https://[DOMENA]/#menu",
   "sameAs": [

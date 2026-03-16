@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const hours = [
-  { day: "Poniedziałek", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Wtorek", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Środa", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Czwartek", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Piątek", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Sobota", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Niedziela", open: "[GODZINA]", close: "[GODZINA]" },
+  { day: "Poniedziałek", open: "Zamknięte", close: "" },
+  { day: "Wtorek", open: "13:00", close: "21:00" },
+  { day: "Środa", open: "13:00", close: "21:00" },
+  { day: "Czwartek", open: "13:00", close: "21:00" },
+  { day: "Piątek", open: "13:00", close: "22:00" },
+  { day: "Sobota", open: "13:00", close: "22:00" },
+  { day: "Niedziela", open: "13:00", close: "21:00" },
 ];
 
 const dayNames = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
@@ -79,7 +79,9 @@ const KontaktSection = () => {
                     }`}
                   >
                     <span>{h.day}</span>
-                    <span className="font-data tabular-nums">{h.open} – {h.close}</span>
+                    <span className="font-data tabular-nums">
+                      {h.close ? `${h.open} – ${h.close}` : h.open}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -142,14 +144,17 @@ const KontaktSection = () => {
 
           {/* Map */}
           <AnimatedSection delay={0.15} className="space-y-3">
-            <div className="w-full aspect-[4/3] lg:aspect-auto lg:h-full min-h-[400px] rounded-3xl overflow-hidden border border-border/30 bg-bg-dark/50 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-4xl mb-4">🗺️</p>
-                <p className="font-body text-sm text-muted-foreground">
-                  Mapa Google Maps<br />
-                  <span className="text-xs">[Uzupełnić iframe z Google Maps embed — współrzędne GPS]</span>
-                </p>
-              </div>
+            <div className="w-full aspect-[4/3] lg:aspect-auto lg:h-full min-h-[400px] rounded-3xl overflow-hidden border border-border/30">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1200!2d18.0846522!3d53.1844016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470310d52334fe87%3A0x7c12a88e5b166e26!2sPizzeria%20oSIELSKO!5e0!3m2!1spl!2spl!4v1710000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "400px" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa Pizzeria Osielsko"
+              />
             </div>
             <a
               href="https://www.google.com/maps/search/?api=1&query=Akacjowa%202,%2086-031%20Osielsko"
