@@ -26,7 +26,7 @@ const events: EventItem[] = [
   { title: "Letnie Kino z Pizzą", badge: "Sezonowy 🌙", badgeColor: "bg-blue-900/10 text-blue-800", desc: "Film pod gwiazdami, ciepła pizza i napoje — idealne letnie wieczory.", price: "[CENA / wstęp wolny]", placeholder: "Wieczorny seans filmowy na zewnątrz", image: eventXmasImg },
   { title: "Pizza Challenge", badge: "Wyzwanie 🌶️", badgeColor: "bg-red-500/10 text-red-600", desc: "Zmierz się z naszą ogromną pizzą XXL! Dasz radę sam ją zjeść?", price: "[CENA] zł", placeholder: "Ogromna pizza XXL na stole" },
   { title: "Karaoke Italiano Night", badge: "Muzyczny 🎶", badgeColor: "bg-purple-500/10 text-purple-700", desc: "Śpiewaj włoskie i polskie przeboje przy pizzy i winie!", price: "[CENA / wstęp wolny]", placeholder: "Wieczór karaoke w restauracji", image: interior2Img },
-  { title: "Pizza & Wino z Sommelierem", badge: "Premium 🍷", badgeColor: "bg-rose-800/10 text-rose-800", desc: "Degustacja wina z profesjonalnym sommelierem, dobrana z naszymi pizzami.", price: "[CENA] zł/os.", placeholder: "Degustacja wina z pizzą", image: winoImg },
+  { title: "Pizza & Wino z Sommelierem", badge: "Premium 🍷", badgeColor: "bg-rose-800/10 text-rose-800", desc: "Degustacja wina z profesjonalnym sommelierem, dobrana z naszymi pizzami.", price: "[CENA] zł/os.", placeholder: "Degustacja wina z pizzą", image: pizzasVarietyImg },
   { title: "Event na Zamówienie / Private", badge: "Private 🏢", badgeColor: "bg-yellow-600/10 text-yellow-700", desc: "Organizujemy wydarzenia firmowe, imprezy okolicznościowe i przyjęcia prywatne.", price: "Wycena indywidualna", placeholder: "Elegancko nakryty stół na prywatne przyjęcie", image: cateringImg },
 ];
 
