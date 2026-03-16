@@ -55,7 +55,7 @@ const HistoriaSection = () => (
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 mb-8 bg-card rounded-2xl p-6 border border-border/30">
             <div className="text-center">
-              <p className="font-display text-3xl font-bold text-primary">[X]</p>
+              <p className="font-display text-3xl font-bold text-primary">5+</p>
               <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mt-1">Lat tradycji</p>
             </div>
             <div className="text-center border-x border-border/30">
