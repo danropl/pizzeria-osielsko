@@ -5,6 +5,8 @@ import drinksImg from "@/assets/drinks.jpg";
 import interiorImg from "@/assets/interior.jpg";
 import interior2Img from "@/assets/interior-2.jpg";
 import eventXmasImg from "@/assets/event-xmas.jpg";
+import winoImg from "@/assets/wino.jpg";
+import cateringImg from "@/assets/catering.jpg";
 
 interface EventItem {
   title: string;
