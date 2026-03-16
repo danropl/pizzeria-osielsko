@@ -219,7 +219,7 @@ const MenuSection = () => {
                   <div className="flex-1 min-w-0">
                     <h3 className="font-body font-semibold text-foreground text-sm">{addon.name}</h3>
                     <p className="font-body text-xs text-muted-foreground">{addon.desc}</p>
-                    <p className="price-tag text-primary text-sm mt-1">{addon.price} zł</p>
+                    <p className="price-tag text-primary text-sm mt-1">{addon.price === "—" ? "Zapytaj" : `${addon.price} zł`}</p>
                   </div>
                 </AnimatedSection>
               ))}
