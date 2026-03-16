@@ -3,6 +3,8 @@ import AnimatedSection from "./AnimatedSection";
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
 import drinksImg from "@/assets/drinks.jpg";
 import interiorImg from "@/assets/interior.jpg";
+import interior2Img from "@/assets/interior-2.jpg";
+import eventXmasImg from "@/assets/event-xmas.jpg";
 
 interface EventItem {
   title: string;
