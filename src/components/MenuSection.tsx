@@ -89,17 +89,15 @@ const drinks: Drink[] = [
 
 interface Addon { name: string; desc: string; price: string; placeholder: string; image?: string; }
 const addons: Addon[] = [
-  { name: "Sos czosnkowy", desc: "Kremowy sos na bazie czosnku", price: "[CENA]", placeholder: "Miseczka kremowego sosu czosnkowego", image: sosCzosnkowyImg },
-  { name: "Sos BBQ", desc: "Klasyczny sos barbecue", price: "[CENA]", placeholder: "Miseczka sosu barbecue — ciemnobrązowy, błyszczący", image: sosBbqImg },
-  { name: "Rukola (porcja)", desc: "Świeża, zielona rukola", price: "[CENA]", placeholder: "Porcja świeżej rukoli na białym talerzu", image: rukolaImg },
-  { name: "Oliwki marynowane", desc: "Czarne i zielone oliwki", price: "[CENA]", placeholder: "Miseczka marynowanych oliwek czarnych i zielonych", image: oliwkiImg },
-  { name: "Burrata świeża", desc: "Kremowa kula sera z Puglii", price: "[CENA]", placeholder: "Świeża burrata — kremowa biała kula sera, z pomidorkami i bazylią", image: burrataImg },
-  { name: "Bruschetta (2 szt.)", desc: "Pomidory, czosnek, bazylia", price: "[CENA]", placeholder: "Dwie bruschetty z pomidorami, czosnkiem i bazylią", image: bruschettaImg },
-  { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "[CENA]", placeholder: "Deska serów", image: deskaSerowImg },
-  { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Prosciutto crudo", image: prosciuttoImg },
-  { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią", image: zupaPomidorowaImg },
-  { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu", image: cannoloImg },
-  { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym", image: pannaCottaImg },
+  { name: "Sos czosnkowy", desc: "Do pizzy", price: "3", placeholder: "Miseczka sosu czosnkowego", image: sosCzosnkowyImg },
+  { name: "Sos pomidorowy", desc: "Do pizzy", price: "3", placeholder: "Miseczka sosu pomidorowego", image: sosBbqImg },
+  { name: "Sos tysiąca wysp", desc: "Szefa kuchni poleca!", price: "3", placeholder: "Miseczka sosu tysiąca wysp", image: sosCzosnkowyImg },
+  { name: "Sos ostry", desc: "Do pizzy", price: "3", placeholder: "Miseczka sosu ostrego", image: sosBbqImg },
+  { name: "Focaccia", desc: "Oliwa z oliwek, sól morska", price: "17", placeholder: "Focaccia", image: bruschettaImg },
+  { name: "Focaccia z rozmarynem", desc: "Rozmaryn, pomidorki koktajlowe", price: "19", placeholder: "Focaccia z rozmarynem", image: bruschettaImg },
+  { name: "Burrata świeża", desc: "Kremowa kula sera z Puglii", price: "—", placeholder: "Świeża burrata", image: burrataImg },
+  { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "—", placeholder: "Deska serów", image: deskaSerowImg },
+  { name: "Bruschetta (2 szt.)", desc: "Pomidory, czosnek, bazylia", price: "—", placeholder: "Bruschetty", image: bruschettaImg },
 ];
 
 const tabs: { id: MenuTab; label: string; icon: string }[] = [
