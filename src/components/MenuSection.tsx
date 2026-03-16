@@ -70,7 +70,7 @@ const addons: Addon[] = [
   { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "[CENA]", placeholder: "Deska serów", image: deskaSerowImg },
   { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Cienkie plasterki prosciutto crudo na białym talerzu" },
   { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią" },
-  { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu w kieliszku lub na talerzu, posypane kakao" },
+  { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu", image: cannoloImg },
   { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym" },
 ];
 
