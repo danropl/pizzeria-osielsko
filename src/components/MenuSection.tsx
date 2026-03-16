@@ -14,6 +14,8 @@ import pizzaDelGiornoImg from "@/assets/pizza-del-giorno.jpg";
 import deskaSerowImg from "@/assets/deska-serow.jpg";
 import herbataImg from "@/assets/herbata.jpg";
 import cannoloImg from "@/assets/cannolo.jpg";
+import winoImg from "@/assets/wino.jpg";
+import prosciuttoImg from "@/assets/prosciutto.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
