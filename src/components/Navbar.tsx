@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "@/assets/logo.svg";
 
 const navLinks = [
   { href: "#hero", label: "Start" },
