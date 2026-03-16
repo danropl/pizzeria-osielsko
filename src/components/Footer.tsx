@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logoLightImg from "@/assets/logo-light.png";
+import logoImg from "@/assets/logo.svg";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
