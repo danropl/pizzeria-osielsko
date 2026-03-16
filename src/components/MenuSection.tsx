@@ -225,7 +225,7 @@ const MenuSection = () => {
                 <AnimatedSection key={addon.name} delay={i * 0.03} className="card-warm p-4 flex items-center gap-4">
                   {addon.image ? (
                     <div className="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden">
-                      <img src={addon.image} alt={addon.name} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={addon.image} alt={`${addon.name} – dodatek w Pizzerii Osielsko`} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   ) : (
                     <ImagePlaceholder label={addon.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
