@@ -49,7 +49,7 @@ const EventySection = () => (
             <div className="relative">
               {event.image ? (
                 <div className="aspect-[4/3] w-full overflow-hidden rounded-t-3xl">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={event.image} alt={`${event.title} – event w Pizzerii Osielsko`} className="w-full h-full object-cover" loading="lazy" />
                 </div>
               ) : (
                 <ImagePlaceholder label={event.placeholder} aspectRatio="aspect-[4/3]" className="rounded-none rounded-t-3xl" />

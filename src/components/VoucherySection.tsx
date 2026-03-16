@@ -53,8 +53,8 @@ const VoucherySection = () => (
             Skontaktuj się z nami, aby zamówić.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="tel:[NUMER_TELEFONU]" className="btn-ghost text-sm py-2 px-6">📞 Zadzwoń</a>
-            <a href="mailto:[EMAIL]" className="btn-primary text-sm py-2 px-6">✉️ Napisz email</a>
+            <a href="tel:+48500384100" className="btn-ghost text-sm py-2 px-6">📞 Zadzwoń</a>
+            <a href="mailto:pizzasielsko@gmail.com" className="btn-primary text-sm py-2 px-6">✉️ Napisz email</a>
           </div>
         </div>
       </AnimatedSection>
