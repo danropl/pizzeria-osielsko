@@ -31,7 +31,7 @@ const HistoriaSection = () => (
           </div>
           <div className="bg-primary/10 rounded-2xl px-4 py-3 text-center">
             <p className="font-data text-sm font-semibold text-primary uppercase tracking-wider">
-              Otwarci od [ROK_OTWARCIA] roku
+              Serwujemy pizzę z pasją od 2019 roku
             </p>
           </div>
         </AnimatedSection>
