@@ -4,15 +4,19 @@ interface Voucher {
   emoji: string;
   title: string;
   contents: string;
-  price: string;
-  validity: string;
+  image?: string;
 }
 
+import heartPizzaImg from "@/assets/heart-pizza.jpg";
+import eventKidsImg from "@/assets/event-kids.jpg";
+import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
+import interior2Img from "@/assets/interior-2.jpg";
+
 const vouchers: Voucher[] = [
-  { emoji: "💑", title: "Randka w Kuchni", contents: "Warsztaty dla 2 osób, butelka wina, deser Tiramisu, zdjęcie pamiątkowe", price: "[CENA]", validity: "[OKRES]" },
-  { emoji: "🎂", title: "Urodziny Małego Pizzaiolo", contents: "Warsztaty, fartuszek + czapka, pizza + napój, dyplom Pizzaiolo", price: "[CENA]", validity: "[OKRES]" },
-  { emoji: "🍷", title: "Pizza & Wino z Sommelierem", contents: "Degustacja win, pizze, materiały edukacyjne, certyfikat", price: "[CENA]", validity: "[OKRES]" },
-  { emoji: "🎤", title: "Wieczór Karaoke Italiano", contents: "Wstęp dla 2, pizza Margherita, 2 napoje, priorytetowe piosenki", price: "[CENA]", validity: "[OKRES]" },
+  { emoji: "💑", title: "Randka w Kuchni", contents: "Romantyczny prezent dla pary.", image: heartPizzaImg },
+  { emoji: "🎂", title: "Urodziny Pizzaiolo", contents: "Niezapomniane urodziny w klimacie włoskim.", image: eventKidsImg },
+  { emoji: "🍷", title: "Pizza & Wino z Sommelierem", contents: "Ekskluzywna degustacja dla koneserów.", image: pizzasVarietyImg },
+  { emoji: "🎤", title: "Wieczór Karaoke", contents: "Zabawa z włoskimi klasykami i pyszną pizzą.", image: interior2Img },
 ];
 
 const VoucherySection = () => (
@@ -25,17 +29,19 @@ const VoucherySection = () => (
         </h2>
       </AnimatedSection>
 
-      <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {vouchers.map((v, i) => (
-          <AnimatedSection key={v.title} delay={i * 0.1} className="card-warm p-6 flex flex-col">
-            <div className="text-5xl mb-4">{v.emoji}</div>
-            <h3 className="font-subhead text-xl font-semibold text-foreground mb-2">{v.title}</h3>
-            <p className="font-body text-sm text-muted-foreground mb-6 flex-1">{v.contents}</p>
-            <div className="flex items-center justify-between mb-4">
-              <span className="price-tag text-2xl text-primary">{v.price} zł</span>
-              <span className="font-data text-xs text-muted-foreground uppercase tracking-wider">Ważny {v.validity} mies.</span>
+          <AnimatedSection key={v.title} delay={i * 0.1} className="card-warm overflow-hidden flex flex-col">
+            {v.image && (
+              <div className="aspect-[4/3] w-full overflow-hidden">
+                <img src={v.image} alt={v.title} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+            )}
+            <div className="p-5 flex flex-col flex-1">
+              <h3 className="font-subhead text-lg font-semibold text-foreground mb-2">{v.title}</h3>
+              <p className="font-body text-sm text-muted-foreground mb-4 flex-1">{v.contents}</p>
+              <button className="btn-primary w-full text-sm py-2">🎁 Kup voucher</button>
             </div>
-            <button className="btn-primary w-full">🎁 Kup voucher</button>
           </AnimatedSection>
         ))}
       </div>

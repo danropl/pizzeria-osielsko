@@ -29,9 +29,6 @@ const HeroSection = () => (
               📋 Zobacz menu
             </a>
           </div>
-          <div className="flex items-center gap-3 text-sm text-muted-foreground font-body">
-            <span className="inline-flex items-center gap-1">🕐 Czynni 7 dni w tygodniu</span>
-          </div>
         </AnimatedSection>
 
         {/* Hero image */}

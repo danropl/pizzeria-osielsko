@@ -23,14 +23,14 @@ interface EventItem {
 }
 
 const events: EventItem[] = [
-  { title: "Urodziny Mały Pizzaiolo", badge: "Dla dzieci 👶", badgeColor: "bg-accent/80 text-accent-foreground", desc: "Warsztaty pizzy dla najmłodszych — fartuszki, czapki kucharskie, mnóstwo zabawy!", price: "od [CENA] zł/dziecko", placeholder: "Dzieci w fartuszkach i czapkach kucharskich przy stole kuchennym", image: eventKidsImg },
-  { title: "Warsztaty Robienia Pizzy", badge: "Warsztaty 👨‍🍳", badgeColor: "bg-orange-500/80 text-white", desc: "Naucz się robić pizzę jak prawdziwy neapolitańczyk. Ciasto, sos, piec — pełne doświadczenie.", price: "[CENA] zł/os.", placeholder: "Ręce rozciągające ciasto na pizzę — mąka w powietrzu", image: eventWorkshopImg },
-  { title: "Randka w Kuchni", badge: "Romantyczny 💕", badgeColor: "bg-pink-500/80 text-white", desc: "Wieczór dla dwojga — wspólne gotowanie, wino, świece i niezapomniane wspomnienia.", price: "[CENA] zł/para", placeholder: "Romantyczny wieczór w kuchni", image: heartPizzaImg },
-  { title: "Letnie Kino z Pizzą", badge: "Sezonowy 🌙", badgeColor: "bg-blue-800/80 text-white", desc: "Film pod gwiazdami, ciepła pizza i napoje — idealne letnie wieczory.", price: "[CENA / wstęp wolny]", placeholder: "Wieczorny seans filmowy na zewnątrz", image: eventXmasImg },
-  { title: "Pizza Challenge", badge: "Wyzwanie 🌶️", badgeColor: "bg-red-500/80 text-white", desc: "Zmierz się z naszą ogromną pizzą XXL! Dasz radę sam ją zjeść?", price: "[CENA] zł", placeholder: "Ogromna pizza XXL na stole", image: eventChallengeImg },
-  { title: "Karaoke Italiano Night", badge: "Muzyczny 🎶", badgeColor: "bg-purple-500/80 text-white", desc: "Śpiewaj włoskie i polskie przeboje przy pizzy i winie!", price: "[CENA / wstęp wolny]", placeholder: "Wieczór karaoke w restauracji", image: interior2Img },
-  { title: "Pizza & Wino z Sommelierem", badge: "Premium 🍷", badgeColor: "bg-rose-800/80 text-white", desc: "Degustacja wina z profesjonalnym sommelierem, dobrana z naszymi pizzami.", price: "[CENA] zł/os.", placeholder: "Degustacja wina z pizzą", image: pizzasVarietyImg },
-  { title: "Event na Zamówienie / Private", badge: "Private 🏢", badgeColor: "bg-yellow-600/80 text-white", desc: "Organizujemy wydarzenia firmowe, imprezy okolicznościowe i przyjęcia prywatne.", price: "Wycena indywidualna", placeholder: "Elegancko nakryty stół na prywatne przyjęcie", image: cateringImg },
+  { title: "Urodziny Mały Pizzaiolo", badge: "Dla dzieci 👶", badgeColor: "bg-accent/80 text-accent-foreground", desc: "Wyjątkowe urodziny w stylu włoskim dla najmłodszych.", price: "", placeholder: "Dzieci w fartuszkach i czapkach kucharskich przy stole kuchennym", image: eventKidsImg },
+  { title: "Warsztaty Robienia Pizzy", badge: "Warsztaty 👨‍🍳", badgeColor: "bg-orange-500/80 text-white", desc: "Naucz się wyrabiać ciasto i komponować smaki jak prawdziwy pizzaiolo.", price: "", placeholder: "Ręce rozciągające ciasto na pizzę — mąka w powietrzu", image: eventWorkshopImg },
+  { title: "Randka w Kuchni", badge: "Romantyczny 💕", badgeColor: "bg-pink-500/80 text-white", desc: "Romantyczny wieczór dla dwojga przy wspólnym gotowaniu.", price: "", placeholder: "Romantyczny wieczór w kuchni", image: heartPizzaImg },
+  { title: "Letnie Kino z Pizzą", badge: "Sezonowy 🌙", badgeColor: "bg-blue-800/80 text-white", desc: "Seans filmowy pod gwiazdami z gorącą pizzą w ręku.", price: "", placeholder: "Wieczorny seans filmowy na zewnątrz", image: eventXmasImg },
+  { title: "Pizza Challenge", badge: "Wyzwanie 🌶️", badgeColor: "bg-red-500/80 text-white", desc: "Kto zje najszybciej? Rywalizacja w dobrym stylu.", price: "", placeholder: "Ogromna pizza XXL na stole", image: eventChallengeImg },
+  { title: "Karaoke Italiano Night", badge: "Muzyczny 🎶", badgeColor: "bg-purple-500/80 text-white", desc: "Włoskie przeboje i pizza do późna w nocy.", price: "", placeholder: "Wieczór karaoke w restauracji", image: interior2Img },
+  { title: "Pizza & Wino z Sommelierem", badge: "Premium 🍷", badgeColor: "bg-rose-800/80 text-white", desc: "Degustacja win dobranych do pizzy przez eksperta.", price: "", placeholder: "Degustacja wina z pizzą", image: pizzasVarietyImg },
+  { title: "Voucher Experience", badge: "Prezent 🎁", badgeColor: "bg-yellow-600/80 text-white", desc: "Podaruj komuś niezapomniane przeżycie w naszej restauracji.", price: "", placeholder: "Elegancki voucher podarunkowy", image: cateringImg },
 ];
 
 const EventySection = () => (
@@ -59,7 +59,7 @@ const EventySection = () => (
             <div className="p-5 flex flex-col flex-1">
               <h3 className="font-subhead text-lg font-semibold text-foreground mb-2">{event.title}</h3>
               <p className="font-body text-sm text-muted-foreground mb-4 flex-1">{event.desc}</p>
-              <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mb-4">{event.price}</p>
+              {event.price && <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mb-4">{event.price}</p>}
               <button className="btn-primary text-sm py-2 w-full">Dowiedz się więcej</button>
             </div>
           </AnimatedSection>
