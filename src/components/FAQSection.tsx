@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "Czy Pizzeria Osielsko organizuje urodziny dla dzieci?",
     answer:
-      "Tak! Organizujemy wyjątkowe urodziny „Mały Pizzaiolo" w stylu włoskim. Dzieci uczą się robić pizzę, dekorują ją samodzielnie, a potem wspólnie jedzą. Zapraszamy do kontaktu, aby ustalić szczegóły i zarezerwować termin.",
+      "Tak! Organizujemy wyj\u0105tkowe urodziny \u201eMa\u0142y Pizzaiolo\u201D w stylu w\u0142oskim. Dzieci ucz\u0105 si\u0119 robi\u0107 pizz\u0119, dekoruj\u0105 j\u0105 samodzielnie, a potem wsp\u00F3lnie jedz\u0105. Zapraszamy do kontaktu, aby ustali\u0107 szczeg\u00F3\u0142y i zarezerwowa\u0107 termin.",
   },
   {
     question: "Jak zarezerwować stolik w Pizzerii Osielsko?",
