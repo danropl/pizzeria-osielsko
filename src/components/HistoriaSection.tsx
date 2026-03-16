@@ -1,7 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
 import interiorImg from "@/assets/interior.jpg";
 import pizzaOvenImg from "@/assets/hero-pizza-oven.jpg";
-import pizzasTopImg from "@/assets/pizzas-top.jpg";
+import italianProductsImg from "@/assets/italian-products.jpg";
 
 const amenities = [
   { icon: "🍕", label: "Pizza na miejscu" },
@@ -26,7 +26,7 @@ const HistoriaSection = () => (
               <img src={pizzaOvenImg} alt="Pizza w piecu opalanym drewnem — płomienie i żar" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             </div>
             <div className="aspect-square w-full overflow-hidden rounded-3xl">
-              <img src={pizzasTopImg} alt="Świeże pizze z widoku z góry — różnorodne składniki" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+              <img src={italianProductsImg} alt="Włoskie produkty — oliwa extra vergine, marynaty" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             </div>
           </div>
           <div className="bg-primary/10 rounded-2xl px-4 py-3 text-center">
