@@ -59,7 +59,7 @@ const EventySection = () => (
             <div className="p-5 flex flex-col flex-1">
               <h3 className="font-subhead text-lg font-semibold text-foreground mb-2">{event.title}</h3>
               <p className="font-body text-sm text-muted-foreground mb-4 flex-1">{event.desc}</p>
-              <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mb-4">{event.price}</p>
+              {event.price && <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mb-4">{event.price}</p>}
               <button className="btn-primary text-sm py-2 w-full">Dowiedz się więcej</button>
             </div>
           </AnimatedSection>
