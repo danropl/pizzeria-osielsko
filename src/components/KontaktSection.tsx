@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const hours = [
-  { day: "Poniedziałek", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Wtorek", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Środa", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Czwartek", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Piątek", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Sobota", open: "[GODZINA]", close: "[GODZINA]" },
-  { day: "Niedziela", open: "[GODZINA]", close: "[GODZINA]" },
+  { day: "Poniedziałek", open: "Zamknięte", close: "" },
+  { day: "Wtorek", open: "13:00", close: "21:00" },
+  { day: "Środa", open: "13:00", close: "21:00" },
+  { day: "Czwartek", open: "13:00", close: "21:00" },
+  { day: "Piątek", open: "13:00", close: "22:00" },
+  { day: "Sobota", open: "13:00", close: "22:00" },
+  { day: "Niedziela", open: "13:00", close: "21:00" },
 ];
 
 const dayNames = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
