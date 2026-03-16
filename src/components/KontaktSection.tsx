@@ -55,7 +55,7 @@ const KontaktSection = () => {
                 <span className="text-xl">📞</span>
                 <div>
                   <p className="font-body font-semibold text-foreground text-sm">Telefon</p>
-                  <a href="tel:[NUMER_TELEFONU]" className="font-body text-sm text-primary hover:underline">[NUMER TELEFONU — WYPEŁNIĆ]</a>
+                  <a href="tel:+48500384100" className="font-body text-sm text-primary hover:underline">+48 500 384 100</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
