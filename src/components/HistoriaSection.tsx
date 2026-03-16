@@ -43,13 +43,13 @@ const HistoriaSection = () => (
             Pasja do pizzy, tradycja od pokoleń
           </h2>
           <div className="space-y-4 text-foreground/70 font-body text-base leading-relaxed mb-8">
-            <p>[PARAGRAF 1 — Historia powstania restauracji, inspiracja kuchnią włoską, piec opalany drewnem. WYPEŁNIĆ]</p>
-            <p>[PARAGRAF 2 — Filozofia jakości, naturalne składniki, lokalni dostawcy. WYPEŁNIĆ]</p>
-            <p>[PARAGRAF 3 — Misja, społeczność, plany na przyszłość. WYPEŁNIĆ]</p>
+            <p>Pizzeria oSIELSKO narodziła się z prostego marzenia — stworzyć miejsce, gdzie autentyczny smak Włoch spotyka się z ciepłem polskiej gościnności. Nasz piec opalany drewnem, rozgrzany do 400°C, to serce restauracji. To dzięki niemu każda pizza zyskuje niepowtarzalny, lekko wędzony charakter i chrupiące, puszyste ciasto.</p>
+            <p>Stawiamy na jakość bez kompromisów. Mąka tipo „00" sprowadzana z Neapolu, mozzarella fior di latte, sos z pomidorów San Marzano i oliwa extra vergine — każdy składnik ma znaczenie. Współpracujemy z lokalnymi dostawcami, aby warzywa i zioła trafiały na talerz prosto z pola.</p>
+            <p>Jesteśmy częścią Osielska i okolic Bydgoszczy. Naszą misją jest nie tylko karmić, ale i łączyć ludzi — przy wspólnym stole, kawałku dobrej pizzy i kieliszku włoskiego wina. Zapraszamy rodziny, przyjaciół i wszystkich, którzy cenią prawdziwy smak.</p>
           </div>
 
           <blockquote className="border-l-4 border-primary pl-6 py-2 mb-8 italic font-subhead text-lg text-foreground/80">
-            "[CYTAT — np. inspirujące zdanie założyciela o pasji do pizzy. WYPEŁNIĆ]"
+            "Pizza to nie tylko jedzenie — to emocje, wspomnienia i ludzie, z którymi ją dzielisz."
           </blockquote>
 
           {/* Stats */}
