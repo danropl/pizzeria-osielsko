@@ -3,8 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import ImagePlaceholder from "./ImagePlaceholder";
 import AnimatedSection from "./AnimatedSection";
 import margheritaImg from "@/assets/margherita.jpg";
-import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
-import pizzaOutdoorImg from "@/assets/pizza-outdoor.jpg";
+import pepperoniImg from "@/assets/pepperoni.jpg";
+import quattroFormaggiImg from "@/assets/quattro-formaggi.jpg";
+import capricciosaImg from "@/assets/capricciosa.jpg";
+import diavolaImg from "@/assets/diavola.jpg";
+import bambinoImg from "@/assets/bambino.jpg";
+import vegetarianaImg from "@/assets/vegetariana.jpg";
+import pizzaDelGiornoImg from "@/assets/pizza-del-giorno.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
@@ -20,15 +25,15 @@ interface Pizza {
 
 const pizzas: Pizza[] = [
   { name: "Margherita", ingredients: "sos pomidorowy San Marzano, mozzarella fior di latte, świeża bazylia, oliwa EV", price: "[CENA]", badge: "Klasyczna", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Margherita", image: margheritaImg },
-  { name: "Pepperoni", ingredients: "sos pomidorowy, mozzarella, pikantne pepperoni, oregano", price: "[CENA]", badge: "Bestseller 🔥", badgeColor: "bg-primary/10 text-primary", placeholder: "Pizza Pepperoni" },
-  { name: "Quattro Formaggi", ingredients: "mozzarella, gorgonzola, parmezan, ricotta, miód truflowy", price: "[CENA]", badge: "Nowość ✨", badgeColor: "bg-yellow-500/10 text-yellow-700", placeholder: "Pizza Quattro Formaggi" },
-  { name: "Capricciosa", ingredients: "sos pomidorowy, mozzarella, szynka parmeńska, pieczarki, karczochy, oliwki", price: "[CENA]", placeholder: "Pizza Capricciosa", image: pizzasVarietyImg },
-  { name: "Diavola", ingredients: "sos pomidorowy, mozzarella, nduja, salami piccante, papryczki chili", price: "[CENA]", badge: "Ostre 🌶️🌶️", badgeColor: "bg-red-500/10 text-red-600", placeholder: "Pizza Diavola" },
+  { name: "Pepperoni", ingredients: "sos pomidorowy, mozzarella, pikantne pepperoni, oregano", price: "[CENA]", badge: "Bestseller 🔥", badgeColor: "bg-primary/10 text-primary", placeholder: "Pizza Pepperoni", image: pepperoniImg },
+  { name: "Quattro Formaggi", ingredients: "mozzarella, gorgonzola, parmezan, ricotta, miód truflowy", price: "[CENA]", badge: "Nowość ✨", badgeColor: "bg-yellow-500/10 text-yellow-700", placeholder: "Pizza Quattro Formaggi", image: quattroFormaggiImg },
+  { name: "Capricciosa", ingredients: "sos pomidorowy, mozzarella, szynka parmeńska, pieczarki, karczochy, oliwki", price: "[CENA]", placeholder: "Pizza Capricciosa", image: capricciosaImg },
+  { name: "Diavola", ingredients: "sos pomidorowy, mozzarella, nduja, salami piccante, papryczki chili", price: "[CENA]", badge: "Ostre 🌶️🌶️", badgeColor: "bg-red-500/10 text-red-600", placeholder: "Pizza Diavola", image: diavolaImg },
   { name: "Prosciutto e Rucola", ingredients: "sos pomidorowy, mozzarella, prosciutto crudo, rukola, parmezan, pomidorki", price: "[CENA]", placeholder: "Pizza Prosciutto e Rucola" },
   { name: "Funghi Porcini", ingredients: "biała baza śmietanowa, mozzarella, grzyby porcini, czosnek, tymianek, truflowe olio", price: "[CENA]", badge: "Premium 👑", badgeColor: "bg-yellow-600/10 text-yellow-700", placeholder: "Pizza Funghi Porcini" },
-  { name: "Bambino", ingredients: "sos pomidorowy, mozzarella, szynka gotowana, kukurydza", price: "[CENA]", badge: "Dla dzieci 👶", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Bambino" },
-  { name: "Vegetariana", ingredients: "sos pomidorowy, mozzarella, papryka, cukinia, bakłażan, rukola, pomidorki", price: "[CENA]", badge: "Vege 🌱", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Vegetariana", image: pizzaOutdoorImg },
-  { name: "Pizza del Giorno", ingredients: "zmieniają się codziennie — sezonowe propozycje szefa kuchni", price: "[CENA]", badge: "Sezonowa 🍂", badgeColor: "bg-orange-500/10 text-orange-700", placeholder: "Pizza del Giorno" },
+  { name: "Bambino", ingredients: "sos pomidorowy, mozzarella, szynka gotowana, kukurydza", price: "[CENA]", badge: "Dla dzieci 👶", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Bambino", image: bambinoImg },
+  { name: "Vegetariana", ingredients: "sos pomidorowy, mozzarella, papryka, cukinia, bakłażan, rukola, pomidorki", price: "[CENA]", badge: "Vege 🌱", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Vegetariana", image: vegetarianaImg },
+  { name: "Pizza del Giorno", ingredients: "zmieniają się codziennie — sezonowe propozycje szefa kuchni", price: "[CENA]", badge: "Sezonowa 🍂", badgeColor: "bg-orange-500/10 text-orange-700", placeholder: "Pizza del Giorno", image: pizzaDelGiornoImg },
 ];
 
 interface Drink { name: string; price: string; placeholder: string; }
