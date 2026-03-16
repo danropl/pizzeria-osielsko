@@ -67,7 +67,7 @@ const EventySection = () => (
       </div>
 
       <AnimatedSection className="text-center mt-12">
-        <a href="#kontakt" className="btn-primary text-base px-8 py-4">📩 Zapytaj o event lub rezerwację</a>
+        <a href="#kontakt" onClick={(e) => { e.preventDefault(); document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-primary text-base px-8 py-4">📩 Zapytaj o event lub rezerwację</a>
       </AnimatedSection>
     </div>
   </section>

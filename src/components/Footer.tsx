@@ -23,9 +23,9 @@ const Footer = () => {
               Autentyczna włoska pizza z pieca opalanego drewnem
             </p>
             <div className="flex gap-3">
-              <a href="[LINK_FACEBOOK]" target="_blank" rel="noopener noreferrer" className="text-background/40 hover:text-background transition-colors text-sm font-body" aria-label="Facebook">Facebook</a>
-              <a href="[LINK_INSTAGRAM]" target="_blank" rel="noopener noreferrer" className="text-background/40 hover:text-background transition-colors text-sm font-body" aria-label="Instagram">Instagram</a>
-              <a href="https://g.page/[PROFIL_GOOGLE]" target="_blank" rel="noopener noreferrer" className="text-background/40 hover:text-background transition-colors text-sm font-body" aria-label="Google">Google</a>
+              <a href="https://www.facebook.com/pizzeriaosielsko/" target="_blank" rel="noopener noreferrer" className="text-background/40 hover:text-background transition-colors text-sm font-body" aria-label="Facebook">Facebook</a>
+              <a href="https://www.instagram.com/pizzeriaosielsko/" target="_blank" rel="noopener noreferrer" className="text-background/40 hover:text-background transition-colors text-sm font-body" aria-label="Instagram">Instagram</a>
+              <a href="https://www.tiktok.com/@pizzeria_osielsko" target="_blank" rel="noopener noreferrer" className="text-background/40 hover:text-background transition-colors text-sm font-body" aria-label="TikTok">TikTok</a>
             </div>
           </div>
 

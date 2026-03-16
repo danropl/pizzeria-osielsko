@@ -94,9 +94,9 @@ const KontaktSection = () => {
 
             {/* Social */}
             <div className="flex gap-3">
-              <a href="[LINK_FACEBOOK]" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="Facebook">Facebook</a>
-              <a href="[LINK_INSTAGRAM]" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="Instagram">Instagram</a>
-              <a href="[LINK_TIKTOK]" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="TikTok">TikTok</a>
+              <a href="https://www.facebook.com/pizzeriaosielsko/" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="Facebook">Facebook</a>
+              <a href="https://www.instagram.com/pizzeriaosielsko/" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="Instagram">Instagram</a>
+              <a href="https://www.tiktok.com/@pizzeria_osielsko" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="TikTok">TikTok</a>
             </div>
 
             {/* Form */}
