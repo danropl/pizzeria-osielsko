@@ -14,6 +14,8 @@ import pizzaDelGiornoImg from "@/assets/pizza-del-giorno.jpg";
 import deskaSerowImg from "@/assets/deska-serow.jpg";
 import herbataImg from "@/assets/herbata.jpg";
 import cannoloImg from "@/assets/cannolo.jpg";
+import winoImg from "@/assets/wino.jpg";
+import prosciuttoImg from "@/assets/prosciutto.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
@@ -50,8 +52,8 @@ const drinks: Drink[] = [
   { name: "Świeżo wyciskany sok pomarańczowy", price: "[CENA]", placeholder: "Szklanka świeżo wyciśniętego soku pomarańczowego" },
   { name: "Piwo Peroni Nastro Azzurro", price: "[CENA]", placeholder: "Butelka piwa Peroni Nastro Azzurro — zielona butelka" },
   { name: "Piwo Moretti butelka", price: "[CENA]", placeholder: "Butelka piwa Birra Moretti — charakterystyczna etykieta" },
-  { name: "Wino Chianti kieliszek", price: "[CENA]", placeholder: "Kieliszek czerwonego wina Chianti — rubinowa barwa" },
-  { name: "Wino Pinot Grigio kieliszek", price: "[CENA]", placeholder: "Kieliszek białego wina Pinot Grigio — złocisty kolor" },
+  { name: "Wino Chianti kieliszek", price: "[CENA]", placeholder: "Kieliszek czerwonego wina Chianti", image: winoImg },
+  { name: "Wino Pinot Grigio kieliszek", price: "[CENA]", placeholder: "Kieliszek białego wina Pinot Grigio", image: winoImg },
   { name: "Prosecco kieliszek", price: "[CENA]", placeholder: "Kieliszek prosecco — bąbelki, złocista barwa" },
   { name: "Espresso", price: "[CENA]", placeholder: "Filiżanka espresso — intensywna czarna kawa, crema" },
   { name: "Cappuccino", price: "[CENA]", placeholder: "Cappuccino z pianką mleczną i latte art" },
@@ -68,7 +70,7 @@ const addons: Addon[] = [
   { name: "Burrata świeża", desc: "Kremowa kula sera z Puglii", price: "[CENA]", placeholder: "Świeża burrata — kremowa biała kula sera, z pomidorkami i bazylią" },
   { name: "Bruschetta (2 szt.)", desc: "Pomidory, czosnek, bazylia", price: "[CENA]", placeholder: "Dwie bruschetty z pomidorami, czosnkiem i bazylią" },
   { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "[CENA]", placeholder: "Deska serów", image: deskaSerowImg },
-  { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Cienkie plasterki prosciutto crudo na białym talerzu" },
+  { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Prosciutto crudo", image: prosciuttoImg },
   { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią" },
   { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu", image: cannoloImg },
   { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym" },
