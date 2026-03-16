@@ -1,0 +1,195 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ImagePlaceholder from "./ImagePlaceholder";
+import AnimatedSection from "./AnimatedSection";
+
+type MenuTab = "pizze" | "napoje" | "dodatki";
+
+interface Pizza {
+  name: string;
+  ingredients: string;
+  price: string;
+  badge?: string;
+  badgeColor?: string;
+  placeholder: string;
+}
+
+const pizzas: Pizza[] = [
+  { name: "Margherita", ingredients: "sos pomidorowy San Marzano, mozzarella fior di latte, świeża bazylia, oliwa EV", price: "[CENA]", badge: "Klasyczna", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Margherita — klasyczna, prosta pizza z czerwonym sosem, białą mozzarellą i zielonymi liśćmi bazylii. Widok z góry na ciemnej desce." },
+  { name: "Pepperoni", ingredients: "sos pomidorowy, mozzarella, pikantne pepperoni, oregano", price: "[CENA]", badge: "Bestseller 🔥", badgeColor: "bg-primary/10 text-primary", placeholder: "Pizza Pepperoni — gęsto ułożone plasterki pepperoni na roztopionym serze, lekko przypieczony brzeg ciasta. Widok z góry." },
+  { name: "Quattro Formaggi", ingredients: "mozzarella, gorgonzola, parmezan, ricotta, miód truflowy", price: "[CENA]", badge: "Nowość ✨", badgeColor: "bg-yellow-500/10 text-yellow-700", placeholder: "Pizza Quattro Formaggi — biała pizza bez sosu, widoczne cztery rodzaje serów. Drizzle miodu truflowego." },
+  { name: "Capricciosa", ingredients: "sos pomidorowy, mozzarella, szynka parmeńska, pieczarki, karczochy, oliwki", price: "[CENA]", placeholder: "Pizza Capricciosa — kolorowa pizza z pieczarkami, szynką, oliwkami i karczochami. Widok z góry." },
+  { name: "Diavola", ingredients: "sos pomidorowy, mozzarella, nduja, salami piccante, papryczki chili", price: "[CENA]", badge: "Ostre 🌶️🌶️", badgeColor: "bg-red-500/10 text-red-600", placeholder: "Pizza Diavola — intensywna, czerwona pizza z plasterkami pikantnego salami i papryczkami chili." },
+  { name: "Prosciutto e Rucola", ingredients: "sos pomidorowy, mozzarella, prosciutto crudo, rukola, parmezan, pomidorki", price: "[CENA]", placeholder: "Pizza Prosciutto e Rucola — cienko pokrojone prosciutto crudo i świeża rukola nałożone po upieczeniu." },
+  { name: "Funghi Porcini", ingredients: "biała baza śmietanowa, mozzarella, grzyby porcini, czosnek, tymianek, truflowe olio", price: "[CENA]", badge: "Premium 👑", badgeColor: "bg-yellow-600/10 text-yellow-700", placeholder: "Pizza Funghi Porcini — biała pizza ze śmietanową bazą, kawałki grzybów porcini, zioła, drizzle oliwy truflowej." },
+  { name: "Bambino", ingredients: "sos pomidorowy, mozzarella, szynka gotowana, kukurydza", price: "[CENA]", badge: "Dla dzieci 👶", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Bambino — prosta, kolorowa pizza dla dzieci z kukurydzą i szynką. Mniejszy rozmiar, jasne tło." },
+  { name: "Vegetariana", ingredients: "sos pomidorowy, mozzarella, papryka, cukinia, bakłażan, rukola, pomidorki", price: "[CENA]", badge: "Vege 🌱", badgeColor: "bg-accent/10 text-accent", placeholder: "Pizza Vegetariana — kolorowa pizza z warzywami: papryka, cukinia, bakłażan, pomidorki cherry. Widok z góry." },
+  { name: "Pizza del Giorno", ingredients: "zmieniają się codziennie — sezonowe propozycje szefa kuchni", price: "[CENA]", badge: "Sezonowa 🍂", badgeColor: "bg-orange-500/10 text-orange-700", placeholder: "Pizza del Giorno — eleganckie zdjęcie pizzy z sezonowymi składnikami. Artystyczna prezentacja, ciemne tło." },
+];
+
+interface Drink { name: string; price: string; placeholder: string; }
+const drinks: Drink[] = [
+  { name: "Woda mineralna gazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej gazowanej 0.5l" },
+  { name: "Woda mineralna niegazowana 0.5l", price: "[CENA]", placeholder: "Butelka wody mineralnej niegazowanej 0.5l" },
+  { name: "Woda mineralna 1l", price: "[CENA]", placeholder: "Butelka wody mineralnej 1 litr" },
+  { name: "Coca-Cola 0.33l", price: "[CENA]", placeholder: "Puszka lub butelka Coca-Cola 0.33l — czerwona" },
+  { name: "Lemoniada domowa", price: "[CENA]", placeholder: "Szklanka domowej lemonady z cytryną i miętą, z lodem" },
+  { name: "Świeżo wyciskany sok pomarańczowy", price: "[CENA]", placeholder: "Szklanka świeżo wyciśniętego soku pomarańczowego" },
+  { name: "Piwo Peroni Nastro Azzurro", price: "[CENA]", placeholder: "Butelka piwa Peroni Nastro Azzurro — zielona butelka" },
+  { name: "Piwo Moretti butelka", price: "[CENA]", placeholder: "Butelka piwa Birra Moretti — charakterystyczna etykieta" },
+  { name: "Wino Chianti kieliszek", price: "[CENA]", placeholder: "Kieliszek czerwonego wina Chianti — rubinowa barwa" },
+  { name: "Wino Pinot Grigio kieliszek", price: "[CENA]", placeholder: "Kieliszek białego wina Pinot Grigio — złocisty kolor" },
+  { name: "Prosecco kieliszek", price: "[CENA]", placeholder: "Kieliszek prosecco — bąbelki, złocista barwa" },
+  { name: "Espresso", price: "[CENA]", placeholder: "Filiżanka espresso — intensywna czarna kawa, crema" },
+  { name: "Cappuccino", price: "[CENA]", placeholder: "Cappuccino z pianką mleczną i latte art" },
+  { name: "Herbata", price: "[CENA]", placeholder: "Szklanka lub czajniczek herbaty" },
+  { name: "Sok owocowy dla dzieci", price: "[CENA]", placeholder: "Kolorowy kartonik soku owocowego dla dzieci" },
+];
+
+interface Addon { name: string; desc: string; price: string; placeholder: string; }
+const addons: Addon[] = [
+  { name: "Sos czosnkowy", desc: "Kremowy sos na bazie czosnku", price: "[CENA]", placeholder: "Miseczka kremowego sosu czosnkowego" },
+  { name: "Sos BBQ", desc: "Klasyczny sos barbecue", price: "[CENA]", placeholder: "Miseczka sosu barbecue — ciemnobrązowy, błyszczący" },
+  { name: "Rukola (porcja)", desc: "Świeża, zielona rukola", price: "[CENA]", placeholder: "Porcja świeżej rukoli na białym talerzu" },
+  { name: "Oliwki marynowane", desc: "Czarne i zielone oliwki", price: "[CENA]", placeholder: "Miseczka marynowanych oliwek czarnych i zielonych" },
+  { name: "Burrata świeża", desc: "Kremowa kula sera z Puglii", price: "[CENA]", placeholder: "Świeża burrata — kremowa biała kula sera, z pomidorkami i bazylią" },
+  { name: "Bruschetta (2 szt.)", desc: "Pomidory, czosnek, bazylia", price: "[CENA]", placeholder: "Dwie bruschetty z pomidorami, czosnkiem i bazylią" },
+  { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "[CENA]", placeholder: "Deska serów — parmezan, pecorino, gorgonzola na drewnianej desce" },
+  { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Cienkie plasterki prosciutto crudo na białym talerzu" },
+  { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią" },
+  { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu w kieliszku lub na talerzu, posypane kakao" },
+  { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym" },
+];
+
+const tabs: { id: MenuTab; label: string; icon: string }[] = [
+  { id: "pizze", label: "Pizze", icon: "🍕" },
+  { id: "napoje", label: "Napoje", icon: "🥤" },
+  { id: "dodatki", label: "Dodatki", icon: "🧂" },
+];
+
+const MenuSection = () => {
+  const [activeTab, setActiveTab] = useState<MenuTab>("pizze");
+
+  return (
+    <section id="menu" className="bg-background section-padding">
+      <div className="container-custom">
+        <AnimatedSection className="text-center mb-12">
+          <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">Nasze Menu</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
+            Wybierz swój smak
+          </h2>
+        </AnimatedSection>
+
+        {/* Tabs */}
+        <div className="flex justify-center gap-2 mb-12">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`relative px-6 py-3 rounded-2xl font-body font-medium text-sm transition-colors ${
+                activeTab === tab.id ? "text-primary-foreground" : "text-foreground/60 hover:text-foreground bg-card border border-border/30"
+              }`}
+            >
+              {activeTab === tab.id && (
+                <motion.div
+                  layoutId="menu-tab"
+                  className="absolute inset-0 bg-primary rounded-2xl -z-10"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              {tab.icon} {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Content */}
+        <AnimatePresence mode="wait">
+          {activeTab === "pizze" && (
+            <motion.div
+              key="pizze"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.3 }}
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {pizzas.map((pizza, i) => (
+                <AnimatedSection key={pizza.name} delay={i * 0.05} className="card-warm overflow-hidden">
+                  <div className="relative">
+                    <ImagePlaceholder label={pizza.placeholder} aspectRatio="aspect-[4/3]" className="rounded-none rounded-t-3xl" />
+                    {pizza.badge && (
+                      <span className={`absolute top-3 right-3 badge-tag ${pizza.badgeColor}`}>
+                        {pizza.badge}
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-subhead text-xl font-semibold text-foreground mb-1">{pizza.name}</h3>
+                    <p className="font-body text-sm text-muted-foreground mb-4 line-clamp-2">{pizza.ingredients}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="price-tag text-xl text-primary">{pizza.price} zł</span>
+                      <button className="btn-primary text-sm py-2 px-4">Zamów</button>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </motion.div>
+          )}
+
+          {activeTab === "napoje" && (
+            <motion.div
+              key="napoje"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.3 }}
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              {drinks.map((drink, i) => (
+                <AnimatedSection key={drink.name} delay={i * 0.03} className="card-warm p-4 flex items-center gap-4">
+                  <ImagePlaceholder label={drink.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-body font-semibold text-foreground text-sm truncate">{drink.name}</h3>
+                    <p className="price-tag text-primary text-sm mt-1">{drink.price} zł</p>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </motion.div>
+          )}
+
+          {activeTab === "dodatki" && (
+            <motion.div
+              key="dodatki"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.3 }}
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              {addons.map((addon, i) => (
+                <AnimatedSection key={addon.name} delay={i * 0.03} className="card-warm p-4 flex items-center gap-4">
+                  <ImagePlaceholder label={addon.placeholder} aspectRatio="aspect-square" className="w-16 h-16 flex-shrink-0 rounded-xl" />
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-body font-semibold text-foreground text-sm">{addon.name}</h3>
+                    <p className="font-body text-xs text-muted-foreground">{addon.desc}</p>
+                    <p className="price-tag text-primary text-sm mt-1">{addon.price} zł</p>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Bottom */}
+        <AnimatedSection className="text-center mt-12 space-y-4">
+          <a href="#" className="btn-primary text-base px-8 py-4">🛵 Zamów online</a>
+          <p className="font-body text-xs text-muted-foreground">
+            ⚠️ Informacje o alergenach dostępne w restauracji. Zapytaj obsługę o składniki.
+          </p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
+export default MenuSection;
