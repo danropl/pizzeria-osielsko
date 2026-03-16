@@ -16,6 +16,7 @@ import herbataImg from "@/assets/herbata.jpg";
 import cannoloImg from "@/assets/cannolo.jpg";
 import winoImg from "@/assets/wino.jpg";
 import prosciuttoImg from "@/assets/prosciutto.jpg";
+import pannaCottaImg from "@/assets/panna-cotta.jpg";
 
 type MenuTab = "pizze" | "napoje" | "dodatki";
 
@@ -73,7 +74,7 @@ const addons: Addon[] = [
   { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Prosciutto crudo", image: prosciuttoImg },
   { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią" },
   { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu", image: cannoloImg },
-  { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym" },
+  { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym", image: pannaCottaImg },
 ];
 
 const tabs: { id: MenuTab; label: string; icon: string }[] = [
