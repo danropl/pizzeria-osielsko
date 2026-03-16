@@ -84,7 +84,7 @@
     transform: translateY(-4px);
   }
   .badge-tag {
-    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-data font-semibold uppercase tracking-wider backdrop-blur-lg shadow-md bg-background/70;
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-data font-semibold uppercase tracking-wider shadow-md bg-background/90;
   }
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-body font-bold rounded-2xl transition-all duration-300 hover:bg-[hsl(var(--primary-dark))] hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
