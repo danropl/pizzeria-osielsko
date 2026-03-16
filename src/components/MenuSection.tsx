@@ -70,7 +70,7 @@ const addons: Addon[] = [
   { name: "Burrata świeża", desc: "Kremowa kula sera z Puglii", price: "[CENA]", placeholder: "Świeża burrata — kremowa biała kula sera, z pomidorkami i bazylią" },
   { name: "Bruschetta (2 szt.)", desc: "Pomidory, czosnek, bazylia", price: "[CENA]", placeholder: "Dwie bruschetty z pomidorami, czosnkiem i bazylią" },
   { name: "Deska serów włoskich", desc: "Parmezan, pecorino, gorgonzola", price: "[CENA]", placeholder: "Deska serów", image: deskaSerowImg },
-  { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Cienkie plasterki prosciutto crudo na białym talerzu" },
+  { name: "Prosciutto crudo", desc: "Cienko krojone prosciutto", price: "[CENA]", placeholder: "Prosciutto crudo", image: prosciuttoImg },
   { name: "Zupa pomidorowa dnia", desc: "Ze świeżą bazylią", price: "[CENA]", placeholder: "Miska zupy pomidorowej ze świeżą bazylią" },
   { name: "Tiramisu", desc: "Klasyczny włoski deser", price: "[CENA]", placeholder: "Tiramisu", image: cannoloImg },
   { name: "Panna cotta", desc: "Z sosem truskawkowym", price: "[CENA]", placeholder: "Panna cotta na talerzu z sosem truskawkowym" },
