@@ -1,5 +1,7 @@
-import ImagePlaceholder from "./ImagePlaceholder";
 import AnimatedSection from "./AnimatedSection";
+import interiorImg from "@/assets/interior.jpg";
+import pizzaOvenImg from "@/assets/hero-pizza-oven.jpg";
+import pizzasTopImg from "@/assets/pizzas-top.jpg";
 
 const amenities = [
   { icon: "🍕", label: "Pizza na miejscu" },
@@ -16,19 +18,16 @@ const HistoriaSection = () => (
       <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
         {/* Images */}
         <AnimatedSection className="space-y-4">
-          <ImagePlaceholder
-            label="Wnętrze restauracji — ciepłe oświetlenie, drewniane stoły, widoczny piec."
-            aspectRatio="aspect-[4/3]"
-          />
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
+            <img src={interiorImg} alt="Wnętrze restauracji Pizzeria Osielsko — ciepłe oświetlenie, drewniane stoły" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+          </div>
           <div className="grid grid-cols-2 gap-4">
-            <ImagePlaceholder
-              label="Piec opalany drewnem — płomienie, żar, pizza na łopacie."
-              aspectRatio="aspect-square"
-            />
-            <ImagePlaceholder
-              label="Składniki — świeże pomidory, mozzarella, bazylia, oliwa."
-              aspectRatio="aspect-square"
-            />
+            <div className="aspect-square w-full overflow-hidden rounded-3xl">
+              <img src={pizzaOvenImg} alt="Pizza w piecu opalanym drewnem — płomienie i żar" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            </div>
+            <div className="aspect-square w-full overflow-hidden rounded-3xl">
+              <img src={pizzasTopImg} alt="Świeże pizze z widoku z góry — różnorodne składniki" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            </div>
           </div>
           <div className="bg-primary/10 rounded-2xl px-4 py-3 text-center">
             <p className="font-data text-sm font-semibold text-primary uppercase tracking-wider">
