@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
+const GOOGLE_REVIEW_URL = "https://www.google.com/maps/place/Pizzeria+oSIELSKO/@53.1843616,18.0844161,20.5z/data=!4m6!3m5!1s0x470310d52334fe87:0x7c12a88e5b166e26!8m2!3d53.1844016!4d18.0846522!16s%2Fg%2F11b6hw48yw?entry=ttu&g_ep=EgoyMDI2MDMxNy4wIKXMDSoASAFQAw%3D%3D";
+
 interface Review {
   name: string;
   text: string;
@@ -49,14 +51,12 @@ const OpinieSection = () => {
               transition={{ duration: 0.4 }}
               className="card-warm p-8 md:p-10 text-center"
             >
-              {/* Stars */}
               <div className="flex justify-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-yellow-500 text-xl">⭐</span>
                 ))}
               </div>
 
-              {/* Google icon */}
               <div className="flex justify-center mb-4">
                 <svg className="w-6 h-6 text-muted-foreground/40" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />
@@ -82,7 +82,6 @@ const OpinieSection = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Nav arrows */}
           <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-10 h-10 rounded-full bg-card border border-border/30 flex items-center justify-center text-foreground/60 hover:text-primary transition-colors" aria-label="Poprzednia opinia">
             ←
           </button>
@@ -90,7 +89,6 @@ const OpinieSection = () => {
             →
           </button>
 
-          {/* Dots */}
           <div className="flex justify-center gap-2 mt-6">
             {reviews.map((_, i) => (
               <button
@@ -104,10 +102,10 @@ const OpinieSection = () => {
         </div>
 
         <AnimatedSection className="text-center mt-10 flex flex-wrap gap-4 justify-center">
-          <a href="https://g.page/[PROFIL_GOOGLE]/review" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-6">
+          <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-6">
             📝 Napisz opinię w Google
           </a>
-          <a href="https://g.page/[PROFIL_GOOGLE]" target="_blank" rel="noopener noreferrer" className="btn-ghost text-sm py-2 px-6">
+          <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost text-sm py-2 px-6">
             Przeczytaj wszystkie →
           </a>
         </AnimatedSection>
