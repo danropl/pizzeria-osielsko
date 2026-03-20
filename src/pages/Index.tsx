@@ -141,7 +141,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <HistoriaSection />
-        <InstagramSection />
+        <TikTokSection />
         <GallerySection />
         <EventySection />
         <VoucherySection />
