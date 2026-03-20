@@ -29,9 +29,9 @@ const VoucherySection = () => (
         </h2>
       </AnimatedSection>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="flex flex-wrap justify-center gap-6">
         {vouchers.map((v, i) => (
-          <AnimatedSection key={v.title} delay={i * 0.1} className="card-warm overflow-hidden flex flex-col">
+          <AnimatedSection key={v.title} delay={i * 0.1} className="card-warm overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
             <div className="aspect-[4/3] w-full overflow-hidden">
               <img src={v.image} alt={`Voucher ${v.title} – Pizzeria Osielsko`} className="w-full h-full object-cover" loading="lazy" />
             </div>
@@ -42,19 +42,6 @@ const VoucherySection = () => (
           </AnimatedSection>
         ))}
       </div>
-
-      <AnimatedSection className="text-center mt-10">
-        <div className="bg-card rounded-2xl border border-border/30 p-6 max-w-2xl mx-auto">
-          <p className="font-body text-sm text-muted-foreground mb-4">
-            Vouchery są dostępne w formie elegancko zapakowanej kartki lub w wersji elektronicznej (PDF).
-            Skontaktuj się z nami, aby zamówić.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <a href="tel:+48500384100" className="btn-ghost text-sm py-2 px-6">📞 Zadzwoń</a>
-            <a href="mailto:pizzasielsko@gmail.com" className="btn-primary text-sm py-2 px-6">✉️ Napisz email</a>
-          </div>
-        </div>
-      </AnimatedSection>
     </div>
   </section>
 );
