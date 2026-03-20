@@ -1,9 +1,7 @@
-import { useState } from "react";
 import logoImg from "@/assets/logo.svg";
+import { ORDER_URL } from "@/lib/constants";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -33,7 +31,7 @@ const Footer = () => {
           <div>
             <h4 className="font-subhead text-lg font-semibold text-background mb-4">Nawigacja</h4>
             <nav className="space-y-2">
-              {["#hero|Start", "#menu|Menu", "#eventy|Eventy", "#vouchery|Vouchery", "#historia|Historia", "#kontakt|Kontakt"].map((item) => {
+              {["#hero|Start", "#nasze-pizze|Nasze pizze", "#eventy|Eventy", "#vouchery|Vouchery", "#historia|Historia", "#kontakt|Kontakt"].map((item) => {
                 const [href, label] = item.split("|");
                 return (
                   <button key={href} onClick={() => scrollTo(href)} className="block font-body text-sm text-background/60 hover:text-background transition-colors">
@@ -54,30 +52,23 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Col 4 - Newsletter */}
+          {/* Col 4 - Order */}
           <div>
-            <h4 className="font-subhead text-lg font-semibold text-background mb-4">Newsletter</h4>
+            <h4 className="font-subhead text-lg font-semibold text-background mb-4">Zamów online</h4>
             <p className="font-body text-sm text-background/60 mb-4">
-              Zapisz się i bądź na bieżąco z nowościami i promocjami.
+              Złóż zamówienie przez nasz system online i odbierz gorącą pizzę!
             </p>
-            <form
-              onSubmit={(e) => { e.preventDefault(); alert("Zapisano! (demo)"); setEmail(""); }}
-              className="flex gap-2"
+            <a
+              href={ORDER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm py-2 px-6 inline-block"
             >
-              <input
-                type="email"
-                placeholder="Twój email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-4 py-2 rounded-xl bg-background/10 border border-background/20 font-body text-sm text-background placeholder:text-background/40 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button type="submit" className="btn-primary text-sm py-2 px-4">Zapisz się</button>
-            </form>
+              🍕 Zamów teraz
+            </a>
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-background/40">
             © 2025 Pizzeria Osielsko. Wszelkie prawa zastrzeżone.

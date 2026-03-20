@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
+import { ORDER_URL } from "@/lib/constants";
 
 const hours = [
   { day: "Poniedziałek", open: "Zamknięte", close: "" },
@@ -15,18 +16,12 @@ const dayNames = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", 
 
 const KontaktSection = () => {
   const [todayIndex, setTodayIndex] = useState(0);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "", rodo: false });
 
   useEffect(() => {
     setTodayIndex(new Date().getDay());
   }, []);
 
   const todayName = dayNames[todayIndex];
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Formularz wysłany! (demo — podłączyć backend)");
-  };
 
   return (
     <section id="kontakt" className="bg-background section-padding">
@@ -39,7 +34,7 @@ const KontaktSection = () => {
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-[40%_60%] gap-8">
-          {/* Info + Form */}
+          {/* Info */}
           <AnimatedSection className="space-y-6">
             <div className="card-warm p-6 space-y-4">
               <div className="flex items-start gap-3">
@@ -85,61 +80,23 @@ const KontaktSection = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 text-center">
-                <span className="badge-tag bg-accent/10 text-accent">
-                  🟢 Status: sprawdź godziny
-                </span>
-              </div>
             </div>
 
-            {/* Social */}
-            <div className="flex gap-3">
+            {/* Social + CTA */}
+            <div className="flex flex-wrap gap-3">
               <a href="https://www.facebook.com/pizzeriaosielsko/" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="Facebook">Facebook</a>
               <a href="https://www.instagram.com/pizzeriaosielsko/" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="Instagram">Instagram</a>
               <a href="https://www.tiktok.com/@pizzeria_osielsko" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="TikTok">TikTok</a>
             </div>
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="card-warm p-6 space-y-4">
-              <h3 className="font-subhead text-lg font-semibold text-foreground">Napisz do nas</h3>
-              <input
-                type="text"
-                placeholder="Imię"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-2xl bg-background border border-border/50 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-2xl bg-background border border-border/50 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <textarea
-                placeholder="Wiadomość"
-                required
-                rows={4}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-2xl bg-background border border-border/50 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-              />
-              <label className="flex items-start gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  required
-                  checked={formData.rodo}
-                  onChange={(e) => setFormData({ ...formData, rodo: e.target.checked })}
-                  className="mt-1 accent-primary"
-                />
-                <span className="font-body text-xs text-muted-foreground">
-                  Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z Polityką Prywatności (RODO).
-                </span>
-              </label>
-              <button type="submit" className="btn-primary w-full">Wyślij wiadomość</button>
-            </form>
+            <a
+              href={ORDER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full text-center text-base py-4"
+            >
+              🍕 Zamów online
+            </a>
           </AnimatedSection>
 
           {/* Map */}

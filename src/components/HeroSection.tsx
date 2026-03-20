@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import heroPizzaOven from "@/assets/hero-pizza-oven.jpg";
+import { ORDER_URL } from "@/lib/constants";
 
 const HeroSection = () => (
   <section id="hero" className="relative min-h-screen flex items-center bg-gradient-to-b from-background to-bg-dark overflow-hidden pt-[72px]">
     <div className="container-custom section-padding w-full">
       <div className="grid lg:grid-cols-[55%_45%] gap-12 lg:gap-16 items-center">
-        {/* Text */}
         <AnimatedSection>
           <div className="badge-tag bg-primary/10 text-primary mb-6">
             🔥 Prawdziwy piec opalany drewnem
@@ -22,16 +22,15 @@ const HeroSection = () => (
             Odkryj ciepłą atmosferę i gościnność naszej pizzerii w Osielsku. Serwujemy autentyczną włoską pizzę z pieca opalanego drewnem, przygotowaną z naturalnych składników i pasją do włoskiej kuchni.
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
-            <a href="#menu" className="btn-primary text-base px-8 py-4">
+            <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-4">
               🍕 Zamów online
             </a>
-            <a href="#menu" className="btn-ghost text-base px-8 py-4">
-              📋 Zobacz menu
+            <a href="#nasze-pizze" className="btn-ghost text-base px-8 py-4">
+              🎬 Zobacz nasze TikToki
             </a>
           </div>
         </AnimatedSection>
 
-        {/* Hero image */}
         <AnimatedSection delay={0.2} className="relative">
           <div className="aspect-square w-full overflow-hidden rounded-3xl">
             <img
@@ -41,7 +40,6 @@ const HeroSection = () => (
               loading="eager"
             />
           </div>
-          {/* Floating card */}
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -56,7 +54,6 @@ const HeroSection = () => (
       </div>
     </div>
 
-    {/* Scroll indicator */}
     <motion.div
       animate={{ y: [0, 8, 0] }}
       transition={{ duration: 2, repeat: Infinity }}
