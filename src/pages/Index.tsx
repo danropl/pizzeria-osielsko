@@ -138,7 +138,7 @@ const Index = () => {
         <HeroSection />
         <HistoriaSection />
         <TikTokSection />
-        
+        <GallerySection />
         <EventySection />
         <VoucherySection />
         <OpinieSection />
