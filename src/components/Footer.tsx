@@ -1,11 +1,11 @@
 import logoImg from "@/assets/logo.svg";
-import { ORDER_URL } from "@/lib/constants";
 
 interface Props {
   onOpenPrivacy: () => void;
+  onOpenOrder: () => void;
 }
 
-const Footer = ({ onOpenPrivacy }: Props) => {
+const Footer = ({ onOpenPrivacy, onOpenOrder }: Props) => {
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -14,7 +14,6 @@ const Footer = ({ onOpenPrivacy }: Props) => {
     <footer className="bg-foreground text-background section-padding">
       <div className="container-custom">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Col 1 - Logo */}
           <div>
             <img src={logoImg} alt="Pizzeria Osielsko – logo" className="w-48 mb-3 invert" />
             <p className="font-body text-sm text-background/60 mb-4">
@@ -27,7 +26,6 @@ const Footer = ({ onOpenPrivacy }: Props) => {
             </div>
           </div>
 
-          {/* Col 2 - Nav */}
           <div>
             <h4 className="font-subhead text-lg font-semibold text-background mb-4">Nawigacja</h4>
             <nav className="space-y-2">
@@ -42,7 +40,6 @@ const Footer = ({ onOpenPrivacy }: Props) => {
             </nav>
           </div>
 
-          {/* Col 3 - Contact */}
           <div>
             <h4 className="font-subhead text-lg font-semibold text-background mb-4">Kontakt</h4>
             <div className="space-y-2 font-body text-sm text-background/60">
@@ -52,15 +49,14 @@ const Footer = ({ onOpenPrivacy }: Props) => {
             </div>
           </div>
 
-          {/* Col 4 - Order */}
           <div>
             <h4 className="font-subhead text-lg font-semibold text-background mb-4">Zamów online</h4>
             <p className="font-body text-sm text-background/60 mb-4">
               Złóż zamówienie przez nasz system online i odbierz gorącą pizzę!
             </p>
-            <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-6 inline-block">
+            <button onClick={onOpenOrder} className="btn-primary text-sm py-2 px-6">
               🍕 Zamów teraz
-            </a>
+            </button>
           </div>
         </div>
 

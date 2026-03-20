@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
-import { ORDER_URL } from "@/lib/constants";
 
 const hours = [
   { day: "Poniedziałek", open: "Zamknięte", close: "" },
@@ -14,7 +13,11 @@ const hours = [
 
 const dayNames = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
 
-const KontaktSection = () => {
+interface Props {
+  onOpenOrder: () => void;
+}
+
+const KontaktSection = ({ onOpenOrder }: Props) => {
   const [todayIndex, setTodayIndex] = useState(0);
 
   useEffect(() => {
@@ -34,7 +37,6 @@ const KontaktSection = () => {
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-[40%_60%] gap-8">
-          {/* Info */}
           <AnimatedSection className="space-y-6">
             <div className="card-warm p-6 space-y-4">
               <div className="flex items-start gap-3">
@@ -62,7 +64,6 @@ const KontaktSection = () => {
               </div>
             </div>
 
-            {/* Hours */}
             <div className="card-warm p-6">
               <h3 className="font-subhead text-lg font-semibold text-foreground mb-4">Godziny otwarcia</h3>
               <div className="space-y-2">
@@ -82,24 +83,20 @@ const KontaktSection = () => {
               </div>
             </div>
 
-            {/* Social + CTA */}
             <div className="flex flex-wrap gap-3">
               <a href="https://www.facebook.com/pizzeriaosielsko/" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="Facebook">Facebook</a>
               <a href="https://www.instagram.com/pizzeriaosielsko/" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="Instagram">Instagram</a>
               <a href="https://www.tiktok.com/@pizzeria_osielsko" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="TikTok">TikTok</a>
             </div>
 
-            <a
-              href={ORDER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={onOpenOrder}
               className="btn-primary w-full text-center text-base py-4"
             >
               🍕 Zamów online
-            </a>
+            </button>
           </AnimatedSection>
 
-          {/* Map */}
           <AnimatedSection delay={0.15} className="space-y-3">
             <div className="w-full aspect-[4/3] lg:aspect-auto lg:h-full min-h-[400px] rounded-3xl overflow-hidden border border-border/30">
               <iframe

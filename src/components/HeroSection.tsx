@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import heroPizzaOven from "@/assets/hero-pizza-oven.jpg";
-import { ORDER_URL } from "@/lib/constants";
 
-const HeroSection = () => (
+interface Props {
+  onOpenOrder: () => void;
+}
+
+const HeroSection = ({ onOpenOrder }: Props) => (
   <section id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-[72px]">
-    {/* Full-bleed background image */}
     <div className="absolute inset-0">
       <img
         src={heroPizzaOven}
@@ -13,12 +15,10 @@ const HeroSection = () => (
         className="w-full h-full object-cover"
         loading="eager"
       />
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/60 to-foreground/30" />
       <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-foreground/20" />
     </div>
 
-    {/* Content */}
     <div className="container-custom section-padding w-full relative z-10">
       <div className="max-w-2xl">
         <AnimatedSection>
@@ -58,9 +58,9 @@ const HeroSection = () => (
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.9 }}
           >
-            <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-4 shadow-lg">
+            <button onClick={onOpenOrder} className="btn-primary text-base px-8 py-4 shadow-lg">
               🍕 Zamów online
-            </a>
+            </button>
             <a href="#nasze-pizze" className="btn-ghost text-base px-8 py-4 border-background/40 text-background/90 hover:bg-background/10 hover:text-background">
               🎬 Zobacz nasze TikToki
             </a>
@@ -69,7 +69,6 @@ const HeroSection = () => (
       </div>
     </div>
 
-    {/* Scroll indicator */}
     <motion.div
       animate={{ y: [0, 8, 0] }}
       transition={{ duration: 2, repeat: Infinity }}

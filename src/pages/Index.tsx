@@ -104,6 +104,9 @@ const jsonLdFAQ = {
 const Index = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [reservationOpen, setReservationOpen] = useState(false);
+  const [orderOpen, setOrderOpen] = useState(false);
+
+  const openOrder = () => setOrderOpen(true);
 
   return (
     <>
@@ -139,23 +142,24 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
       </Helmet>
 
-      <Navbar onOpenReservation={() => setReservationOpen(true)} />
+      <Navbar onOpenReservation={() => setReservationOpen(true)} onOpenOrder={openOrder} />
       <main>
-        <HeroSection />
+        <HeroSection onOpenOrder={openOrder} />
         <HistoriaSection />
         <GallerySection />
-        <EventySection />
-        <VoucherySection />
+        <EventySection onOpenOrder={openOrder} />
+        <VoucherySection onOpenOrder={openOrder} />
         <OpinieSection />
         <FAQSection />
-        <KontaktSection />
+        <KontaktSection onOpenOrder={openOrder} />
       </main>
-      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
+      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} onOpenOrder={openOrder} />
       <BackToTop />
       <CookieConsent onOpenPrivacy={() => setPrivacyOpen(true)} />
-      <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
+      <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} onOpenOrder={openOrder} />
       <PrivacyPolicyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
       <ReservationModal open={reservationOpen} onClose={() => setReservationOpen(false)} />
+      <OrderModal open={orderOpen} onClose={() => setOrderOpen(false)} />
     </>
   );
 };
