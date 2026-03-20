@@ -1,67 +1,58 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { ORDER_URL, INSTAGRAM_PROFILE_URL } from "@/lib/constants";
 
-interface InstagramPost {
+interface InstaPost {
   id: string;
+  shortcode: string;
   title: string;
   description: string;
   emoji: string;
-  postUrl: string;
-  embedCode: string;
 }
 
-const PROFILE = INSTAGRAM_PROFILE_URL;
-
-const posts: InstagramPost[] = [
+const posts: InstaPost[] = [
   {
     id: "1",
-    title: "Pizza prosto z pieca 🔥",
-    description: "Autentyczna pizza neapolitańska wypiekana w 90 sekund w naszym piecu opalanym drewnem.",
+    shortcode: "DA0tsU1tcUg",
+    title: "Menu Wujka Paolo 🍕",
+    description: "Wyjątkowe menu w naszym lokalu — sprawdź ofertę specjalną od Wujka Paolo!",
     emoji: "🍕",
-    postUrl: PROFILE,
-    embedCode: "",
   },
   {
     id: "2",
-    title: "Rozciąganie ciasta 🤌",
-    description: "Ręczne rozciąganie ciasta — tradycyjna neapolitańska technika naszego pizzaiolo.",
+    shortcode: "DV02M0ujKEZ",
+    title: "Ciasto do pizzy — idealne połączenie 🤌",
+    description: "Woda, mąka, sól, oliwa i odrobina drożdży — tak powstaje nasze ciasto na pizzę.",
     emoji: "🫶",
-    postUrl: PROFILE,
-    embedCode: "",
   },
   {
     id: "3",
-    title: "Warsztaty z dziećmi 👨‍🍳",
-    description: "Mali pizzaiolo w akcji — warsztaty robienia pizzy dla najmłodszych.",
-    emoji: "👶",
-    postUrl: PROFILE,
-    embedCode: "",
+    shortcode: "DV-gcZziOCq",
+    title: "Dostawa prosto do Ciebie 🛵",
+    description: "Zostań na kanapie — przywieziemy Ci kawałek Włoch prosto do salonu!",
+    emoji: "🛵",
   },
   {
     id: "4",
-    title: "Składniki prosto z Włoch 🇮🇹",
-    description: "Importujemy z Włoch — mozzarella fior di latte, pelati San Marzano, oliwa extra vergine.",
-    emoji: "🇮🇹",
-    postUrl: PROFILE,
-    embedCode: "",
+    shortcode: "DVVpq76DI7A",
+    title: "Pizza Pistacja 💚",
+    description: "Wasz zeszłoroczny faworyt — pesto bazyliowo-pistacjowe, na wiosnę idealne!",
+    emoji: "💚",
   },
   {
     id: "5",
-    title: "Atmosfera w restauracji ✨",
-    description: "Ciepła, włoska atmosfera z ogrodem i piecem na żywo — przyjdź i przekonaj się!",
-    emoji: "✨",
-    postUrl: PROFILE,
-    embedCode: "",
+    shortcode: "DVtItY-jEya",
+    title: "Gorąca pizza na każdy dzień 🔥",
+    description: "Idealny sposób na dobry dzień? Gorąca pizza prosto z naszego pieca!",
+    emoji: "🔥",
   },
   {
     id: "6",
-    title: "Randka w Kuchni 💕",
-    description: "Romantyczny wieczór dla dwojga — gotujcie wspólnie pod okiem naszego szefa kuchni.",
-    emoji: "💕",
-    postUrl: PROFILE,
-    embedCode: "",
+    shortcode: "DVN62LSDDGL",
+    title: "Pistacjowe love w Sielsko 🌿",
+    description: "Miłość do pistacji w każdym kęsie — nasze autorskie kompozycje smakowe.",
+    emoji: "🌿",
   },
 ];
 
@@ -77,8 +68,8 @@ const PostCard = ({
   post,
   onOpen,
 }: {
-  post: InstagramPost;
-  onOpen: (post: InstagramPost) => void;
+  post: InstaPost;
+  onOpen: (post: InstaPost) => void;
 }) => (
   <button
     type="button"
@@ -89,7 +80,6 @@ const PostCard = ({
     <div className="relative aspect-square w-full bg-gradient-to-br from-foreground/5 via-foreground/10 to-foreground/20 rounded-t-3xl overflow-hidden flex flex-col items-center justify-center gap-3">
       <span className="text-5xl group-hover:scale-110 transition-transform duration-300">{post.emoji}</span>
 
-      {/* Instagram badge */}
       <span className="font-body text-xs font-semibold text-foreground/70 bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-full flex items-center gap-1.5">
         <InstagramIcon className="w-3.5 h-3.5" />
         Instagram
@@ -114,79 +104,116 @@ const PostCard = ({
   </button>
 );
 
-/* ─── Post Modal ─── */
+/* ─── Post Modal with Instagram embed ─── */
 const PostModal = ({
   post,
   onClose,
 }: {
-  post: InstagramPost;
+  post: InstaPost;
   onClose: () => void;
-}) => (
-  <motion.div
-    className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.25 }}
-  >
-    {/* Backdrop */}
-    <div className="absolute inset-0 bg-foreground/70 backdrop-blur-sm" onClick={onClose} />
+}) => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [loaded, setLoaded] = useState(false);
+  const [embedFailed, setEmbedFailed] = useState(false);
+  const embedUrl = `https://www.instagram.com/p/${post.shortcode}/embed/`;
+  const postUrl = `https://www.instagram.com/p/${post.shortcode}/`;
 
-    {/* Content */}
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!loaded) setEmbedFailed(true);
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, [loaded]);
+
+  return (
     <motion.div
-      className="relative z-10 w-full max-w-md bg-card rounded-3xl overflow-hidden shadow-2xl border border-border/50"
-      initial={{ scale: 0.92, opacity: 0, y: 24 }}
-      animate={{ scale: 1, opacity: 1, y: 0 }}
-      exit={{ scale: 0.92, opacity: 0, y: 24 }}
-      transition={{ type: "spring", damping: 28, stiffness: 340 }}
-      onClick={(e) => e.stopPropagation()}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25 }}
     >
-      {/* Close */}
-      <button
-        type="button"
-        onClick={onClose}
-        className="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-background transition-colors"
-        aria-label="Zamknij"
+      <div className="absolute inset-0 bg-foreground/70 backdrop-blur-sm" onClick={onClose} />
+
+      <motion.div
+        className="relative z-10 w-full max-w-md bg-card rounded-3xl overflow-hidden shadow-2xl border border-border/50"
+        initial={{ scale: 0.92, opacity: 0, y: 24 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.92, opacity: 0, y: 24 }}
+        transition={{ type: "spring", damping: 28, stiffness: 340 }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
-          <path d="M18 6 6 18M6 6l12 12" />
-        </svg>
-      </button>
-
-      {/* Visual area */}
-      <div className="aspect-square w-full bg-gradient-to-br from-foreground/5 via-foreground/10 to-foreground/20 flex flex-col items-center justify-center gap-5 p-8">
-        <span className="text-7xl">{post.emoji}</span>
-        <h3 className="font-subhead text-xl font-bold text-foreground text-center">{post.title}</h3>
-        <p className="font-body text-sm text-muted-foreground text-center max-w-xs">{post.description}</p>
-      </div>
-
-      {/* Actions */}
-      <div className="p-5 flex flex-col gap-3">
-        <a
-          href={post.postUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary text-sm py-3 w-full text-center"
+        {/* Close */}
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-background transition-colors"
+          aria-label="Zamknij"
         >
-          <InstagramIcon className="w-4 h-4" />
-          Otwórz na Instagramie
-        </a>
-        <a
-          href={ORDER_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-ghost text-sm py-2.5 w-full text-center"
-        >
-          🍕 Zamów online
-        </a>
-      </div>
+          <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Embed area */}
+        <div className="w-full relative" style={{ minHeight: 480 }}>
+          {!embedFailed && (
+            <iframe
+              ref={iframeRef}
+              src={embedUrl}
+              className="w-full border-0"
+              style={{ minHeight: 480 }}
+              onLoad={() => setLoaded(true)}
+              loading="lazy"
+              title={post.title}
+              allowTransparency
+            />
+          )}
+
+          {/* Loading / fallback */}
+          {(!loaded || embedFailed) && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 p-8 bg-gradient-to-br from-foreground/5 via-foreground/10 to-foreground/20">
+              <span className="text-6xl">{post.emoji}</span>
+              <h3 className="font-subhead text-xl font-bold text-foreground text-center">{post.title}</h3>
+              <p className="font-body text-sm text-muted-foreground text-center max-w-xs">{post.description}</p>
+              {!embedFailed && (
+                <div className="flex items-center gap-2 text-muted-foreground text-xs">
+                  <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                  Ładowanie...
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Actions */}
+        <div className="p-5 flex flex-col gap-3">
+          <a
+            href={postUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-sm py-3 w-full text-center"
+          >
+            <InstagramIcon className="w-4 h-4" />
+            Otwórz na Instagramie
+          </a>
+          <a
+            href={ORDER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost text-sm py-2.5 w-full text-center"
+          >
+            🍕 Zamów online
+          </a>
+        </div>
+      </motion.div>
     </motion.div>
-  </motion.div>
-);
+  );
+};
 
 /* ─── Section ─── */
 const InstagramSection = () => {
-  const [activePost, setActivePost] = useState<InstagramPost | null>(null);
+  const [activePost, setActivePost] = useState<InstaPost | null>(null);
   const handleClose = useCallback(() => setActivePost(null), []);
 
   const handleKeyDown = useCallback(
@@ -214,7 +241,7 @@ const InstagramSection = () => {
               Zobacz nas na Instagramie
             </h2>
             <p className="font-body text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Zaglądaj za kulisy, poznaj nasz team i zobacz jak powstają Twoje ulubione pizze. Obserwuj nas na Instagramie!
+              Zaglądaj za kulisy, poznaj nasz team i zobacz jak powstają Twoje ulubione pizze. Obserwuj nas!
             </p>
           </AnimatedSection>
 
