@@ -72,6 +72,14 @@ const Footer = ({ onOpenPrivacy }: Props) => {
             <span>Cookies</span>
           </div>
         </div>
+        <div className="text-center mt-4">
+          <p className="font-body text-[11px] text-background/30">
+            Wykonanie{" "}
+            <a href="https://emanager.pro/" target="_blank" rel="noopener noreferrer" className="hover:text-background/60 transition-colors underline underline-offset-2">
+              emanager.pro
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
