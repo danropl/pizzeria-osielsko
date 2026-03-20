@@ -29,11 +29,6 @@ const HistoriaSection = () => (
               <img src={italianProductsImg} alt="Włoskie produkty — oliwa extra vergine, marynaty" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             </div>
           </div>
-          <div className="bg-primary/10 rounded-2xl px-4 py-3 text-center">
-            <p className="font-data text-sm font-semibold text-primary uppercase tracking-wider">
-              Serwujemy pizzę z pasją od 2019 roku
-            </p>
-          </div>
         </AnimatedSection>
 
         {/* Text */}
@@ -53,16 +48,12 @@ const HistoriaSection = () => (
           </blockquote>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 mb-8 bg-card rounded-2xl p-6 border border-border/30">
+          <div className="grid grid-cols-2 gap-4 mb-8 bg-card rounded-2xl p-6 border border-border/30">
             <div className="text-center">
-              <p className="font-display text-3xl font-bold text-primary">5+</p>
-              <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mt-1">Lat tradycji</p>
-            </div>
-            <div className="text-center border-x border-border/30">
               <p className="font-display text-3xl font-bold text-primary">100%</p>
               <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mt-1">Naturalne składniki</p>
             </div>
-            <div className="text-center">
+            <div className="text-center border-l border-border/30">
               <p className="font-display text-3xl font-bold text-primary">400°C</p>
               <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mt-1">Piec drewniany</p>
             </div>
