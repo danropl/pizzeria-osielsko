@@ -29,14 +29,16 @@ const Footer = ({ onOpenPrivacy }: Props) => {
           <div>
             <h4 className="font-subhead text-lg font-semibold text-background mb-4">Nawigacja</h4>
             <nav className="space-y-2">
-              {["#hero|Start", "#nasze-pizze|Nasze pizze", "#eventy|Eventy", "#vouchery|Vouchery", "#historia|Historia", "#kontakt|Kontakt"].map((item) => {
-                const [href, label] = item.split("|");
-                return (
-                  <button key={href} onClick={() => scrollTo(href)} className="block font-body text-sm text-background/60 hover:text-background transition-colors">
-                    {label}
-                  </button>
-                );
-              })}
+              {[
+                { href: "#hero", label: "Start" },
+                { href: "#eventy", label: "Eventy" },
+                { href: "#vouchery", label: "Vouchery" },
+                { href: "#kontakt", label: "Kontakt" },
+              ].map((item) => (
+                <button key={item.href} onClick={() => scrollTo(item.href)} className="block font-body text-sm text-background/60 hover:text-background transition-colors">
+                  {item.label}
+                </button>
+              ))}
             </nav>
           </div>
 
