@@ -42,7 +42,7 @@ const row2: GalleryImage[] = [
   { src: truflowaImg, alt: "Pizza truflowa – smak premium w Pizzerii Osielsko" },
   { src: pizzasTopImg, alt: "Pizze prosto z pieca – widok z góry" },
   { src: deskaSerowImg, alt: "Deska serów włoskich – parmezan, pecorino, gorgonzola" },
-  { src: carbonaraImg, alt: "Pizza Carbonara z jajkiem i boczkiem" },
+  
   { src: heartPizzaImg, alt: "Pizza w kształcie serca – Randka w Kuchni" },
   { src: pizzasVarietyImg, alt: "Wybór pizz – różnorodność smaków w Pizzerii Osielsko" },
   { src: diavolaImg, alt: "Pizza Diavola – ostra i aromatyczna" },
