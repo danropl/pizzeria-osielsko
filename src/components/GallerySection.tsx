@@ -11,7 +11,7 @@ import quattroFormaggiImg from "@/assets/quattro-formaggi.jpg";
 import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
 import prosciuttoImg from "@/assets/prosciutto.jpg";
 import truflowaImg from "@/assets/truflowa.jpg";
-import carbonaraImg from "@/assets/carbonara.jpg";
+
 import winoImg from "@/assets/wino.jpg";
 import deskaSerowImg from "@/assets/deska-serow.jpg";
 import capricciosaImg from "@/assets/capricciosa.jpg";
