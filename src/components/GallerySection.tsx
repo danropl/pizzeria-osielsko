@@ -6,12 +6,12 @@ import interiorImg from "@/assets/interior.jpg";
 import interior2Img from "@/assets/interior-2.jpg";
 import interior3Img from "@/assets/interior-3.jpg";
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
-import pepperoniImg from "@/assets/pepperoni-2.jpg";
+
 import quattroFormaggiImg from "@/assets/quattro-formaggi.jpg";
 import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
 import prosciuttoImg from "@/assets/prosciutto.jpg";
 import truflowaImg from "@/assets/truflowa.jpg";
-import carbonaraImg from "@/assets/carbonara.jpg";
+
 import winoImg from "@/assets/wino.jpg";
 import deskaSerowImg from "@/assets/deska-serow.jpg";
 import capricciosaImg from "@/assets/capricciosa.jpg";
@@ -27,7 +27,7 @@ interface GalleryImage {
 const row1: GalleryImage[] = [
   { src: margheritaImg, alt: "Pizza Margherita z pieca opalanego drewnem – Pizzeria Osielsko" },
   { src: interiorImg, alt: "Wnętrze Pizzerii Osielsko – ciepła włoska atmosfera" },
-  { src: pepperoniImg, alt: "Pizza Pepperoni – bestseller Pizzerii Osielsko" },
+  
   { src: winoImg, alt: "Degustacja wina w Pizzerii Osielsko" },
   { src: capricciosaImg, alt: "Pizza Capricciosa – klasyka włoskiej kuchni" },
   { src: heroPizzaOvenImg, alt: "Piec opalany drewnem – serce Pizzerii Osielsko" },
@@ -42,7 +42,7 @@ const row2: GalleryImage[] = [
   { src: truflowaImg, alt: "Pizza truflowa – smak premium w Pizzerii Osielsko" },
   { src: pizzasTopImg, alt: "Pizze prosto z pieca – widok z góry" },
   { src: deskaSerowImg, alt: "Deska serów włoskich – parmezan, pecorino, gorgonzola" },
-  { src: carbonaraImg, alt: "Pizza Carbonara z jajkiem i boczkiem" },
+  
   { src: heartPizzaImg, alt: "Pizza w kształcie serca – Randka w Kuchni" },
   { src: pizzasVarietyImg, alt: "Wybór pizz – różnorodność smaków w Pizzerii Osielsko" },
   { src: diavolaImg, alt: "Pizza Diavola – ostra i aromatyczna" },
