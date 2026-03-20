@@ -14,6 +14,7 @@ import CookieConsent from "@/components/CookieConsent";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import ReservationModal from "@/components/ReservationModal";
+import OrderModal from "@/components/OrderModal";
 import { Helmet } from "react-helmet-async";
 
 const DOMAIN = "https://pizzeriaosielsko.pl";
