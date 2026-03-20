@@ -37,9 +37,9 @@ const EventySection = () => (
         </h2>
       </AnimatedSection>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {events.map((event, i) => (
-          <AnimatedSection key={event.title} delay={i * 0.05} className="card-warm overflow-hidden flex flex-col w-full max-w-md">
+          <AnimatedSection key={event.title} delay={i * 0.05} className="card-warm overflow-hidden flex flex-col w-full">
             <div className="relative">
               <div className="aspect-[4/3] w-full overflow-hidden rounded-t-3xl">
                 <img src={event.image} alt={`${event.title} – event w Pizzerii Osielsko`} className="w-full h-full object-cover" loading="lazy" />
