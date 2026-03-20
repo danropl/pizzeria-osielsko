@@ -2,7 +2,6 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HistoriaSection from "@/components/HistoriaSection";
-
 import GallerySection from "@/components/GallerySection";
 import EventySection from "@/components/EventySection";
 import VoucherySection from "@/components/VoucherySection";
@@ -14,6 +13,7 @@ import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
+import ReservationModal from "@/components/ReservationModal";
 import { Helmet } from "react-helmet-async";
 
 const DOMAIN = "https://pizzeriaosielsko.pl";
@@ -89,7 +89,7 @@ const jsonLdFAQ = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Czy Pizzeria Osielsko organizuje urodziny dla dzieci?", "acceptedAnswer": { "@type": "Answer", "text": "Tak! Organizujemy wyj\u0105tkowe urodziny \u201eMa\u0142y Pizzaiolo\u201D w stylu w\u0142oskim. Dzieci ucz\u0105 si\u0119 robi\u0107 pizz\u0119, dekoruj\u0105 j\u0105 samodzielnie, a potem wsp\u00F3lnie jedz\u0105." } },
+    { "@type": "Question", "name": "Czy Pizzeria Osielsko organizuje urodziny dla dzieci?", "acceptedAnswer": { "@type": "Answer", "text": "Tak! Organizujemy wyjątkowe urodziny \u201eMały Pizzaiolo\u201D w stylu włoskim. Dzieci uczą się robić pizzę, dekorują ją samodzielnie, a potem wspólnie jedzą." } },
     { "@type": "Question", "name": "Jak zarezerwować stolik w Pizzerii Osielsko?", "acceptedAnswer": { "@type": "Answer", "text": "Rezerwację można zrobić telefonicznie pod numerem +48 500 384 100 lub wysyłając e-mail na pizzasielsko@gmail.com." } },
     { "@type": "Question", "name": "Czy można kupić voucher na warsztaty pizzy?", "acceptedAnswer": { "@type": "Answer", "text": "Tak! Oferujemy vouchery podarunkowe na warsztaty robienia pizzy, randkę w kuchni, degustację pizza & wino oraz wieczór karaoke. Dostępne w formie kartki lub PDF." } },
     { "@type": "Question", "name": "Jakie eventy organizuje Pizzeria Osielsko?", "acceptedAnswer": { "@type": "Answer", "text": "Organizujemy m.in. urodziny Mały Pizzaiolo, warsztaty robienia pizzy, randki w kuchni, letnie kino z pizzą, Pizza Challenge, Karaoke Italiano Night, degustacje pizza & wino z sommelierem oraz Voucher Experience." } },
@@ -102,6 +102,7 @@ const jsonLdFAQ = {
 
 const Index = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [reservationOpen, setReservationOpen] = useState(false);
 
   return (
     <>
@@ -137,11 +138,10 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
       </Helmet>
 
-      <Navbar />
+      <Navbar onOpenReservation={() => setReservationOpen(true)} />
       <main>
         <HeroSection />
         <HistoriaSection />
-        
         <GallerySection />
         <EventySection />
         <VoucherySection />
@@ -152,8 +152,9 @@ const Index = () => {
       <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
       <BackToTop />
       <CookieConsent onOpenPrivacy={() => setPrivacyOpen(true)} />
-      <MobileBottomBar />
+      <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
       <PrivacyPolicyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
+      <ReservationModal open={reservationOpen} onClose={() => setReservationOpen(false)} />
     </>
   );
 };
