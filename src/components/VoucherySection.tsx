@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import { ORDER_URL } from "@/lib/constants";
 
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
 import eventKidsImg from "@/assets/event-kids.jpg";
@@ -19,11 +20,7 @@ const vouchers: Voucher[] = [
   { emoji: "🎤", title: "Wieczór Karaoke", contents: "Zabawa z włoskimi klasykami i pyszną pizzą.", image: interior2Img },
 ];
 
-interface Props {
-  onOpenOrder: () => void;
-}
-
-const VoucherySection = ({ onOpenOrder }: Props) => (
+const VoucherySection = () => (
   <section id="vouchery" className="bg-background section-padding">
     <div className="container-custom">
       <AnimatedSection className="text-center mb-12">
@@ -42,9 +39,9 @@ const VoucherySection = ({ onOpenOrder }: Props) => (
             <div className="p-5 flex flex-col flex-1">
               <h3 className="font-subhead text-lg font-semibold text-foreground mb-2">{v.title}</h3>
               <p className="font-body text-sm text-muted-foreground mb-4 flex-1">{v.contents}</p>
-              <button onClick={onOpenOrder} className="btn-primary w-full text-sm py-2">
+              <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-sm py-2 text-center">
                 🎁 Kup voucher
-              </button>
+              </a>
             </div>
           </AnimatedSection>
         ))}

@@ -1,11 +1,11 @@
 import logoImg from "@/assets/logo.svg";
+import { ORDER_URL } from "@/lib/constants";
 
 interface Props {
   onOpenPrivacy: () => void;
-  onOpenOrder: () => void;
 }
 
-const Footer = ({ onOpenPrivacy, onOpenOrder }: Props) => {
+const Footer = ({ onOpenPrivacy }: Props) => {
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -54,9 +54,9 @@ const Footer = ({ onOpenPrivacy, onOpenOrder }: Props) => {
             <p className="font-body text-sm text-background/60 mb-4">
               Złóż zamówienie przez nasz system online i odbierz gorącą pizzę!
             </p>
-            <button onClick={onOpenOrder} className="btn-primary text-sm py-2 px-6">
+            <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-6 inline-block">
               🍕 Zamów teraz
-            </button>
+            </a>
           </div>
         </div>
 

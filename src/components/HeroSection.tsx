@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import heroPizzaOven from "@/assets/hero-pizza-oven.jpg";
+import { ORDER_URL } from "@/lib/constants";
 
-interface Props {
-  onOpenOrder: () => void;
-}
-
-const HeroSection = ({ onOpenOrder }: Props) => (
+const HeroSection = () => (
   <section id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-[72px]">
     <div className="absolute inset-0">
       <img
@@ -58,9 +55,9 @@ const HeroSection = ({ onOpenOrder }: Props) => (
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.9 }}
           >
-            <button onClick={onOpenOrder} className="btn-primary text-base px-8 py-4 shadow-lg">
+            <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-4 shadow-lg">
               🍕 Zamów online
-            </button>
+            </a>
             <a href="#nasze-pizze" className="btn-ghost text-base px-8 py-4 border-background/40 text-background/90 hover:bg-background/10 hover:text-background">
               🎬 Zobacz nasze TikToki
             </a>

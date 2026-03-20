@@ -14,7 +14,6 @@ import CookieConsent from "@/components/CookieConsent";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import ReservationModal from "@/components/ReservationModal";
-import OrderModal from "@/components/OrderModal";
 import { Helmet } from "react-helmet-async";
 
 const DOMAIN = "https://pizzeriaosielsko.pl";
@@ -104,9 +103,6 @@ const jsonLdFAQ = {
 const Index = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [reservationOpen, setReservationOpen] = useState(false);
-  const [orderOpen, setOrderOpen] = useState(false);
-
-  const openOrder = () => setOrderOpen(true);
 
   return (
     <>
@@ -142,24 +138,23 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
       </Helmet>
 
-      <Navbar onOpenReservation={() => setReservationOpen(true)} onOpenOrder={openOrder} />
+      <Navbar onOpenReservation={() => setReservationOpen(true)} />
       <main>
-        <HeroSection onOpenOrder={openOrder} />
+        <HeroSection />
         <HistoriaSection />
         <GallerySection />
-        <EventySection onOpenOrder={openOrder} />
-        <VoucherySection onOpenOrder={openOrder} />
+        <EventySection />
+        <VoucherySection />
         <OpinieSection />
         <FAQSection />
-        <KontaktSection onOpenOrder={openOrder} />
+        <KontaktSection />
       </main>
-      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} onOpenOrder={openOrder} />
+      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
       <BackToTop />
       <CookieConsent onOpenPrivacy={() => setPrivacyOpen(true)} />
-      <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} onOpenOrder={openOrder} />
+      <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
       <PrivacyPolicyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
       <ReservationModal open={reservationOpen} onClose={() => setReservationOpen(false)} />
-      <OrderModal open={orderOpen} onClose={() => setOrderOpen(false)} />
     </>
   );
 };
