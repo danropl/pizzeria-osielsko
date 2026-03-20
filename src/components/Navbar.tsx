@@ -51,7 +51,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
       }`}
       style={{ height: "76px" }}
     >
-      <div className="container-custom h-full flex items-center justify-between px-4 lg:px-8">
+      <div className="container-custom h-full grid grid-cols-[auto_1fr_auto] items-center px-4 lg:px-8">
         {/* Logo */}
         <button
           onClick={() => handleClick("#hero")}
@@ -66,7 +66,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
         </button>
 
         {/* Desktop nav links — centered */}
-        <nav className="hidden lg:flex items-center gap-0.5" aria-label="Nawigacja główna">
+        <nav className="hidden lg:flex items-center justify-center gap-0.5" aria-label="Nawigacja główna">
           {navLinks.map((link) => (
             <button
               key={link.href}
