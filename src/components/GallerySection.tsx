@@ -6,7 +6,7 @@ import interiorImg from "@/assets/interior.jpg";
 import interior2Img from "@/assets/interior-2.jpg";
 import interior3Img from "@/assets/interior-3.jpg";
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
-import pepperoniImg from "@/assets/pepperoni-2.jpg";
+
 import quattroFormaggiImg from "@/assets/quattro-formaggi.jpg";
 import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
 import prosciuttoImg from "@/assets/prosciutto.jpg";
