@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import { ORDER_URL } from "@/lib/constants";
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
 import eventXmasImg from "@/assets/event-xmas.jpg";
 import interior2Img from "@/assets/interior-2.jpg";
@@ -27,11 +28,7 @@ const events: EventItem[] = [
   { title: "Voucher Experience", badge: "Prezent 🎁", badgeColor: "bg-yellow-600/80 text-white", desc: "Podaruj komuś niezapomniane przeżycie w naszej restauracji.", image: cateringImg },
 ];
 
-interface Props {
-  onOpenOrder: () => void;
-}
-
-const EventySection = ({ onOpenOrder }: Props) => (
+const EventySection = () => (
   <section id="eventy" className="bg-bg-dark section-padding">
     <div className="container-custom">
       <AnimatedSection className="text-center mb-12">
@@ -53,9 +50,9 @@ const EventySection = ({ onOpenOrder }: Props) => (
             <div className="p-5 flex flex-col flex-1">
               <h3 className="font-subhead text-lg font-semibold text-foreground mb-2">{event.title}</h3>
               <p className="font-body text-sm text-muted-foreground mb-4 flex-1">{event.desc}</p>
-              <button onClick={onOpenOrder} className="btn-primary text-sm py-2 w-full">
+              <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 w-full text-center">
                 Zamów online
-              </button>
+              </a>
             </div>
           </AnimatedSection>
         ))}

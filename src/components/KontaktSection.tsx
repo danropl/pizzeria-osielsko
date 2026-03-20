@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
+import { ORDER_URL } from "@/lib/constants";
 
 const hours = [
   { day: "Poniedziałek", open: "Zamknięte", close: "" },
@@ -13,11 +14,7 @@ const hours = [
 
 const dayNames = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
 
-interface Props {
-  onOpenOrder: () => void;
-}
-
-const KontaktSection = ({ onOpenOrder }: Props) => {
+const KontaktSection = () => {
   const [todayIndex, setTodayIndex] = useState(0);
 
   useEffect(() => {
@@ -89,12 +86,14 @@ const KontaktSection = ({ onOpenOrder }: Props) => {
               <a href="https://www.tiktok.com/@pizzeria_osielsko" target="_blank" rel="noopener noreferrer" className="btn-ghost py-2 px-4 text-sm" aria-label="TikTok">TikTok</a>
             </div>
 
-            <button
-              onClick={onOpenOrder}
+            <a
+              href={ORDER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary w-full text-center text-base py-4"
             >
               🍕 Zamów online
-            </button>
+            </a>
           </AnimatedSection>
 
           <AnimatedSection delay={0.15} className="space-y-3">
