@@ -1,7 +1,11 @@
 import logoImg from "@/assets/logo.svg";
 import { ORDER_URL } from "@/lib/constants";
 
-const Footer = () => {
+interface Props {
+  onOpenPrivacy: () => void;
+}
+
+const Footer = ({ onOpenPrivacy }: Props) => {
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -12,11 +16,7 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Col 1 - Logo */}
           <div>
-            <img
-              src={logoImg}
-              alt="Pizzeria Osielsko – logo"
-              className="w-48 mb-3 invert"
-            />
+            <img src={logoImg} alt="Pizzeria Osielsko – logo" className="w-48 mb-3 invert" />
             <p className="font-body text-sm text-background/60 mb-4">
               Autentyczna włoska pizza z pieca opalanego drewnem
             </p>
@@ -58,12 +58,7 @@ const Footer = () => {
             <p className="font-body text-sm text-background/60 mb-4">
               Złóż zamówienie przez nasz system online i odbierz gorącą pizzę!
             </p>
-            <a
-              href={ORDER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-sm py-2 px-6 inline-block"
-            >
+            <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-6 inline-block">
               🍕 Zamów teraz
             </a>
           </div>
@@ -74,9 +69,9 @@ const Footer = () => {
             © 2025 Pizzeria Osielsko. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4 font-body text-xs text-background/40">
-            <a href="#" className="hover:text-background transition-colors">Polityka prywatności</a>
-            <a href="#" className="hover:text-background transition-colors">Regulamin</a>
-            <a href="#" className="hover:text-background transition-colors">Cookies</a>
+            <button onClick={onOpenPrivacy} className="hover:text-background transition-colors">Polityka prywatności</button>
+            <span className="text-background/20">|</span>
+            <span>Cookies</span>
           </div>
         </div>
       </div>
