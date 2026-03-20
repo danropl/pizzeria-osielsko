@@ -74,7 +74,7 @@ const Footer = ({ onOpenPrivacy }: Props) => {
         </div>
         <div className="text-center mt-4">
           <p className="font-body text-[11px] text-background/30">
-            Wykonanie{" "}
+            Realizacja{" "}
             <a href="https://emanager.pro/" target="_blank" rel="noopener noreferrer" className="hover:text-background/60 transition-colors underline underline-offset-2">
               emanager.pro
             </a>
