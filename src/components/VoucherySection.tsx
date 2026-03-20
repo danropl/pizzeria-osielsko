@@ -37,10 +37,7 @@ const VoucherySection = () => (
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="font-subhead text-lg font-semibold text-foreground mb-2">{v.title}</h3>
-              <p className="font-body text-sm text-muted-foreground mb-4 flex-1">{v.contents}</p>
-              <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-sm py-2 text-center">
-                🎁 Kup voucher
-              </a>
+              <p className="font-body text-sm text-muted-foreground flex-1">{v.contents}</p>
             </div>
           </AnimatedSection>
         ))}
