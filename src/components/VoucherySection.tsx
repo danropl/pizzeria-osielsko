@@ -1,5 +1,4 @@
 import AnimatedSection from "./AnimatedSection";
-import { ORDER_URL } from "@/lib/constants";
 
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
 import eventKidsImg from "@/assets/event-kids.jpg";
