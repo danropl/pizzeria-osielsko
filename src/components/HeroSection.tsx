@@ -58,9 +58,6 @@ const HeroSection = () => (
             <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-4 shadow-lg">
               🍕 Zamów online
             </a>
-            <a href="#nasze-pizze" className="btn-ghost text-base px-8 py-4 border-background/40 text-background/90 hover:bg-background/10 hover:text-background">
-              🎬 Zobacz nasze TikToki
-            </a>
           </motion.div>
         </AnimatedSection>
       </div>
