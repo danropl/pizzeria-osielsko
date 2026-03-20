@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HistoriaSection from "@/components/HistoriaSection";
@@ -12,6 +13,7 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import MobileBottomBar from "@/components/MobileBottomBar";
+import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import { Helmet } from "react-helmet-async";
 
 const DOMAIN = "https://pizzeriaosielsko.pl";
@@ -99,6 +101,8 @@ const jsonLdFAQ = {
 };
 
 const Index = () => {
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
   return (
     <>
       <Helmet>
@@ -145,10 +149,11 @@ const Index = () => {
         <FAQSection />
         <KontaktSection />
       </main>
-      <Footer />
+      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
       <BackToTop />
-      <CookieConsent />
+      <CookieConsent onOpenPrivacy={() => setPrivacyOpen(true)} />
       <MobileBottomBar />
+      <PrivacyPolicyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
     </>
   );
 };

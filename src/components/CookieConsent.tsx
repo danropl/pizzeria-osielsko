@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const CookieConsent = () => {
+interface Props {
+  onOpenPrivacy: () => void;
+}
+
+const CookieConsent = ({ onOpenPrivacy }: Props) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -19,15 +23,21 @@ const CookieConsent = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          className="fixed bottom-0 left-0 right-0 z-[999] bg-foreground/95 backdrop-blur-lg p-4"
+          className="fixed bottom-0 left-0 right-0 z-[999] bg-foreground/95 backdrop-blur-lg p-4 sm:p-5"
         >
           <div className="container-custom flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-body text-sm text-background/80">
-              🍪 Używamy plików cookies, aby zapewnić najlepszą jakość korzystania z naszej strony.
+            <p className="font-body text-sm text-background/80 leading-relaxed">
+              🍪 Używamy plików cookies, aby zapewnić najlepszą jakość korzystania z naszej strony.{" "}
+              <button
+                onClick={onOpenPrivacy}
+                className="underline text-background/90 hover:text-background transition-colors font-semibold"
+              >
+                Polityka prywatności
+              </button>
             </p>
             <div className="flex gap-2 flex-shrink-0">
-              <button onClick={accept} className="btn-primary text-xs py-2 px-4">Akceptuj</button>
-              <button onClick={reject} className="btn-ghost text-xs py-2 px-4 border-background/30 text-background/70 hover:bg-background/10 hover:text-background">Odrzuć</button>
+              <button onClick={accept} className="btn-primary text-xs py-2 px-4">Akceptuję</button>
+              <button onClick={reject} className="btn-ghost text-xs py-2 px-4 border-background/30 text-background/70 hover:bg-background/10 hover:text-background">Tylko niezbędne</button>
             </div>
           </div>
         </motion.div>
