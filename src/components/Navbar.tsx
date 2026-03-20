@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/logo.svg";
+import { ORDER_URL } from "@/lib/constants";
 
 const navLinks = [
   { href: "#hero", label: "Start" },
-  { href: "#menu", label: "Menu" },
+  { href: "#nasze-pizze", label: "Nasze pizze" },
   { href: "#eventy", label: "Eventy" },
   { href: "#vouchery", label: "Vouchery" },
   { href: "#kontakt", label: "Kontakt" },
@@ -18,7 +19,6 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
-      // scrollspy
       for (const link of [...navLinks].reverse()) {
         const el = document.querySelector(link.href);
         if (el) {
@@ -49,12 +49,10 @@ const Navbar = () => {
       style={{ height: "72px" }}
     >
       <div className="container-custom h-full flex items-center justify-between px-4 lg:px-8">
-        {/* Logo */}
         <button onClick={() => handleClick("#hero")} className="flex items-center gap-2 group" aria-label="Pizzeria Osielsko — strona główna">
           <img src={logoImg} alt="Pizzeria Osielsko – logo" className="h-14 w-auto" />
         </button>
 
-        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1" aria-label="Nawigacja główna">
           {navLinks.map((link) => (
             <button
@@ -78,17 +76,15 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-3">
           <a href="tel:+48500384100" className="btn-ghost text-sm py-2 px-4">
             📞 Rezerwacja
           </a>
-          <a href="#menu" className="btn-primary text-sm py-2 px-4">
+          <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4">
             Zamów online
           </a>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="lg:hidden p-2 text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -105,7 +101,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -132,7 +127,7 @@ const Navbar = () => {
                 <a href="tel:+48500384100" className="btn-ghost text-sm py-2 px-4 flex-1 text-center">
                   📞 Rezerwacja
                 </a>
-                <a href="#menu" className="btn-primary text-sm py-2 px-4 flex-1 text-center" onClick={() => setMobileOpen(false)}>
+                <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4 flex-1 text-center" onClick={() => setMobileOpen(false)}>
                   Zamów online
                 </a>
               </div>

@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HistoriaSection from "@/components/HistoriaSection";
-import MenuSection from "@/components/MenuSection";
+import TikTokSection from "@/components/TikTokSection";
 import EventySection from "@/components/EventySection";
 import VoucherySection from "@/components/VoucherySection";
 import OpinieSection from "@/components/OpinieSection";
@@ -45,7 +45,6 @@ const jsonLdRestaurant = {
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "13:00", "closes": "22:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "13:00", "closes": "21:00" }
   ],
-  "hasMenu": `${DOMAIN}/#menu`,
   "sameAs": [
     "https://www.facebook.com/pizzeriaosielsko/",
     "https://www.instagram.com/pizzeriaosielsko/",
@@ -88,7 +87,7 @@ const jsonLdFAQ = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Czy Pizzeria Osielsko organizuje urodziny dla dzieci?", "acceptedAnswer": { "@type": "Answer", "text": "Tak! Organizujemy wyj\u0105tkowe urodziny \u201eMa\u0142y Pizzaiolo\u201D w stylu w\u0142oskim. Dzieci ucz\u0105 si\u0119 robi\u0107 pizz\u0119, dekoruj\u0105 j\u0105 samodzielnie, a potem wsp\u00F3lnie jedz\u0105." } },
-    { "@type": "Question", "name": "Jak zarezerwować stolik w Pizzerii Osielsko?", "acceptedAnswer": { "@type": "Answer", "text": "Rezerwację można zrobić telefonicznie pod numerem +48 500 384 100 lub wysyłając e-mail na pizzasielsko@gmail.com. Można też skorzystać z formularza kontaktowego na stronie." } },
+    { "@type": "Question", "name": "Jak zarezerwować stolik w Pizzerii Osielsko?", "acceptedAnswer": { "@type": "Answer", "text": "Rezerwację można zrobić telefonicznie pod numerem +48 500 384 100 lub wysyłając e-mail na pizzasielsko@gmail.com." } },
     { "@type": "Question", "name": "Czy można kupić voucher na warsztaty pizzy?", "acceptedAnswer": { "@type": "Answer", "text": "Tak! Oferujemy vouchery podarunkowe na warsztaty robienia pizzy, randkę w kuchni, degustację pizza & wino oraz wieczór karaoke. Dostępne w formie kartki lub PDF." } },
     { "@type": "Question", "name": "Jakie eventy organizuje Pizzeria Osielsko?", "acceptedAnswer": { "@type": "Answer", "text": "Organizujemy m.in. urodziny Mały Pizzaiolo, warsztaty robienia pizzy, randki w kuchni, letnie kino z pizzą, Pizza Challenge, Karaoke Italiano Night, degustacje pizza & wino z sommelierem oraz Voucher Experience." } },
     { "@type": "Question", "name": "Czy pizza jest wypiekana w piecu opalanym drewnem?", "acceptedAnswer": { "@type": "Answer", "text": "Tak — każda pizza jest wypiekana w autentycznym piecu opalanym drewnem, rozgrzanym do 400°C." } },
@@ -110,7 +109,6 @@ const Index = () => {
         <meta name="geo.region" content="PL-KP" />
         <meta name="geo.placename" content="Osielsko, Bydgoszcz" />
 
-        {/* Open Graph */}
         <meta property="og:type" content="restaurant" />
         <meta property="og:site_name" content="Pizzeria Osielsko" />
         <meta property="og:title" content="Pizzeria Osielsko – Autentyczna Pizza Włoska z Pieca Drewnianego" />
@@ -122,14 +120,12 @@ const Index = () => {
         <meta property="og:url" content={DOMAIN} />
         <meta property="og:locale" content="pl_PL" />
 
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Pizzeria Osielsko – Autentyczna Pizza Włoska z Pieca" />
         <meta name="twitter:description" content="Prawdziwa pizza neapolitańska z pieca opalanego drewnem w Osielsku k. Bydgoszczy. Zamów online lub zarezerwuj stolik." />
         <meta name="twitter:image" content={`${DOMAIN}/og-image.jpg`} />
         <meta name="twitter:image:alt" content="Pizzeria Osielsko – pizza z pieca opalanego drewnem" />
 
-        {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(jsonLdRestaurant)}</script>
         <script type="application/ld+json">{JSON.stringify(jsonLdEvents)}</script>
         <script type="application/ld+json">{JSON.stringify(jsonLdProducts)}</script>
@@ -140,7 +136,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <HistoriaSection />
-        <MenuSection />
+        <TikTokSection />
         <EventySection />
         <VoucherySection />
         <OpinieSection />
