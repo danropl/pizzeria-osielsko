@@ -66,7 +66,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
         </button>
 
         {/* Desktop nav links — centered */}
-        <nav className="hidden lg:flex items-center gap-0.5" aria-label="Nawigacja główna">
+        <nav className="hidden lg:flex items-center justify-center gap-0.5" aria-label="Nawigacja główna">
           {navLinks.map((link) => (
             <button
               key={link.href}
