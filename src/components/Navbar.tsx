@@ -44,93 +44,126 @@ const Navbar = ({ onOpenReservation }: Props) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
         scrolled
-          ? "bg-background shadow-lg"
-          : "bg-background/95 backdrop-blur-xl"
+          ? "bg-background/95 backdrop-blur-md shadow-[0_1px_0_0_hsl(var(--border)/0.4),0_4px_20px_-4px_rgba(0,0,0,0.08)]"
+          : "bg-background/80 backdrop-blur-sm"
       }`}
-      style={{ height: "72px" }}
+      style={{ height: "76px" }}
     >
       <div className="container-custom h-full flex items-center justify-between px-4 lg:px-8">
-        <button onClick={() => handleClick("#hero")} className="flex items-center gap-2 group" aria-label="Pizzeria Osielsko — strona główna">
-          <img src={logoImg} alt="Pizzeria Osielsko – logo" className="h-14 w-auto" />
+        {/* Logo */}
+        <button
+          onClick={() => handleClick("#hero")}
+          className="flex items-center gap-2 group shrink-0"
+          aria-label="Pizzeria Osielsko — strona główna"
+        >
+          <img
+            src={logoImg}
+            alt="Pizzeria Osielsko – logo"
+            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+          />
         </button>
 
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Nawigacja główna">
+        {/* Desktop nav links — centered */}
+        <nav className="hidden lg:flex items-center gap-0.5" aria-label="Nawigacja główna">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className={`relative px-4 py-2 text-sm font-body font-medium rounded-xl transition-colors ${
+              className={`relative px-5 py-2 text-[13px] font-body font-semibold uppercase tracking-[0.08em] rounded-lg transition-all duration-300 ${
                 activeSection === link.href
                   ? "text-primary"
-                  : "text-foreground/70 hover:text-foreground"
+                  : "text-foreground/60 hover:text-foreground"
               }`}
             >
               {link.label}
               {activeSection === link.href && (
-                <motion.div
-                  layoutId="nav-pill"
-                  className="absolute inset-0 bg-primary/10 rounded-xl -z-10"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                <motion.span
+                  layoutId="nav-underline"
+                  className="absolute bottom-0.5 left-1/2 -translate-x-1/2 h-[2px] w-5 bg-primary rounded-full"
+                  transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
                 />
               )}
             </button>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <button onClick={onOpenReservation} className="btn-ghost text-sm py-2 px-4">
-            📞 Rezerwacja
+        {/* Desktop CTA buttons */}
+        <div className="hidden lg:flex items-center gap-2.5 shrink-0">
+          <button
+            onClick={onOpenReservation}
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-[13px] font-body font-semibold uppercase tracking-[0.06em] text-foreground/70 border border-border/60 rounded-xl transition-all duration-300 hover:text-primary hover:border-primary/40 hover:bg-primary/5"
+          >
+            <span className="text-sm">📞</span>
+            Rezerwacja
           </button>
-          <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4">
+          <a
+            href={ORDER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-5 py-2 text-[13px] font-body font-bold uppercase tracking-[0.06em] bg-primary text-primary-foreground rounded-xl transition-all duration-300 hover:bg-[hsl(var(--primary-dark))] hover:shadow-[0_4px_12px_-2px_hsl(var(--primary)/0.35)]"
+          >
             Zamów online
           </a>
         </div>
 
+        {/* Mobile hamburger */}
         <button
-          className="lg:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Zamknij menu" : "Otwórz menu"}
           aria-expanded={mobileOpen}
         >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             {mobileOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-t border-border/50 overflow-hidden"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="lg:hidden absolute top-[76px] left-0 right-0 bg-background/98 backdrop-blur-lg border-t border-border/30 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.12)]"
           >
-            <nav className="p-4 flex flex-col gap-2" aria-label="Nawigacja mobilna">
+            <nav className="p-5 flex flex-col gap-1" aria-label="Nawigacja mobilna">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className={`text-left px-4 py-3 rounded-2xl font-body font-medium transition-colors ${
+                  className={`text-left px-4 py-3 rounded-xl font-body text-sm font-semibold uppercase tracking-[0.06em] transition-all duration-200 ${
                     activeSection === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground/70 hover:bg-muted"
+                      ? "text-primary bg-primary/8"
+                      : "text-foreground/60 hover:text-foreground hover:bg-muted/50"
                   }`}
                 >
                   {link.label}
                 </button>
               ))}
-              <div className="flex gap-2 mt-2">
-                <button onClick={() => { setMobileOpen(false); onOpenReservation(); }} className="btn-ghost text-sm py-2 px-4 flex-1 text-center">
-                  📞 Rezerwacja
+              <div className="flex gap-2 mt-3 pt-3 border-t border-border/30">
+                <button
+                  onClick={() => { setMobileOpen(false); onOpenReservation(); }}
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-body font-semibold uppercase tracking-[0.06em] text-foreground/70 border border-border/60 rounded-xl transition-all duration-300 hover:text-primary hover:border-primary/40"
+                >
+                  <span className="text-sm">📞</span>
+                  Rezerwacja
                 </button>
-                <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4 flex-1 text-center" onClick={() => setMobileOpen(false)}>
+                <a
+                  href={ORDER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-[13px] font-body font-bold uppercase tracking-[0.06em] bg-primary text-primary-foreground rounded-xl transition-all duration-300 hover:bg-[hsl(var(--primary-dark))]"
+                  onClick={() => setMobileOpen(false)}
+                >
                   Zamów online
                 </a>
               </div>
