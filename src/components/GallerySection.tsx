@@ -27,7 +27,7 @@ interface GalleryImage {
 const row1: GalleryImage[] = [
   { src: margheritaImg, alt: "Pizza Margherita z pieca opalanego drewnem – Pizzeria Osielsko" },
   { src: interiorImg, alt: "Wnętrze Pizzerii Osielsko – ciepła włoska atmosfera" },
-  { src: pepperoniImg, alt: "Pizza Pepperoni – bestseller Pizzerii Osielsko" },
+  
   { src: winoImg, alt: "Degustacja wina w Pizzerii Osielsko" },
   { src: capricciosaImg, alt: "Pizza Capricciosa – klasyka włoskiej kuchni" },
   { src: heroPizzaOvenImg, alt: "Piec opalany drewnem – serce Pizzerii Osielsko" },
