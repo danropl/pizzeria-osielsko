@@ -29,11 +29,6 @@ const HistoriaSection = () => (
               <img src={italianProductsImg} alt="Włoskie produkty — oliwa extra vergine, marynaty" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             </div>
           </div>
-          <div className="bg-primary/10 rounded-2xl px-4 py-3 text-center">
-            <p className="font-data text-sm font-semibold text-primary uppercase tracking-wider">
-              Serwujemy pizzę z pasją od 2019 roku
-            </p>
-          </div>
         </AnimatedSection>
 
         {/* Text */}
