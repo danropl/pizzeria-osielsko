@@ -5,7 +5,6 @@ import { ORDER_URL } from "@/lib/constants";
 
 const navLinks = [
   { href: "#hero", label: "Start" },
-  { href: "#nasze-pizze", label: "Nasze pizze" },
   { href: "#eventy", label: "Eventy" },
   { href: "#vouchery", label: "Vouchery" },
   { href: "#kontakt", label: "Kontakt" },
