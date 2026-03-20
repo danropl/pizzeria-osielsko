@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/logo.svg";
-import { ORDER_URL } from "@/lib/constants";
 
 const navLinks = [
   { href: "#hero", label: "Start" },
@@ -13,9 +12,10 @@ const navLinks = [
 
 interface Props {
   onOpenReservation: () => void;
+  onOpenOrder: () => void;
 }
 
-const Navbar = ({ onOpenReservation }: Props) => {
+const Navbar = ({ onOpenReservation, onOpenOrder }: Props) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#hero");
@@ -84,9 +84,9 @@ const Navbar = ({ onOpenReservation }: Props) => {
           <button onClick={onOpenReservation} className="btn-ghost text-sm py-2 px-4">
             📞 Rezerwacja
           </button>
-          <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4">
+          <button onClick={onOpenOrder} className="btn-primary text-sm py-2 px-4">
             Zamów online
-          </a>
+          </button>
         </div>
 
         <button
@@ -131,9 +131,9 @@ const Navbar = ({ onOpenReservation }: Props) => {
                 <button onClick={() => { setMobileOpen(false); onOpenReservation(); }} className="btn-ghost text-sm py-2 px-4 flex-1 text-center">
                   📞 Rezerwacja
                 </button>
-                <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4 flex-1 text-center" onClick={() => setMobileOpen(false)}>
+                <button onClick={() => { setMobileOpen(false); onOpenOrder(); }} className="btn-primary text-sm py-2 px-4 flex-1 text-center">
                   Zamów online
-                </a>
+                </button>
               </div>
             </nav>
           </motion.div>
