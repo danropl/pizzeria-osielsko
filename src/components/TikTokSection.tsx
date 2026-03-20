@@ -190,11 +190,11 @@ const TikTokSection = () => {
     [handleClose],
   );
 
-  // Attach/detach escape listener
-  useState(() => {
+  useEffect(() => {
+    if (!activeVideo) return;
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  });
+  }, [activeVideo, handleKeyDown]);
 
   return (
     <>
