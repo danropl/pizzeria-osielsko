@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HistoriaSection from "@/components/HistoriaSection";
-import TikTokSection from "@/components/TikTokSection";
+import InstagramSection from "@/components/InstagramSection";
 import GallerySection from "@/components/GallerySection";
 import EventySection from "@/components/EventySection";
 import VoucherySection from "@/components/VoucherySection";
