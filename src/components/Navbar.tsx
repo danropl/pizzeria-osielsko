@@ -81,7 +81,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
               {activeSection === link.href && (
                 <motion.span
                   layoutId="nav-underline"
-                  className="absolute bottom-0.5 left-1/2 -translate-x-1/2 h-[2px] w-5 bg-primary rounded-full"
+                  className="absolute bottom-0.5 left-5 right-5 h-[2px] bg-primary rounded-full"
                   transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
                 />
               )}
