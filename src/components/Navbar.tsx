@@ -11,7 +11,11 @@ const navLinks = [
   { href: "#kontakt", label: "Kontakt" },
 ];
 
-const Navbar = () => {
+interface Props {
+  onOpenReservation: () => void;
+}
+
+const Navbar = ({ onOpenReservation }: Props) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#hero");
@@ -77,9 +81,9 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+48500384100" className="btn-ghost text-sm py-2 px-4">
+          <button onClick={onOpenReservation} className="btn-ghost text-sm py-2 px-4">
             📞 Rezerwacja
-          </a>
+          </button>
           <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4">
             Zamów online
           </a>
@@ -124,9 +128,9 @@ const Navbar = () => {
                 </button>
               ))}
               <div className="flex gap-2 mt-2">
-                <a href="tel:+48500384100" className="btn-ghost text-sm py-2 px-4 flex-1 text-center">
+                <button onClick={() => { setMobileOpen(false); onOpenReservation(); }} className="btn-ghost text-sm py-2 px-4 flex-1 text-center">
                   📞 Rezerwacja
-                </a>
+                </button>
                 <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4 flex-1 text-center" onClick={() => setMobileOpen(false)}>
                   Zamów online
                 </a>
