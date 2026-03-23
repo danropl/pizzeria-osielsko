@@ -110,7 +110,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
+          className="lg:hidden ml-auto p-2 text-foreground/70 hover:text-foreground transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Zamknij menu" : "Otwórz menu"}
           aria-expanded={mobileOpen}
