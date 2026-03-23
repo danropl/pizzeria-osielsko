@@ -44,10 +44,10 @@ const Navbar = ({ onOpenReservation }: Props) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 bg-background ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-[0_1px_0_0_hsl(var(--border)/0.4),0_4px_20px_-4px_rgba(0,0,0,0.08)]"
-          : "bg-background/80 backdrop-blur-sm"
+          ? "shadow-[0_1px_0_0_hsl(var(--border)/0.4),0_4px_20px_-4px_rgba(0,0,0,0.08)]"
+          : ""
       }`}
       style={{ height: "76px" }}
     >
