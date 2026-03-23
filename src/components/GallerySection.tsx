@@ -10,7 +10,7 @@ import heartPizzaImg from "@/assets/heart-pizza.jpg";
 import quattroFormaggiImg from "@/assets/quattro-formaggi.jpg";
 import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
 import prosciuttoImg from "@/assets/prosciutto.jpg";
-import truflowaImg from "@/assets/truflowa.jpg";
+
 
 import winoImg from "@/assets/wino.jpg";
 import deskaSerowImg from "@/assets/deska-serow.jpg";
@@ -39,7 +39,7 @@ const row1: GalleryImage[] = [
 const row2: GalleryImage[] = [
   { src: quattroFormaggiImg, alt: "Pizza 4 Sery z gorgonzolą DOP – Pizzeria oSielsko" },
   { src: interior2Img, alt: "Klimatyczne wnętrze Pizzerii Osielsko wieczorem" },
-  { src: truflowaImg, alt: "Pizza truflowa – smak premium w Pizzerii Osielsko" },
+  
   { src: pizzasTopImg, alt: "Pizze prosto z pieca – widok z góry" },
   { src: deskaSerowImg, alt: "Deska serów włoskich – parmezan, pecorino, gorgonzola" },
   
