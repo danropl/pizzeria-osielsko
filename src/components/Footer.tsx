@@ -64,7 +64,7 @@ const Footer = ({ onOpenPrivacy }: Props) => {
 
         <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-background/40">
-            © 2025 Pizzeria Osielsko. Wszelkie prawa zastrzeżone.
+            © 2026 Pizzeria Osielsko. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4 font-body text-xs text-background/40">
             <button onClick={onOpenPrivacy} className="hover:text-background transition-colors">Polityka prywatności</button>
