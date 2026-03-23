@@ -51,7 +51,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
       }`}
       style={{ height: "76px" }}
     >
-      <div className="container-custom h-full grid grid-cols-[auto_1fr_auto] items-center px-4 lg:px-8">
+      <div className="container-custom h-full flex items-center justify-between px-4 lg:grid lg:grid-cols-[auto_1fr_auto] lg:px-8">
         {/* Logo */}
         <button
           onClick={() => handleClick("#hero")}
