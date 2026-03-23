@@ -106,7 +106,7 @@ const KontaktSection = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa Pizzeria Osielsko"
+                title="Mapa Pizzeria oSielsko"
               />
             </div>
             <a

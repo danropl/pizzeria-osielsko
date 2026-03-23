@@ -25,19 +25,19 @@ interface GalleryImage {
 }
 
 const row1: GalleryImage[] = [
-  { src: margheritaImg, alt: "Pizza Margherita z pieca opalanego drewnem – Pizzeria Osielsko" },
+  { src: margheritaImg, alt: "Pizza Margherita z pieca opalanego drewnem – Pizzeria oSielsko" },
   { src: interiorImg, alt: "Wnętrze Pizzerii Osielsko – ciepła włoska atmosfera" },
   
   { src: winoImg, alt: "Degustacja wina w Pizzerii Osielsko" },
   { src: capricciosaImg, alt: "Pizza Capricciosa – klasyka włoskiej kuchni" },
   { src: heroPizzaOvenImg, alt: "Piec opalany drewnem – serce Pizzerii Osielsko" },
   { src: prosciuttoImg, alt: "Pizza Parma z szynką dojrzewającą i rukolą" },
-  { src: italianProductsImg, alt: "Włoskie składniki premium – Pizzeria Osielsko" },
-  { src: interior3Img, alt: "Ogród restauracji – Pizzeria Osielsko" },
+  { src: italianProductsImg, alt: "Włoskie składniki premium – Pizzeria oSielsko" },
+  { src: interior3Img, alt: "Ogród restauracji – Pizzeria oSielsko" },
 ];
 
 const row2: GalleryImage[] = [
-  { src: quattroFormaggiImg, alt: "Pizza 4 Sery z gorgonzolą DOP – Pizzeria Osielsko" },
+  { src: quattroFormaggiImg, alt: "Pizza 4 Sery z gorgonzolą DOP – Pizzeria oSielsko" },
   { src: interior2Img, alt: "Klimatyczne wnętrze Pizzerii Osielsko wieczorem" },
   { src: truflowaImg, alt: "Pizza truflowa – smak premium w Pizzerii Osielsko" },
   { src: pizzasTopImg, alt: "Pizze prosto z pieca – widok z góry" },
