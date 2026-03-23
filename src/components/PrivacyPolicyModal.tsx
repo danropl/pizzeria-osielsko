@@ -60,7 +60,7 @@ const PrivacyPolicyModal = ({ open, onClose }: Props) => {
 
               <section>
                 <h4 className="font-subhead text-base font-semibold text-foreground mb-2">1. Informacje ogólne</h4>
-                <p>Witryna jest obsługiwana przez Pizzeria Osielsko, Akacjowa 2, 86-031 Osielsko, Poland, Pizzeriaosielsko@onet.pl (zwaną dalej „my" lub „nam"). W przypadku pytań dotyczących ochrony danych można skontaktować się z nami, korzystając z informacji kontaktowych podanych powyżej.</p>
+                <p>Witryna jest obsługiwana przez Pizzeria oSielsko, Akacjowa 2, 86-031 Osielsko, Poland, Pizzeriaosielsko@onet.pl (zwaną dalej „my" lub „nam"). W przypadku pytań dotyczących ochrony danych można skontaktować się z nami, korzystając z informacji kontaktowych podanych powyżej.</p>
               </section>
 
               <section>

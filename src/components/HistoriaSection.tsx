@@ -19,7 +19,7 @@ const HistoriaSection = () => (
         {/* Images */}
         <AnimatedSection className="space-y-4">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
-            <img src={interiorImg} alt="Wnętrze restauracji Pizzeria Osielsko — ciepłe oświetlenie, drewniane stoły" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            <img src={interiorImg} alt="Wnętrze restauracji Pizzeria oSielsko — ciepłe oświetlenie, drewniane stoły" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-square w-full overflow-hidden rounded-3xl">

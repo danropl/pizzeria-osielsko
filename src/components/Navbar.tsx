@@ -56,11 +56,11 @@ const Navbar = ({ onOpenReservation }: Props) => {
         <button
           onClick={() => handleClick("#hero")}
           className="flex items-center gap-2 group shrink-0"
-          aria-label="Pizzeria Osielsko — strona główna"
+          aria-label="Pizzeria oSielsko — strona główna"
         >
           <img
             src={logoImg}
-            alt="Pizzeria Osielsko – logo"
+            alt="Pizzeria oSielsko – logo"
             className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
           />
         </button>

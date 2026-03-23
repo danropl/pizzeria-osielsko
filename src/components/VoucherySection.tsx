@@ -33,7 +33,7 @@ const VoucherySection = () => (
         {vouchers.map((v, i) => (
           <AnimatedSection key={v.title} delay={i * 0.1} className="card-warm overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
             <div className="aspect-[4/3] w-full overflow-hidden">
-              <img src={v.image} alt={`Voucher ${v.title} – Pizzeria Osielsko`} className="w-full h-full object-cover" loading="lazy" />
+              <img src={v.image} alt={`Voucher ${v.title} – Pizzeria oSielsko`} className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="font-subhead text-lg font-semibold text-foreground mb-2">{v.title}</h3>

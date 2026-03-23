@@ -44,7 +44,7 @@ const ReservationModal = ({ open, onClose }: Props) => {
             <div className="flex items-center justify-between p-5 border-b border-border/30">
               <div>
                 <h3 className="font-subhead text-lg font-semibold text-foreground">Zarezerwuj stolik</h3>
-                <p className="font-body text-sm text-muted-foreground mt-1">Pizzeria Osielsko</p>
+                <p className="font-body text-sm text-muted-foreground mt-1">Pizzeria oSielsko</p>
               </div>
               <button
                 onClick={onClose}
@@ -60,7 +60,7 @@ const ReservationModal = ({ open, onClose }: Props) => {
               <iframe
                 src={RESERVATION_URL}
                 className="w-full h-full min-h-[500px] border-0"
-                title="Rezerwacja stolika – Pizzeria Osielsko"
+                title="Rezerwacja stolika – Pizzeria oSielsko"
                 loading="lazy"
               />
             </div>

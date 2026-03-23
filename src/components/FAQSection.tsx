@@ -8,7 +8,7 @@ import {
 
 const faqs = [
   {
-    question: "Czy Pizzeria Osielsko organizuje urodziny dla dzieci?",
+    question: "Czy Pizzeria oSielsko organizuje urodziny dla dzieci?",
     answer:
       "Tak! Organizujemy wyj\u0105tkowe urodziny \u201eMa\u0142y Pizzaiolo\u201D w stylu w\u0142oskim. Dzieci ucz\u0105 si\u0119 robi\u0107 pizz\u0119, dekoruj\u0105 j\u0105 samodzielnie, a potem wsp\u00F3lnie jedz\u0105. Zapraszamy do kontaktu, aby ustali\u0107 szczeg\u00F3\u0142y i zarezerwowa\u0107 termin.",
   },
@@ -23,7 +23,7 @@ const faqs = [
       "Oczywiście! Oferujemy vouchery podarunkowe na warsztaty robienia pizzy, randkę w kuchni, degustację pizza & wino oraz wieczór karaoke. Vouchery dostępne w formie eleganckiej kartki lub w wersji elektronicznej (PDF).",
   },
   {
-    question: "Jakie eventy organizuje Pizzeria Osielsko?",
+    question: "Jakie eventy organizuje Pizzeria oSielsko?",
     answer:
       "Organizujemy m.in. urodziny Mały Pizzaiolo, warsztaty robienia pizzy, randki w kuchni, letnie kino z pizzą, Pizza Challenge, Karaoke Italiano Night, degustacje pizza & wino z sommelierem oraz Voucher Experience.",
   },
@@ -33,7 +33,7 @@ const faqs = [
       "Tak — każda nasza pizza jest wypiekana w autentycznym piecu opalanym drewnem, rozgrzanym do 400°C. Dzięki temu ciasto zyskuje niepowtarzalny, lekko wędzony charakter i idealną chrupkość.",
   },
   {
-    question: "Gdzie znajduje się Pizzeria Osielsko?",
+    question: "Gdzie znajduje się Pizzeria oSielsko?",
     answer:
       "Nasza restauracja mieści się przy ul. Akacjowej 2, 86-031 Osielsko, w pobliżu Bydgoszczy. Dysponujemy parkingiem i ogrodem, w którym mile widziane są również zwierzęta.",
   },
@@ -43,7 +43,7 @@ const faqs = [
       "Wtorek–czwartek i niedziela: 13:00–21:00, piątek–sobota: 13:00–22:00. W poniedziałki restauracja jest zamknięta.",
   },
   {
-    question: "Czy Pizzeria Osielsko oferuje jedzenie na wynos?",
+    question: "Czy Pizzeria oSielsko oferuje jedzenie na wynos?",
     answer:
       "Tak, oferujemy pizzę na wynos. Zamówienie można złożyć telefonicznie (+48 500 384 100) lub bezpośrednio w restauracji.",
   },

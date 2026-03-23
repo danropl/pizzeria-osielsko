@@ -15,7 +15,7 @@ const Footer = ({ onOpenPrivacy }: Props) => {
       <div className="container-custom">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <img src={logoImg} alt="Pizzeria Osielsko – logo" className="w-48 mb-3 invert" />
+            <img src={logoImg} alt="Pizzeria oSielsko – logo" className="w-48 mb-3 invert" />
             <p className="font-body text-sm text-background/60 mb-4">
               Autentyczna włoska pizza z pieca opalanego drewnem
             </p>
@@ -64,7 +64,7 @@ const Footer = ({ onOpenPrivacy }: Props) => {
 
         <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-background/40">
-            © 2026 Pizzeria Osielsko. Wszelkie prawa zastrzeżone.
+            © 2026 Pizzeria oSielsko. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4 font-body text-xs text-background/40">
             <button onClick={onOpenPrivacy} className="hover:text-background transition-colors">Polityka prywatności</button>
