@@ -51,7 +51,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
       }`}
       style={{ height: "76px" }}
     >
-      <div className="container-custom h-full grid grid-cols-[auto_1fr_auto] items-center px-4 lg:px-8">
+      <div className="container-custom h-full flex items-center justify-between px-4 lg:grid lg:grid-cols-[auto_1fr_auto] lg:px-8">
         {/* Logo */}
         <button
           onClick={() => handleClick("#hero")}
@@ -110,7 +110,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
+          className="lg:hidden ml-auto p-2 text-foreground/70 hover:text-foreground transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Zamknij menu" : "Otwórz menu"}
           aria-expanded={mobileOpen}
@@ -133,7 +133,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="lg:hidden absolute top-[76px] left-0 right-0 bg-background/98 backdrop-blur-lg border-t border-border/30 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.12)]"
+            className="lg:hidden absolute top-[76px] left-0 right-0 bg-background border-t border-border/30 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.12)]"
           >
             <nav className="p-5 flex flex-col gap-1" aria-label="Nawigacja mobilna">
               {navLinks.map((link) => (
