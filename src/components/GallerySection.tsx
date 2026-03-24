@@ -11,7 +11,6 @@ import quattroFormaggiImg from "@/assets/quattro-formaggi.jpg";
 import pizzasVarietyImg from "@/assets/pizzas-variety.jpg";
 import prosciuttoImg from "@/assets/prosciutto.jpg";
 
-
 import winoImg from "@/assets/wino.jpg";
 import deskaSerowImg from "@/assets/deska-serow.jpg";
 import capricciosaImg from "@/assets/capricciosa.jpg";
@@ -27,7 +26,6 @@ interface GalleryImage {
 const row1: GalleryImage[] = [
   { src: margheritaImg, alt: "Pizza Margherita z pieca opalanego drewnem – Pizzeria oSielsko" },
   { src: interiorImg, alt: "Wnętrze Pizzerii Osielsko – ciepła włoska atmosfera" },
-  
   { src: winoImg, alt: "Degustacja wina w Pizzerii Osielsko" },
   { src: capricciosaImg, alt: "Pizza Capricciosa – klasyka włoskiej kuchni" },
   { src: heroPizzaOvenImg, alt: "Piec opalany drewnem – serce Pizzerii Osielsko" },
@@ -39,10 +37,8 @@ const row1: GalleryImage[] = [
 const row2: GalleryImage[] = [
   { src: quattroFormaggiImg, alt: "Pizza 4 Sery z gorgonzolą DOP – Pizzeria oSielsko" },
   { src: interior2Img, alt: "Klimatyczne wnętrze Pizzerii Osielsko wieczorem" },
-  
   { src: pizzasTopImg, alt: "Pizze prosto z pieca – widok z góry" },
   { src: deskaSerowImg, alt: "Deska serów włoskich – parmezan, pecorino, gorgonzola" },
-  
   { src: heartPizzaImg, alt: "Pizza w kształcie serca – Randka w Kuchni" },
   { src: pizzasVarietyImg, alt: "Wybór pizz – różnorodność smaków w Pizzerii Osielsko" },
   { src: diavolaImg, alt: "Pizza Diavola – ostra i aromatyczna" },
@@ -87,10 +83,10 @@ const MarqueeRow = ({
 };
 
 const GallerySection = () => (
-  <section className="bg-bg-dark py-16 md:py-20 overflow-hidden">
+  <section className="bg-background py-16 md:py-20 overflow-hidden">
     <div className="container-custom mb-10">
       <AnimatedSection className="text-center">
-        <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">
+        <p className="font-body text-xs font-semibold text-primary uppercase tracking-widest mb-3">
           Galeria
         </p>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">

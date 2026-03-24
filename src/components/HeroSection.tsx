@@ -12,26 +12,26 @@ const HeroSection = () => (
         className="w-full h-full object-cover"
         loading="eager"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/60 to-foreground/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-foreground/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#27463F]/80 via-[#27463F]/55 to-[#27463F]/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#27463F]/40 via-transparent to-[#27463F]/15" />
     </div>
 
     <div className="container-custom section-padding w-full relative z-10">
       <div className="max-w-2xl">
         <AnimatedSection>
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-background mb-4 leading-[1.05]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground mb-4 leading-[1.05]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Autentyczna pizza
             <br />
-            <span className="text-primary-light italic">prosto z ognia</span>
+            <span className="font-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl" style={{ fontWeight: 400 }}>prosto z ognia</span>
           </motion.h1>
 
           <motion.p
-            className="font-subhead text-xl md:text-2xl italic text-background/80 mb-6"
+            className="font-display text-xl md:text-2xl text-primary-foreground/80 mb-6 font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
@@ -40,7 +40,7 @@ const HeroSection = () => (
           </motion.p>
 
           <motion.p
-            className="font-body text-background/65 text-lg leading-relaxed mb-8 max-w-xl"
+            className="font-body text-primary-foreground/65 text-lg leading-relaxed mb-8 max-w-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.7 }}
@@ -55,7 +55,7 @@ const HeroSection = () => (
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.9 }}
           >
-            <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-4 shadow-lg">
+            <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-primary-foreground text-primary font-body font-bold rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg text-base">
               🍕 Zamów online
             </a>
           </motion.div>
@@ -68,7 +68,7 @@ const HeroSection = () => (
       transition={{ duration: 2, repeat: Infinity }}
       className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
     >
-      <svg className="w-6 h-6 text-background/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6 text-primary-foreground/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
     </motion.div>

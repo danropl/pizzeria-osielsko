@@ -14,10 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
-        subhead: ['"Cormorant Garamond"', 'serif'],
-        body: ['"Lato"', 'sans-serif'],
-        data: ['"Josefin Sans"', 'sans-serif'],
+        display: ['"Quicksand"', 'sans-serif'],
+        body: ['"Quicksand"', 'sans-serif'],
+        accent: ['"Allura"', 'cursive'],
+        data: ['"Quicksand"', 'sans-serif'],
+        subhead: ['"Quicksand"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
