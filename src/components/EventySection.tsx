@@ -17,21 +17,21 @@ interface EventItem {
 }
 
 const events: EventItem[] = [
-  { title: "Urodziny Mały Pizzaiolo", badge: "Dla dzieci 👶", badgeColor: "bg-accent/80 text-accent-foreground", desc: "Wyjątkowe urodziny w stylu włoskim dla najmłodszych.", image: eventKidsImg },
-  { title: "Warsztaty Robienia Pizzy", badge: "Warsztaty 👨‍🍳", badgeColor: "bg-orange-500/80 text-white", desc: "Naucz się wyrabiać ciasto i komponować smaki jak prawdziwy pizzaiolo.", image: eventWorkshopImg },
-  { title: "Randka w Kuchni", badge: "Romantyczny 💕", badgeColor: "bg-pink-500/80 text-white", desc: "Romantyczny wieczór dla dwojga przy wspólnym gotowaniu.", image: heartPizzaImg },
-  { title: "Letnie Kino z Pizzą", badge: "Sezonowy 🌙", badgeColor: "bg-blue-800/80 text-white", desc: "Seans filmowy pod gwiazdami z gorącą pizzą w ręku.", image: eventXmasImg },
-  { title: "Pizza Challenge", badge: "Wyzwanie 🌶️", badgeColor: "bg-red-500/80 text-white", desc: "Kto zje najszybciej? Rywalizacja w dobrym stylu.", image: eventChallengeImg },
-  { title: "Karaoke Italiano Night", badge: "Muzyczny 🎶", badgeColor: "bg-purple-500/80 text-white", desc: "Włoskie przeboje i pizza do późna w nocy.", image: interior2Img },
-  { title: "Pizza & Wino z Sommelierem", badge: "Premium 🍷", badgeColor: "bg-rose-800/80 text-white", desc: "Degustacja win dobranych do pizzy przez eksperta.", image: pizzasVarietyImg },
-  { title: "Voucher Experience", badge: "Prezent 🎁", badgeColor: "bg-yellow-600/80 text-white", desc: "Podaruj komuś niezapomniane przeżycie w naszej restauracji.", image: cateringImg },
+  { title: "Urodziny Mały Pizzaiolo", badge: "Dla dzieci 👶", badgeColor: "bg-[#A9B38A] text-[#27463F]", desc: "Wyjątkowe urodziny w stylu włoskim dla najmłodszych.", image: eventKidsImg },
+  { title: "Warsztaty Robienia Pizzy", badge: "Warsztaty 👨‍🍳", badgeColor: "bg-[#DCCB7B] text-[#27463F]", desc: "Naucz się wyrabiać ciasto i komponować smaki jak prawdziwy pizzaiolo.", image: eventWorkshopImg },
+  { title: "Randka w Kuchni", badge: "Romantyczny 💕", badgeColor: "bg-[#E7D9B5] text-[#27463F]", desc: "Romantyczny wieczór dla dwojga przy wspólnym gotowaniu.", image: heartPizzaImg },
+  { title: "Letnie Kino z Pizzą", badge: "Sezonowy 🌙", badgeColor: "bg-[#5E7468] text-[#FBF7E8]", desc: "Seans filmowy pod gwiazdami z gorącą pizzą w ręku.", image: eventXmasImg },
+  { title: "Pizza Challenge", badge: "Wyzwanie 🌶️", badgeColor: "bg-[#27463F] text-[#FBF7E8]", desc: "Kto zje najszybciej? Rywalizacja w dobrym stylu.", image: eventChallengeImg },
+  { title: "Karaoke Italiano Night", badge: "Muzyczny 🎶", badgeColor: "bg-[#5E7468] text-[#FBF7E8]", desc: "Włoskie przeboje i pizza do późna w nocy.", image: interior2Img },
+  { title: "Pizza & Wino z Sommelierem", badge: "Premium 🍷", badgeColor: "bg-[#27463F] text-[#FBF7E8]", desc: "Degustacja win dobranych do pizzy przez eksperta.", image: pizzasVarietyImg },
+  { title: "Voucher Experience", badge: "Prezent 🎁", badgeColor: "bg-[#DCCB7B] text-[#27463F]", desc: "Podaruj komuś niezapomniane przeżycie w naszej restauracji.", image: cateringImg },
 ];
 
 const EventySection = () => (
   <section id="eventy" className="bg-bg-dark section-padding">
     <div className="container-custom">
       <AnimatedSection className="text-center mb-12">
-        <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">Wyjątkowe doświadczenia</p>
+        <p className="font-body text-xs font-semibold text-primary uppercase tracking-widest mb-3">Wyjątkowe doświadczenia</p>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
           Eventy & Atrakcje
         </h2>
@@ -47,7 +47,7 @@ const EventySection = () => (
               <span className={`absolute top-3 left-3 badge-tag ${event.badgeColor}`}>{event.badge}</span>
             </div>
             <div className="p-5 flex flex-col flex-1">
-              <h3 className="font-subhead text-lg font-semibold text-foreground mb-2">{event.title}</h3>
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2">{event.title}</h3>
               <p className="font-body text-sm text-muted-foreground flex-1">{event.desc}</p>
             </div>
           </AnimatedSection>

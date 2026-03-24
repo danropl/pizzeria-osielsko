@@ -33,7 +33,7 @@ const HistoriaSection = () => (
 
         {/* Text */}
         <AnimatedSection delay={0.15}>
-          <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">O nas</p>
+          <p className="font-body text-xs font-semibold text-primary uppercase tracking-widest mb-3">O nas</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-8">
             Pasja do pizzy, tradycja od pokoleń
           </h2>
@@ -43,7 +43,7 @@ const HistoriaSection = () => (
             <p>Jesteśmy częścią Osielska i okolic Bydgoszczy. Naszą misją jest nie tylko karmić, ale i łączyć ludzi — przy wspólnym stole, kawałku dobrej pizzy i kieliszku włoskiego wina. Zapraszamy rodziny, przyjaciół i wszystkich, którzy cenią prawdziwy smak.</p>
           </div>
 
-          <blockquote className="border-l-4 border-primary pl-6 py-2 mb-8 italic font-subhead text-lg text-foreground/80">
+          <blockquote className="border-l-4 border-primary pl-6 py-2 mb-8 font-accent text-3xl text-foreground/70">
             "Pizza to nie tylko jedzenie — to emocje, wspomnienia i ludzie, z którymi ją dzielisz."
           </blockquote>
 
@@ -51,11 +51,11 @@ const HistoriaSection = () => (
           <div className="grid grid-cols-2 gap-4 mb-8 bg-card rounded-2xl p-6 border border-border/30">
             <div className="text-center">
               <p className="font-display text-3xl font-bold text-primary">100%</p>
-              <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mt-1">Naturalne składniki</p>
+              <p className="font-body text-xs text-muted-foreground uppercase tracking-wider mt-1">Naturalne składniki</p>
             </div>
             <div className="text-center border-l border-border/30">
               <p className="font-display text-3xl font-bold text-primary">400°C</p>
-              <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mt-1">Piec drewniany</p>
+              <p className="font-body text-xs text-muted-foreground uppercase tracking-wider mt-1">Piec drewniany</p>
             </div>
           </div>
 

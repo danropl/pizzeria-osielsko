@@ -35,7 +35,7 @@ const OpinieSection = () => {
     <section id="opinie" className="bg-bg-dark section-padding">
       <div className="container-custom">
         <AnimatedSection className="text-center mb-12">
-          <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">Opinie</p>
+          <p className="font-body text-xs font-semibold text-primary uppercase tracking-widest mb-3">Opinie</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
             Co mówią nasi goście
           </h2>
@@ -53,7 +53,7 @@ const OpinieSection = () => {
             >
               <div className="flex justify-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-500 text-xl">⭐</span>
+                  <span key={i} className="text-[#DCCB7B] text-xl">⭐</span>
                 ))}
               </div>
 
