@@ -44,10 +44,10 @@ const Navbar = ({ onOpenReservation }: Props) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 bg-[#FEFDE5] ${
         scrolled
-          ? "bg-[hsl(45_50%_95%)] shadow-[0_1px_0_0_hsl(var(--border)/0.4),0_4px_20px_-4px_rgba(0,0,0,0.08)]"
-          : "bg-[hsl(45_50%_95%)]"
+          ? "shadow-[0_1px_0_0_rgba(0,0,0,0.06),0_4px_20px_-4px_rgba(0,0,0,0.08)]"
+          : ""
       }`}
       style={{ height: "76px" }}
     >
@@ -133,7 +133,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="lg:hidden absolute top-full left-0 right-0 z-[1001] bg-background border-t border-border shadow-xl"
+            className="lg:hidden absolute top-full left-0 right-0 z-[1001] bg-[#FEFDE5] border-t border-border shadow-xl"
           >
             <nav className="p-5 flex flex-col gap-1" aria-label="Nawigacja mobilna">
               {navLinks.map((link) => (
