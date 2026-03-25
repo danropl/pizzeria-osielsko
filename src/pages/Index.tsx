@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import MobileBottomBar from "@/components/MobileBottomBar";
-import LemonDecorations from "@/components/LemonDecorations";
+import MediterraneanDecorations from "@/components/MediterraneanDecorations";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import ReservationModal from "@/components/ReservationModal";
 import { Helmet } from "react-helmet-async";
@@ -108,7 +108,7 @@ const Index = () => {
 
   return (
     <div className="relative">
-      <LemonDecorations />
+      <MediterraneanDecorations />
 
       <Helmet>
         <title>Pizzeria oSielsko – Autentyczna Pizza Włoska z Pieca | Zamów Online</title>
