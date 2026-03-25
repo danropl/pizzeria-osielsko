@@ -20,10 +20,10 @@ const OfertaSpecjalnaPage = () => {
   return (
     <>
       <Helmet>
-        <title>Oferta Specjalna \u2013 Pizzeria oSielsko | Pakiety, Zestawy, Okazje</title>
+        <title>Oferta Specjalna – Pizzeria oSielsko | Pakiety, Zestawy, Okazje</title>
         <meta
           name="description"
-          content="Oferta specjalna Pizzerii oSielsko \u2014 pakiety randkowe, urodzinowe, grupowe, lunchowe i filmowe. Gotowe pomysły na każdą okazję w Osielsku k. Bydgoszczy."
+          content="Oferta specjalna Pizzerii oSielsko — pakiety randkowe, urodzinowe, grupowe, lunchowe i filmowe. Gotowe pomysły na każdą okazję w Osielsku k. Bydgoszczy."
         />
         <link rel="canonical" href={`${DOMAIN}/oferta-specjalna`} />
       </Helmet>
@@ -57,7 +57,7 @@ const OfertaSpecjalnaPage = () => {
               className="font-body text-lg text-foreground/70 leading-relaxed mb-8"
             >
               Gotowe pomysły na randkę, urodziny, spotkanie z przyjaciółmi czy wieczór filmowy.
-              Wybierz pakiet, który pasuje do Twojej okazji \u2014 reszta po naszej stronie.
+              Wybierz pakiet, który pasuje do Twojej okazji — reszta po naszej stronie.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -65,7 +65,7 @@ const OfertaSpecjalnaPage = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
-                \uD83C\uDF89 Zapytaj o ofertę
+                🎉 Zapytaj o ofertę
               </a>
             </motion.div>
           </div>
@@ -94,7 +94,7 @@ const OfertaSpecjalnaPage = () => {
                     <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
                       <img
                         src={offer.image}
-                        alt={`${offer.title} \u2013 Pizzeria oSielsko`}
+                        alt={`${offer.title} – Pizzeria oSielsko`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
@@ -113,7 +113,7 @@ const OfertaSpecjalnaPage = () => {
                       <ul className="space-y-2 mb-6">
                         {offer.highlights.map((h, idx) => (
                           <li key={idx} className="flex items-start gap-2">
-                            <span className="text-primary mt-0.5 text-sm shrink-0">\u2713</span>
+                            <span className="text-primary mt-0.5 text-sm shrink-0">✓</span>
                             <span className="font-body text-sm text-foreground/80">{h}</span>
                           </li>
                         ))}
@@ -141,19 +141,19 @@ const OfertaSpecjalnaPage = () => {
               </h2>
               <p className="font-body text-base text-foreground/70 mb-8 leading-relaxed">
                 Przygotujemy indywidualną ofertę dopasowaną do Twojego wydarzenia.
-                Zadzwoń lub napisz \u2014 chętnie pomożemy.
+                Zadzwoń lub napisz — chętnie pomożemy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
-                  \uD83D\uDCDE Zadzwoń: 500 384 100
+                  📞 Zadzwoń: 500 384 100
                 </a>
                 <a href="mailto:pizzasielsko@gmail.com" className="btn-ghost text-base px-8 py-4">
-                  \u2709\uFE0F Napisz do nas
+                  ✉️ Napisz do nas
                 </a>
               </div>
               <div className="mt-8">
                 <Link to="/" className="font-body text-sm text-primary hover:underline">
-                  \u2190 Wróć na stronę główną
+                  ← Wróć na stronę główną
                 </Link>
               </div>
             </AnimatedSection>

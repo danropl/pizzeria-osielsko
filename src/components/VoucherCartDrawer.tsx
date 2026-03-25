@@ -48,9 +48,9 @@ const VoucherCartDrawer = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-5 border-b border-border/50">
               <h2 className="font-display text-xl font-bold text-foreground">
-                {checkoutStep === "cart" && "\uD83D\uDED2 Koszyk"}
-                {checkoutStep === "form" && "\uD83D\uDCDD Dane zamówienia"}
-                {checkoutStep === "confirmation" && "\u2705 Potwierdzenie"}
+                {checkoutStep === "cart" && "🛒 Koszyk"}
+                {checkoutStep === "form" && "📝 Dane zamówienia"}
+                {checkoutStep === "confirmation" && "✅ Potwierdzenie"}
               </h2>
               <button
                 onClick={() => setIsOpen(false)}
@@ -211,7 +211,7 @@ const VoucherCartDrawer = () => {
                               : "border-border/60 text-foreground/60 hover:border-primary/40"
                           }`}
                         >
-                          {fmt === "elektroniczny" ? "\uD83D\uDCE7 Elektroniczny" : "\uD83D\uDCE6 Papierowy"}
+                          {fmt === "elektroniczny" ? "📧 Elektroniczny" : "📦 Papierowy"}
                         </button>
                       ))}
                     </div>
@@ -235,25 +235,25 @@ const VoucherCartDrawer = () => {
               {checkoutStep === "confirmation" && (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl">\u2705</span>
+                    <span className="text-3xl">✅</span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                    Dziekujemy za zainteresowanie!
+                    Dziękujemy za zainteresowanie!
                   </h3>
                   <p className="font-body text-sm text-foreground/70 leading-relaxed mb-6">
                     System płatności online zostanie uruchomiony wkrótce. Aby sfinalizować
                     zamówienie vouchera, skontaktuj się z nami telefonicznie lub mailowo
-                    \u2014 odezwiemy się najszybciej jak to możliwe.
+                    — odezwiemy się najszybciej jak to możliwe.
                   </p>
                   <div className="card-warm p-4 text-left space-y-2 mb-6">
                     <p className="font-body text-sm">
-                      <span className="font-semibold text-foreground">\uD83D\uDCDE Telefon:</span>{" "}
+                      <span className="font-semibold text-foreground">📞 Telefon:</span>{" "}
                       <a href="tel:+48500384100" className="text-primary hover:underline">
                         +48 500 384 100
                       </a>
                     </p>
                     <p className="font-body text-sm">
-                      <span className="font-semibold text-foreground">\u2709\uFE0F E-mail:</span>{" "}
+                      <span className="font-semibold text-foreground">✉️ E-mail:</span>{" "}
                       <a href="mailto:pizzasielsko@gmail.com" className="text-primary hover:underline">
                         pizzasielsko@gmail.com
                       </a>
@@ -287,7 +287,7 @@ const VoucherCartDrawer = () => {
                   onClick={() => setCheckoutStep("form")}
                   className="btn-primary w-full text-base py-3.5"
                 >
-                  Przejdź dalej \u2192
+                  Przejdź dalej →
                 </button>
               </div>
             )}
@@ -298,14 +298,14 @@ const VoucherCartDrawer = () => {
                   onClick={() => setCheckoutStep("cart")}
                   className="w-full text-center font-body text-sm text-foreground/60 hover:text-foreground transition-colors"
                 >
-                  \u2190 Wróć do koszyka
+                  ← Wróć do koszyka
                 </button>
                 <button
                   type="submit"
                   form="voucher-form"
                   className="btn-primary w-full text-base py-3.5"
                 >
-                  Przejdź do płatności \u2192
+                  Przejdź do płatności →
                 </button>
               </div>
             )}
