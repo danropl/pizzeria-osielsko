@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
+import lemonDecoration from "@/assets/lemon-decoration.png";
 import HeroSection from "@/components/HeroSection";
 import HistoriaSection from "@/components/HistoriaSection";
 import GallerySection from "@/components/GallerySection";
