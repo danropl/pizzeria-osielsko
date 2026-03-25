@@ -5,10 +5,12 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ReservationModal from "@/components/ReservationModal";
+import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import { Helmet } from "react-helmet-async";
 
 const KontaktPage = () => {
   const [reservationOpen, setReservationOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   return (
     <>
@@ -20,10 +22,11 @@ const KontaktPage = () => {
       <main className="pt-[76px]">
         <KontaktSection />
       </main>
-      <Footer />
+      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
       <BackToTop />
       <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
-      <ReservationModal open={reservationOpen} onOpenChange={setReservationOpen} />
+      <ReservationModal open={reservationOpen} onClose={() => setReservationOpen(false)} />
+      <PrivacyPolicyModal open={privacyOpen} onOpenChange={setPrivacyOpen} />
     </>
   );
 };
