@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
 
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
