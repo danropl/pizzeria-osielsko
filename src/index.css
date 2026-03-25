@@ -58,12 +58,13 @@
     text-wrap: pretty;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: hsl(45 60% 97%);
     background-image: repeating-linear-gradient(
       90deg,
-      hsl(50 80% 92%) 0px,
-      hsl(50 80% 92%) 60px,
-      hsl(48 60% 97%) 60px,
-      hsl(48 60% 97%) 120px
+      hsl(48 65% 93%) 0px,
+      hsl(48 65% 93%) 48px,
+      hsl(45 40% 98%) 48px,
+      hsl(45 40% 98%) 96px
     );
     background-attachment: fixed;
   }
