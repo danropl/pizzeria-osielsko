@@ -113,7 +113,7 @@ const OfertaSpecjalnaPage = () => {
                       <ul className="space-y-2 mb-6">
                         {offer.highlights.map((h, idx) => (
                           <li key={idx} className="flex items-start gap-2">
-                            <span className="text-primary mt-0.5 text-sm shrink-0">\u2713</span>
+                            <span className="text-primary mt-0.5 text-sm shrink-0">✓</span>
                             <span className="font-body text-sm text-foreground/80">{h}</span>
                           </li>
                         ))}
