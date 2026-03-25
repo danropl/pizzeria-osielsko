@@ -238,7 +238,7 @@ const VoucherCartDrawer = () => {
                     <span className="text-3xl">✅</span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                    Dziekujemy za zainteresowanie!
+                    Dziękujemy za zainteresowanie!
                   </h3>
                   <p className="font-body text-sm text-foreground/70 leading-relaxed mb-6">
                     System płatności online zostanie uruchomiony wkrótce. Aby sfinalizować
