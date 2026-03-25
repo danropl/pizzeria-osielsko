@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
-
 import HeroSection from "@/components/HeroSection";
 import HistoriaSection from "@/components/HistoriaSection";
 import GallerySection from "@/components/GallerySection";
@@ -13,7 +12,6 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import MobileBottomBar from "@/components/MobileBottomBar";
-import MediterraneanDecorations from "@/components/MediterraneanDecorations";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import ReservationModal from "@/components/ReservationModal";
 import { Helmet } from "react-helmet-async";
@@ -107,9 +105,7 @@ const Index = () => {
   const [reservationOpen, setReservationOpen] = useState(false);
 
   return (
-    <div className="relative">
-      <MediterraneanDecorations />
-
+    <>
       <Helmet>
         <title>Pizzeria oSielsko – Autentyczna Pizza Włoska z Pieca | Zamów Online</title>
         <meta name="description" content="Pizzeria oSielsko – autentyczna włoska pizza z pieca opalanego drewnem. Naturalne składniki, eventy, warsztaty pizzy, vouchery. Zamów online lub zarezerwuj stolik. Osielsko k. Bydgoszczy." />
@@ -142,10 +138,8 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
       </Helmet>
 
-      <div className="relative z-[2]">
-        <Navbar onOpenReservation={() => setReservationOpen(true)} />
-      </div>
-      <main className="relative z-[2] flex flex-col gap-3 md:gap-5">
+      <Navbar onOpenReservation={() => setReservationOpen(true)} />
+      <main>
         <HeroSection />
         <HistoriaSection />
         <GallerySection />
@@ -155,15 +149,13 @@ const Index = () => {
         <FAQSection />
         <KontaktSection />
       </main>
-      <div className="relative z-[2]">
-        <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
-      </div>
+      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
       <BackToTop />
       <CookieConsent onOpenPrivacy={() => setPrivacyOpen(true)} />
       <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
       <PrivacyPolicyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
       <ReservationModal open={reservationOpen} onClose={() => setReservationOpen(false)} />
-    </div>
+    </>
   );
 };
 

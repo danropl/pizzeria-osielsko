@@ -32,7 +32,7 @@ const OpinieSection = () => {
   }, [next]);
 
   return (
-    <section id="opinie" className="bg-[#FEF3BD] section-padding">
+    <section id="opinie" className="bg-bg-dark section-padding">
       <div className="container-custom">
         <AnimatedSection className="text-center mb-12">
           <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">Opinie</p>

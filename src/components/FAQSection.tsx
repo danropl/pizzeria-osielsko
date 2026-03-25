@@ -50,7 +50,7 @@ const faqs = [
 ];
 
 const FAQSection = () => (
-  <section id="faq" className="bg-[#FEFDE5] section-padding">
+  <section id="faq" className="bg-bg-dark section-padding">
     <div className="container-custom">
       <AnimatedSection className="text-center mb-12">
         <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">

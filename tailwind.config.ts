@@ -14,10 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Poppins"', 'sans-serif'],
-        subhead: ['"Poppins"', 'sans-serif'],
-        body: ['"Poppins"', 'sans-serif'],
-        data: ['"Poppins"', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
+        subhead: ['"Cormorant Garamond"', 'serif'],
+        body: ['"Lato"', 'sans-serif'],
+        data: ['"Josefin Sans"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
