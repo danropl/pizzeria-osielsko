@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoImg from "@/assets/logo.svg";
 import { ORDER_URL } from "@/lib/constants";
 
@@ -6,10 +7,6 @@ interface Props {
 }
 
 const Footer = ({ onOpenPrivacy }: Props) => {
-  const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-foreground text-background section-padding">
       <div className="container-custom">
@@ -29,16 +26,10 @@ const Footer = ({ onOpenPrivacy }: Props) => {
           <div>
             <h4 className="font-subhead text-lg font-semibold text-background mb-4">Nawigacja</h4>
             <nav className="space-y-2">
-              {[
-                { href: "#hero", label: "Start" },
-                { href: "#eventy", label: "Eventy" },
-                { href: "#vouchery", label: "Vouchery" },
-                { href: "#kontakt", label: "Kontakt" },
-              ].map((item) => (
-                <button key={item.href} onClick={() => scrollTo(item.href)} className="block font-body text-sm text-background/60 hover:text-background transition-colors">
-                  {item.label}
-                </button>
-              ))}
+              <Link to="/" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Start</Link>
+              <Link to="/eventy" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Eventy</Link>
+              <Link to="/vouchery" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Vouchery</Link>
+              <Link to="/#kontakt" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Kontakt</Link>
             </nav>
           </div>
 
