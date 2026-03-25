@@ -31,10 +31,10 @@ const FAQPage = () => {
   return (
     <>
       <Helmet>
-        <title>FAQ \u2013 Najcz\u0119\u015Bciej Zadawane Pytania | Pizzeria oSielsko</title>
+        <title>FAQ – Najczęściej Zadawane Pytania | Pizzeria oSielsko</title>
         <meta
           name="description"
-          content="Odpowiedzi na pytania dotycz\u0105ce rezerwacji, voucherów, eventów i oferty Pizzerii oSielsko. Znajd\u017A informacje o godzinach otwarcia, parkingu i zamówieniach online."
+          content="Odpowiedzi na pytania dotyczące rezerwacji, voucherów, eventów i oferty Pizzerii oSielsko. Znajdź informacje o godzinach otwarcia, parkingu i zamówieniach online."
         />
         <link rel="canonical" href={`${DOMAIN}/faq`} />
       </Helmet>
