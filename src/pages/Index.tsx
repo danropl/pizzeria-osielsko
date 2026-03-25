@@ -107,55 +107,6 @@ const Index = () => {
 
   return (
     <div className="relative">
-      {/* Lemon decorations - left side */}
-      <div className="hidden xl:block fixed left-0 top-0 bottom-0 w-24 z-[1] pointer-events-none">
-        <img
-          src={lemonDecoration}
-          alt=""
-          className="absolute top-[20%] -left-4 w-28 opacity-15 -rotate-12"
-          loading="lazy"
-          aria-hidden="true"
-        />
-        <img
-          src={lemonDecoration}
-          alt=""
-          className="absolute top-[55%] -left-2 w-24 opacity-12 rotate-[25deg]"
-          loading="lazy"
-          aria-hidden="true"
-        />
-        <img
-          src={lemonDecoration}
-          alt=""
-          className="absolute top-[85%] -left-6 w-20 opacity-10 -rotate-[15deg]"
-          loading="lazy"
-          aria-hidden="true"
-        />
-      </div>
-
-      {/* Lemon decorations - right side */}
-      <div className="hidden xl:block fixed right-0 top-0 bottom-0 w-24 z-[1] pointer-events-none">
-        <img
-          src={lemonDecoration}
-          alt=""
-          className="absolute top-[15%] -right-4 w-28 opacity-15 rotate-[20deg] scale-x-[-1]"
-          loading="lazy"
-          aria-hidden="true"
-        />
-        <img
-          src={lemonDecoration}
-          alt=""
-          className="absolute top-[48%] -right-2 w-24 opacity-12 -rotate-[30deg] scale-x-[-1]"
-          loading="lazy"
-          aria-hidden="true"
-        />
-        <img
-          src={lemonDecoration}
-          alt=""
-          className="absolute top-[78%] -right-5 w-22 opacity-10 rotate-[10deg] scale-x-[-1]"
-          loading="lazy"
-          aria-hidden="true"
-        />
-      </div>
 
       <Helmet>
         <title>Pizzeria oSielsko – Autentyczna Pizza Włoska z Pieca | Zamów Online</title>
