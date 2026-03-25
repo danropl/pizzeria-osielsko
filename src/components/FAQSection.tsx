@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "Czy Pizzeria oSielsko organizuje urodziny dla dzieci?",
     answer:
-      "Tak! Organizujemy wyjątkowe urodziny „Mały Pizzaiolo" w stylu włoskim. Dzieci uczą się robić pizzę, dekorują ją samodzielnie, a potem wspólnie jedzą. Zapraszamy do kontaktu, aby ustalić szczegóły i zarezerwować termin.",
+      'Tak! Organizujemy wyjątkowe urodziny „Mały Pizzaiolo" w stylu włoskim. Dzieci uczą się robić pizzę, dekorują ją samodzielnie, a potem wspólnie jedzą. Zapraszamy do kontaktu, aby ustalić szczegóły i zarezerwować termin.',
   },
   {
     question: "Jak zarezerwować stolik w Pizzerii Osielsko?",
