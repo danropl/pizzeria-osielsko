@@ -298,7 +298,7 @@ const VoucherCartDrawer = () => {
                   onClick={() => setCheckoutStep("cart")}
                   className="w-full text-center font-body text-sm text-foreground/60 hover:text-foreground transition-colors"
                 >
-                  \u2190 Wróć do koszyka
+                  ← Wróć do koszyka
                 </button>
                 <button
                   type="submit"
