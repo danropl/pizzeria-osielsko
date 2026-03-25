@@ -35,20 +35,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
 
   const isActive = (link: typeof navLinks[0]) => {
     if (link.href === "/") return location.pathname === "/";
-    if (link.href.startsWith("/#")) return location.pathname === "/" ;
     return location.pathname === link.href;
-  };
-
-  const handleNavClick = (link: typeof navLinks[0]) => {
-    setMobileOpen(false);
-    if (link.href === "/#kontakt") {
-      if (location.pathname === "/") {
-        document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.location.href = "/#kontakt";
-      }
-    }
-    // For Link-based navigation, the Link component handles it
   };
 
   const renderNavItem = (link: typeof navLinks[0], mobile = false) => {
