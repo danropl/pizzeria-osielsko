@@ -48,9 +48,9 @@ const VoucherCartDrawer = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-5 border-b border-border/50">
               <h2 className="font-display text-xl font-bold text-foreground">
-                {checkoutStep === "cart" && "\uD83D\uDED2 Koszyk"}
-                {checkoutStep === "form" && "\uD83D\uDCDD Dane zamówienia"}
-                {checkoutStep === "confirmation" && "\u2705 Potwierdzenie"}
+                {checkoutStep === "cart" && "🛒 Koszyk"}
+                {checkoutStep === "form" && "📝 Dane zamówienia"}
+                {checkoutStep === "confirmation" && "✅ Potwierdzenie"}
               </h2>
               <button
                 onClick={() => setIsOpen(false)}
