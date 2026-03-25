@@ -155,7 +155,7 @@ const FAQPage = () => {
               </div>
               <div className="mt-8">
                 <Link to="/" className="font-body text-sm text-primary hover:underline">
-                  \u2190 Wróć na stronę główną
+                  ← Wróć na stronę główną
                 </Link>
               </div>
             </AnimatedSection>
