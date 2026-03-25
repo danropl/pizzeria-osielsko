@@ -5,12 +5,12 @@ import logoImg from "@/assets/logo.svg";
 import { ORDER_URL } from "@/lib/constants";
 
 const navLinks = [
-  { href: "/", label: "Start", isHome: true },
-  { href: "/eventy", label: "Eventy", isHome: false },
-  { href: "/vouchery", label: "Sklep", isHome: false },
-  { href: "/oferta-specjalna", label: "Oferta", isHome: false },
-  { href: "/faq", label: "FAQ", isHome: false },
-  { href: "/#kontakt", label: "Kontakt", isHome: true },
+  { href: "/", label: "Start" },
+  { href: "/eventy", label: "Eventy" },
+  { href: "/vouchery", label: "Vouchery" },
+  { href: "/oferta-specjalna", label: "Oferta" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 interface Props {
@@ -35,20 +35,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
 
   const isActive = (link: typeof navLinks[0]) => {
     if (link.href === "/") return location.pathname === "/";
-    if (link.href.startsWith("/#")) return location.pathname === "/" ;
     return location.pathname === link.href;
-  };
-
-  const handleNavClick = (link: typeof navLinks[0]) => {
-    setMobileOpen(false);
-    if (link.href === "/#kontakt") {
-      if (location.pathname === "/") {
-        document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.location.href = "/#kontakt";
-      }
-    }
-    // For Link-based navigation, the Link component handles it
   };
 
   const renderNavItem = (link: typeof navLinks[0], mobile = false) => {
@@ -63,25 +50,6 @@ const Navbar = ({ onOpenReservation }: Props) => {
             ? "text-primary"
             : "text-foreground/60 hover:text-foreground"
         }`;
-
-    if (link.href === "/#kontakt") {
-      return (
-        <button
-          key={link.href}
-          onClick={() => handleNavClick(link)}
-          className={classes}
-        >
-          {link.label}
-          {!mobile && isActive(link) && (
-            <motion.span
-              layoutId="nav-underline"
-              className="absolute bottom-0.5 left-5 right-5 h-[2px] bg-primary rounded-full"
-              transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-            />
-          )}
-        </button>
-      );
-    }
 
     return (
       <Link
