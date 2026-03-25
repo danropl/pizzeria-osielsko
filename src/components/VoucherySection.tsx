@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
 
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
@@ -42,6 +43,10 @@ const VoucherySection = () => (
           </AnimatedSection>
         ))}
       </div>
+
+      <AnimatedSection className="text-center mt-12">
+        <Link to="/vouchery" className="btn-primary text-base px-8 py-4">🎁 Zobacz pełną ofertę voucherów</Link>
+      </AnimatedSection>
     </div>
   </section>
 );

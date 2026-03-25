@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
 import heartPizzaImg from "@/assets/heart-pizza.jpg";
 import eventXmasImg from "@/assets/event-xmas.jpg";
@@ -55,7 +56,7 @@ const EventySection = () => (
       </div>
 
       <AnimatedSection className="text-center mt-12">
-        <a href="#kontakt" onClick={(e) => { e.preventDefault(); document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-primary text-base px-8 py-4">📩 Zapytaj o event lub rezerwację</a>
+        <Link to="/eventy" className="btn-primary text-base px-8 py-4">🎉 Zobacz wszystkie eventy i atrakcje</Link>
       </AnimatedSection>
     </div>
   </section>
