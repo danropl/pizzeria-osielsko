@@ -63,7 +63,7 @@ export const specialOffers: SpecialOffer[] = [
     highlights: [
       "Rezerwacja stolika z dekoracją",
       "Deser gratis przy zamówieniu zestawu dla dwojga",
-      "Personalizowana karteczka z \u017Cyczeniami",
+      "Personalizowana karteczka z życzeniami",
       "Kameralny, romantyczny nastrój",
     ],
     whyItWorks:
