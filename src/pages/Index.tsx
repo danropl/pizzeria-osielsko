@@ -142,7 +142,9 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
       </Helmet>
 
-      <Navbar onOpenReservation={() => setReservationOpen(true)} />
+      <div className="relative z-[2]">
+        <Navbar onOpenReservation={() => setReservationOpen(true)} />
+      </div>
       <main className="relative z-[2] flex flex-col gap-3 md:gap-5">
         <HeroSection />
         <HistoriaSection />
@@ -153,7 +155,9 @@ const Index = () => {
         <FAQSection />
         <KontaktSection />
       </main>
-      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} className="relative z-[2]" />
+      <div className="relative z-[2]">
+        <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
+      </div>
       <BackToTop />
       <CookieConsent onOpenPrivacy={() => setPrivacyOpen(true)} />
       <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
