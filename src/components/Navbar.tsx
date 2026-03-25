@@ -51,25 +51,6 @@ const Navbar = ({ onOpenReservation }: Props) => {
             : "text-foreground/60 hover:text-foreground"
         }`;
 
-    if (link.href === "/#kontakt") {
-      return (
-        <button
-          key={link.href}
-          onClick={() => handleNavClick(link)}
-          className={classes}
-        >
-          {link.label}
-          {!mobile && isActive(link) && (
-            <motion.span
-              layoutId="nav-underline"
-              className="absolute bottom-0.5 left-5 right-5 h-[2px] bg-primary rounded-full"
-              transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-            />
-          )}
-        </button>
-      );
-    }
-
     return (
       <Link
         key={link.href}
