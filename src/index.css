@@ -57,6 +57,14 @@
     text-wrap: pretty;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: repeating-linear-gradient(
+      90deg,
+      hsl(48 70% 96%) 0px,
+      hsl(48 70% 96%) 40px,
+      hsl(40 50% 98%) 40px,
+      hsl(40 50% 98%) 80px
+    );
+    background-attachment: fixed;
   }
   h1, h2 {
     @apply font-display tracking-tight;
