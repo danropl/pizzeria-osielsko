@@ -81,7 +81,7 @@ export const specialOffers: SpecialOffer[] = [
       "Zestawy dla 4+ osób z 2–3 pizzami",
       "Sosy i dodatki w cenie zestawu",
       "Napoje do grupy",
-      "Opcja „Pizza Party Box" na wynos",
+      'Opcja \u201EPizza Party Box\u201D na wynos',
       "Pieczywo czosnkowe lub frytki w zestawie",
     ],
     whyItWorks:
