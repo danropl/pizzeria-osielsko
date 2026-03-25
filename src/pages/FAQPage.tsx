@@ -140,10 +140,10 @@ const FAQPage = () => {
           <div className="container-custom text-center max-w-2xl mx-auto">
             <AnimatedSection>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-                Nie znalaz\u0142e\u015B odpowiedzi?
+                Nie znalazłeś odpowiedzi?
               </h2>
               <p className="font-body text-base text-foreground/70 mb-8 leading-relaxed">
-                Skontaktuj si\u0119 z nami \u2014 ch\u0119tnie odpowiemy na ka\u017Cde pytanie.
+                Skontaktuj się z nami — chętnie odpowiemy na każde pytanie.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
