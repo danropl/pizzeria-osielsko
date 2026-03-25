@@ -59,7 +59,7 @@ const FAQPage = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6"
             >
-              Cz\u0119sto zadawane pytania
+              Często zadawane pytania
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
