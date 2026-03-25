@@ -26,7 +26,7 @@ const KontaktPage = () => {
       <BackToTop />
       <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
       <ReservationModal open={reservationOpen} onClose={() => setReservationOpen(false)} />
-      <PrivacyPolicyModal open={privacyOpen} onOpenChange={setPrivacyOpen} />
+      <PrivacyPolicyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
     </>
   );
 };
