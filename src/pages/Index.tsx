@@ -143,7 +143,7 @@ const Index = () => {
       </Helmet>
 
       <Navbar onOpenReservation={() => setReservationOpen(true)} />
-      <main className="flex flex-col gap-3 md:gap-5">
+      <main className="relative z-[2] flex flex-col gap-3 md:gap-5">
         <HeroSection />
         <HistoriaSection />
         <GallerySection />
