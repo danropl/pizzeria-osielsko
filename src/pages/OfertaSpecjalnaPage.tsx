@@ -94,7 +94,7 @@ const OfertaSpecjalnaPage = () => {
                     <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
                       <img
                         src={offer.image}
-                        alt={`${offer.title} \u2013 Pizzeria oSielsko`}
+                        alt={`${offer.title} – Pizzeria oSielsko`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
