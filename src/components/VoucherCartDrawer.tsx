@@ -247,7 +247,7 @@ const VoucherCartDrawer = () => {
                   </p>
                   <div className="card-warm p-4 text-left space-y-2 mb-6">
                     <p className="font-body text-sm">
-                      <span className="font-semibold text-foreground">\uD83D\uDCDE Telefon:</span>{" "}
+                      <span className="font-semibold text-foreground">📞 Telefon:</span>{" "}
                       <a href="tel:+48500384100" className="text-primary hover:underline">
                         +48 500 384 100
                       </a>
