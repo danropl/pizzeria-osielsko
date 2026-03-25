@@ -47,7 +47,7 @@ export const specialOffers: SpecialOffer[] = [
       "2 napoje lub kieliszki prosecco",
       "1 deser do podziału",
       "Stolik z małą świeczką i nastrojowym oświetleniem",
-      'Darmowa rezerwacja \u201Eromantycznego stolika\u201D',
+      'Darmowa rezerwacja „romantycznego stolika"',
     ],
     whyItWorks:
       "Gotowy pakiet z jasną propozycją wartości. Klient nie musi wybierać — dostaje kompletne doświadczenie w atrakcyjnej formie.",
