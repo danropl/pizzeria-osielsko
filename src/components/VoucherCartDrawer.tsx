@@ -235,7 +235,7 @@ const VoucherCartDrawer = () => {
               {checkoutStep === "confirmation" && (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl">\u2705</span>
+                    <span className="text-3xl">✅</span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-3">
                     Dziekujemy za zainteresowanie!
