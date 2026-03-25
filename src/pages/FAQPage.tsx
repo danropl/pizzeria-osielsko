@@ -147,7 +147,7 @@ const FAQPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
-                  \uD83D\uDCDE Zadzwo\u0144: 500 384 100
+                  📞 Zadzwoń: 500 384 100
                 </a>
                 <a href="mailto:pizzasielsko@gmail.com" className="btn-ghost text-base px-8 py-4">
                   \u2709\uFE0F Napisz do nas
