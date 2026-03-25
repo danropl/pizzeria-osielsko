@@ -28,7 +28,7 @@ export const specialOffers: SpecialOffer[] = [
     highlights: [
       "Mini deser lub lemoniada gratis dla solenizanta",
       "Przy grupie 4+ osób — starter lub pizza w promocyjnej cenie",
-      "Świeczka i napis „Sto lat" na talerzu lub pudełku",
+      'Świeczka i napis \u201ESto lat\u201D na talerzu lub pudełku',
       "Zdjęcie urodzinowe przy stoliku z dekoracją",
     ],
     whyItWorks:
