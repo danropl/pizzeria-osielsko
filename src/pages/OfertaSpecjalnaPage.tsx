@@ -57,7 +57,7 @@ const OfertaSpecjalnaPage = () => {
               className="font-body text-lg text-foreground/70 leading-relaxed mb-8"
             >
               Gotowe pomysły na randkę, urodziny, spotkanie z przyjaciółmi czy wieczór filmowy.
-              Wybierz pakiet, który pasuje do Twojej okazji \u2014 reszta po naszej stronie.
+              Wybierz pakiet, który pasuje do Twojej okazji — reszta po naszej stronie.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
