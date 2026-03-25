@@ -28,7 +28,7 @@ export const specialOffers: SpecialOffer[] = [
     highlights: [
       "Mini deser lub lemoniada gratis dla solenizanta",
       "Przy grupie 4+ osób — starter lub pizza w promocyjnej cenie",
-      'Świeczka i napis \u201ESto lat\u201D na talerzu lub pudełku',
+      'Świeczka i napis „Sto lat" na talerzu lub pudełku',
       "Zdjęcie urodzinowe przy stoliku z dekoracją",
     ],
     whyItWorks:
@@ -47,7 +47,7 @@ export const specialOffers: SpecialOffer[] = [
       "2 napoje lub kieliszki prosecco",
       "1 deser do podziału",
       "Stolik z małą świeczką i nastrojowym oświetleniem",
-      'Darmowa rezerwacja \u201Eromantycznego stolika\u201D',
+      'Darmowa rezerwacja „romantycznego stolika"',
     ],
     whyItWorks:
       "Gotowy pakiet z jasną propozycją wartości. Klient nie musi wybierać — dostaje kompletne doświadczenie w atrakcyjnej formie.",
@@ -63,7 +63,7 @@ export const specialOffers: SpecialOffer[] = [
     highlights: [
       "Rezerwacja stolika z dekoracją",
       "Deser gratis przy zamówieniu zestawu dla dwojga",
-      "Personalizowana karteczka z \u017Cyczeniami",
+      "Personalizowana karteczka z życzeniami",
       "Kameralny, romantyczny nastrój",
     ],
     whyItWorks:
@@ -73,7 +73,7 @@ export const specialOffers: SpecialOffer[] = [
   {
     id: "dla-paczki",
     emoji: "👫",
-    title: 'Oferta \u201Edla Paczki\u201D',
+    title: 'Oferta „dla Paczki"',
     lead: "Zestawy dla grup — bo razem smakuje lepiej.",
     description:
       "Spotkanie ze znajomymi, wieczór przy meczu, rodzinny weekend — mamy gotowe zestawy, które ułatwiają wybór i sprawiają, że każdy jest najedzony i zadowolony.",
@@ -81,7 +81,7 @@ export const specialOffers: SpecialOffer[] = [
       "Zestawy dla 4+ osób z 2–3 pizzami",
       "Sosy i dodatki w cenie zestawu",
       "Napoje do grupy",
-      'Opcja \u201EPizza Party Box\u201D na wynos',
+      'Opcja „Pizza Party Box" na wynos',
       "Pieczywo czosnkowe lub frytki w zestawie",
     ],
     whyItWorks:

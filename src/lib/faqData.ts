@@ -75,7 +75,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         q: "Czy Pizzeria oSielsko organizuje urodziny dla dzieci?",
-        a: 'Tak! Organizujemy wyjątkowe urodziny \u201eMały Pizzaiolo\u201D w stylu włoskim. Dzieci uczą się robić pizzę, dekorują ją samodzielnie, a potem wspólnie jedzą. Zapraszamy do kontaktu, aby ustalić szczegóły i zarezerwować termin.',
+        a: 'Tak! Organizujemy wyjątkowe urodziny „Mały Pizzaiolo" w stylu włoskim. Dzieci uczą się robić pizzę, dekorują ją samodzielnie, a potem wspólnie jedzą. Zapraszamy do kontaktu, aby ustalić szczegóły i zarezerwować termin.',
       },
       {
         q: "Czy można zorganizować event prywatny?",
@@ -98,7 +98,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         q: "Czy można zamówić online?",
-        a: 'Tak \u2014 zam\u00F3wienie online mo\u017Cesz z\u0142o\u017Cy\u0107 przez nasz system zam\u00F3wie\u0144 dost\u0119pny na stronie. Przycisk \u201EZam\u00F3w online\u201D znajdziesz w nawigacji.',
+        a: 'Tak — zamówienie online możesz złożyć przez nasz system zamówień dostępny na stronie. Przycisk „Zamów online" znajdziesz w nawigacji.',
       },
       {
         q: "Czy pizza jest wypiekana w piecu opalanym drewnem?",

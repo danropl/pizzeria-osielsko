@@ -31,10 +31,10 @@ const FAQPage = () => {
   return (
     <>
       <Helmet>
-        <title>FAQ \u2013 Najcz\u0119\u015Bciej Zadawane Pytania | Pizzeria oSielsko</title>
+        <title>FAQ – Najczęściej Zadawane Pytania | Pizzeria oSielsko</title>
         <meta
           name="description"
-          content="Odpowiedzi na pytania dotycz\u0105ce rezerwacji, voucherów, eventów i oferty Pizzerii oSielsko. Znajd\u017A informacje o godzinach otwarcia, parkingu i zamówieniach online."
+          content="Odpowiedzi na pytania dotyczące rezerwacji, voucherów, eventów i oferty Pizzerii oSielsko. Znajdź informacje o godzinach otwarcia, parkingu i zamówieniach online."
         />
         <link rel="canonical" href={`${DOMAIN}/faq`} />
       </Helmet>
@@ -59,7 +59,7 @@ const FAQPage = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6"
             >
-              Cz\u0119sto zadawane pytania
+              Często zadawane pytania
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -67,7 +67,7 @@ const FAQPage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="font-body text-lg text-foreground/70 leading-relaxed"
             >
-              Znajdziesz tu odpowiedzi na pytania dotycz\u0105ce rezerwacji, voucherów, eventów,
+              Znajdziesz tu odpowiedzi na pytania dotyczące rezerwacji, voucherów, eventów,
               zamówień i organizacji wizyty w naszej pizzerii.
             </motion.p>
           </div>
@@ -140,22 +140,22 @@ const FAQPage = () => {
           <div className="container-custom text-center max-w-2xl mx-auto">
             <AnimatedSection>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-                Nie znalaz\u0142e\u015B odpowiedzi?
+                Nie znalazłeś odpowiedzi?
               </h2>
               <p className="font-body text-base text-foreground/70 mb-8 leading-relaxed">
-                Skontaktuj si\u0119 z nami \u2014 ch\u0119tnie odpowiemy na ka\u017Cde pytanie.
+                Skontaktuj się z nami — chętnie odpowiemy na każde pytanie.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
-                  \uD83D\uDCDE Zadzwo\u0144: 500 384 100
+                  📞 Zadzwoń: 500 384 100
                 </a>
                 <a href="mailto:pizzasielsko@gmail.com" className="btn-ghost text-base px-8 py-4">
-                  \u2709\uFE0F Napisz do nas
+                  ✉️ Napisz do nas
                 </a>
               </div>
               <div className="mt-8">
                 <Link to="/" className="font-body text-sm text-primary hover:underline">
-                  \u2190 Wróć na stronę główną
+                  ← Wróć na stronę główną
                 </Link>
               </div>
             </AnimatedSection>
