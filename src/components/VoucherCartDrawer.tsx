@@ -243,7 +243,7 @@ const VoucherCartDrawer = () => {
                   <p className="font-body text-sm text-foreground/70 leading-relaxed mb-6">
                     System płatności online zostanie uruchomiony wkrótce. Aby sfinalizować
                     zamówienie vouchera, skontaktuj się z nami telefonicznie lub mailowo
-                    \u2014 odezwiemy się najszybciej jak to możliwe.
+                    — odezwiemy się najszybciej jak to możliwe.
                   </p>
                   <div className="card-warm p-4 text-left space-y-2 mb-6">
                     <p className="font-body text-sm">
