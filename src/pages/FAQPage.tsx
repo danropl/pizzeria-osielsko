@@ -67,7 +67,7 @@ const FAQPage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="font-body text-lg text-foreground/70 leading-relaxed"
             >
-              Znajdziesz tu odpowiedzi na pytania dotycz\u0105ce rezerwacji, voucherów, eventów,
+              Znajdziesz tu odpowiedzi na pytania dotyczące rezerwacji, voucherów, eventów,
               zamówień i organizacji wizyty w naszej pizzerii.
             </motion.p>
           </div>
