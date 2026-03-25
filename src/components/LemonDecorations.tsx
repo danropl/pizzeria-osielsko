@@ -16,13 +16,13 @@ const positions = [
 ];
 
 const LemonDecorations = () => (
-  <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+  <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden" aria-hidden="true">
     {positions.map((pos, i) => (
       <img
         key={i}
         src={lemonMotif}
         alt=""
-        className={`absolute ${pos.w} ${pos.rotate} ${pos.opacity}`}
+        className={`absolute ${pos.w} ${pos.rotate}`}
         style={{ top: pos.top, left: pos.left, right: pos.right }}
         loading="lazy"
       />

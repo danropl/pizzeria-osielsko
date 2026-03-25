@@ -153,7 +153,7 @@ const Index = () => {
         <FAQSection />
         <KontaktSection />
       </main>
-      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
+      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} className="relative z-[2]" />
       <BackToTop />
       <CookieConsent onOpenPrivacy={() => setPrivacyOpen(true)} />
       <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
