@@ -20,10 +20,10 @@ const OfertaSpecjalnaPage = () => {
   return (
     <>
       <Helmet>
-        <title>Oferta Specjalna \u2013 Pizzeria oSielsko | Pakiety, Zestawy, Okazje</title>
+        <title>Oferta Specjalna – Pizzeria oSielsko | Pakiety, Zestawy, Okazje</title>
         <meta
           name="description"
-          content="Oferta specjalna Pizzerii oSielsko \u2014 pakiety randkowe, urodzinowe, grupowe, lunchowe i filmowe. Gotowe pomysły na każdą okazję w Osielsku k. Bydgoszczy."
+          content="Oferta specjalna Pizzerii oSielsko — pakiety randkowe, urodzinowe, grupowe, lunchowe i filmowe. Gotowe pomysły na każdą okazję w Osielsku k. Bydgoszczy."
         />
         <link rel="canonical" href={`${DOMAIN}/oferta-specjalna`} />
       </Helmet>
