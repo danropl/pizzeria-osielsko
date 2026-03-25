@@ -108,6 +108,7 @@ const Index = () => {
 
   return (
     <div className="relative">
+      <LemonDecorations />
 
       <Helmet>
         <title>Pizzeria oSielsko – Autentyczna Pizza Włoska z Pieca | Zamów Online</title>
