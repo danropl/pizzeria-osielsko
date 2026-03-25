@@ -73,7 +73,7 @@ export const specialOffers: SpecialOffer[] = [
   {
     id: "dla-paczki",
     emoji: "👫",
-    title: 'Oferta \u201Edla Paczki\u201D',
+    title: 'Oferta „dla Paczki"',
     lead: "Zestawy dla grup — bo razem smakuje lepiej.",
     description:
       "Spotkanie ze znajomymi, wieczór przy meczu, rodzinny weekend — mamy gotowe zestawy, które ułatwiają wybór i sprawiają, że każdy jest najedzony i zadowolony.",
