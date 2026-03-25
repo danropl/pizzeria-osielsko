@@ -253,7 +253,7 @@ const VoucherCartDrawer = () => {
                       </a>
                     </p>
                     <p className="font-body text-sm">
-                      <span className="font-semibold text-foreground">\u2709\uFE0F E-mail:</span>{" "}
+                      <span className="font-semibold text-foreground">✉️ E-mail:</span>{" "}
                       <a href="mailto:pizzasielsko@gmail.com" className="text-primary hover:underline">
                         pizzasielsko@gmail.com
                       </a>
