@@ -148,7 +148,7 @@ const OfertaSpecjalnaPage = () => {
                   📞 Zadzwoń: 500 384 100
                 </a>
                 <a href="mailto:pizzasielsko@gmail.com" className="btn-ghost text-base px-8 py-4">
-                  \u2709\uFE0F Napisz do nas
+                  ✉️ Napisz do nas
                 </a>
               </div>
               <div className="mt-8">
