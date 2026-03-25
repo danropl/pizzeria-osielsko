@@ -12,6 +12,7 @@ const VoucheryPage = lazy(() => import("./pages/VoucheryPage.tsx"));
 const EventyPage = lazy(() => import("./pages/EventyPage.tsx"));
 const FAQPage = lazy(() => import("./pages/FAQPage.tsx"));
 const OfertaSpecjalnaPage = lazy(() => import("./pages/OfertaSpecjalnaPage.tsx"));
+const KontaktPage = lazy(() => import("./pages/KontaktPage.tsx"));
 
 const queryClient = new QueryClient();
 
