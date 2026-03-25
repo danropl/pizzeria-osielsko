@@ -211,7 +211,7 @@ const VoucherCartDrawer = () => {
                               : "border-border/60 text-foreground/60 hover:border-primary/40"
                           }`}
                         >
-                          {fmt === "elektroniczny" ? "\uD83D\uDCE7 Elektroniczny" : "\uD83D\uDCE6 Papierowy"}
+                          {fmt === "elektroniczny" ? "📧 Elektroniczny" : "📦 Papierowy"}
                         </button>
                       ))}
                     </div>
