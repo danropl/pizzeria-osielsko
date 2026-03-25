@@ -87,7 +87,7 @@ const MarqueeRow = ({
 };
 
 const GallerySection = () => (
-  <section className="bg-[#FEFDE5] py-16 md:py-20 overflow-hidden">
+  <section className="bg-[#FEFDE5]/60 py-16 md:py-20 overflow-hidden">
     <div className="container-custom mb-10">
       <AnimatedSection className="text-center">
         <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">
