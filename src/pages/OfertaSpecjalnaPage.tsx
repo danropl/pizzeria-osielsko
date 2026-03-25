@@ -65,7 +65,7 @@ const OfertaSpecjalnaPage = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
-                \uD83C\uDF89 Zapytaj o ofertę
+                🎉 Zapytaj o ofertę
               </a>
             </motion.div>
           </div>
