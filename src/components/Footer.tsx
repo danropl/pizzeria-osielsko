@@ -29,6 +29,8 @@ const Footer = ({ onOpenPrivacy }: Props) => {
               <Link to="/" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Start</Link>
               <Link to="/eventy" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Eventy</Link>
               <Link to="/vouchery" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Vouchery</Link>
+              <Link to="/oferta-specjalna" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Oferta specjalna</Link>
+              <Link to="/faq" className="block font-body text-sm text-background/60 hover:text-background transition-colors">FAQ</Link>
               <Link to="/#kontakt" className="block font-body text-sm text-background/60 hover:text-background transition-colors">Kontakt</Link>
             </nav>
           </div>
