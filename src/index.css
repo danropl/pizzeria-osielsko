@@ -60,14 +60,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #FEFDE5;
-    background-image: repeating-linear-gradient(
-      90deg,
-      #FEFDE5 0px,
-      #FEFDE5 40px,
-      #FEF3BD 40px,
-      #FEF3BD 80px
-    );
-    background-attachment: fixed;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;

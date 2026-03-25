@@ -28,7 +28,7 @@ const events: EventItem[] = [
 ];
 
 const EventySection = () => (
-  <section id="eventy" className="bg-[#FEF3BD]/70 section-padding">
+  <section id="eventy" className="bg-[#FEF3BD] section-padding">
     <div className="container-custom">
       <AnimatedSection className="text-center mb-12">
         <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">Wyjątkowe doświadczenia</p>
