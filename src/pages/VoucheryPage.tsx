@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import { ShoppingBag } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
@@ -9,34 +10,44 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import ReservationModal from "@/components/ReservationModal";
 import AnimatedSection from "@/components/AnimatedSection";
+import VoucherCartDrawer from "@/components/VoucherCartDrawer";
 import { vouchers } from "@/lib/vouchersData";
+import { useCartStore } from "@/lib/cartStore";
 
 const DOMAIN = "https://pizzeriaosielsko.pl";
 
 const steps = [
-  { num: "01", emoji: "🎯", title: "Wybierz voucher", desc: "Przeglądnij naszą ofertę i wybierz rodzaj vouchera, który najlepiej pasuje do okazji." },
-  { num: "02", emoji: "📩", title: "Skontaktuj się z nami", desc: "Zadzwoń, napisz maila lub odwiedź nas osobiście, aby zamówić wybrany voucher." },
-  { num: "03", emoji: "🎁", title: "Odbierz voucher", desc: "Voucher przygotujemy w eleganckiej formie papierowej lub elektronicznej — do wyboru." },
-  { num: "04", emoji: "🍕", title: "Ciesz się przeżyciem", desc: "Wręcz voucher bliskiej osobie lub wykorzystaj go sam — niezapomniane chwile gwarantowane." },
+  { num: "01", emoji: "\uD83C\uDFAF", title: "Wybierz voucher", desc: "Przeglądnij naszą ofertę i wybierz rodzaj vouchera, który najlepiej pasuje do okazji." },
+  { num: "02", emoji: "\uD83D\uDED2", title: "Dodaj do koszyka", desc: "Kliknij przycisk przy wybranym voucherze, aby dodać go do koszyka." },
+  { num: "03", emoji: "\uD83D\uDCDD", title: "Uzupełnij dane", desc: "Wypełnij formularz z danymi do zamówienia i personalizacją vouchera." },
+  { num: "04", emoji: "\uD83C\uDF89", title: "Sfinalizuj zamówienie", desc: "Dokończ proces \u2014 system płatności online zostanie uruchomiony wkrótce." },
 ];
 
 const faqs = [
-  { q: "Czy voucher może być elektroniczny?", a: "Tak — voucher możemy przygotować w formie elektronicznej (PDF) lub eleganckiej kartki papierowej. Ustalamy to indywidualnie przy zamówieniu." },
+  { q: "Czy voucher może być elektroniczny?", a: "Tak \u2014 voucher możemy przygotować w formie elektronicznej (PDF) lub eleganckiej kartki papierowej. Ustalamy to indywidualnie przy zamówieniu." },
   { q: "Czy voucher można kupić jako prezent?", a: "Oczywiście! Vouchery to idealny prezent na urodziny, rocznicę, święta czy po prostu jako miły gest. Przygotujemy go tak, żeby wyglądał wyjątkowo." },
-  { q: "Jak zamówić voucher?", a: "Skontaktuj się z nami telefonicznie (+48 500 384 100) lub mailowo (pizzasielsko@gmail.com). Pomożemy wybrać odpowiedni rodzaj i ustalić szczegóły." },
+  { q: "Jak zamówić voucher?", a: "Dodaj wybrany voucher do koszyka na tej stronie i wypełnij formularz. Możesz też skontaktować się telefonicznie (+48 500 384 100) lub mailowo (pizzasielsko@gmail.com)." },
   { q: "Czy voucher ma termin ważności?", a: "Szczegóły dotyczące ważności ustalamy indywidualnie. Skontaktuj się z nami, a dobierzemy najlepsze rozwiązanie." },
-  { q: "Czy można ustalić indywidualną wartość vouchera?", a: "Tak — chętnie przygotujemy voucher o indywidualnej wartości lub zakresie dopasowanym do Twoich potrzeb. Wystarczy się z nami skontaktować." },
+  { q: "Czy można ustalić indywidualną wartość vouchera?", a: "Tak \u2014 chętnie przygotujemy voucher o indywidualnej wartości lub zakresie dopasowanym do Twoich potrzeb. Wystarczy się z nami skontaktować." },
 ];
 
 const VoucheryPage = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [reservationOpen, setReservationOpen] = useState(false);
+  const addItem = useCartStore((s) => s.addItem);
+  const [addedId, setAddedId] = useState<string | null>(null);
+
+  const handleAdd = (voucher: typeof vouchers[0]) => {
+    addItem(voucher);
+    setAddedId(voucher.id);
+    setTimeout(() => setAddedId(null), 1500);
+  };
 
   return (
     <>
       <Helmet>
-        <title>Vouchery Podarunkowe – Pizzeria oSielsko | Prezent na każdą okazję</title>
-        <meta name="description" content="Vouchery podarunkowe Pizzeria oSielsko — idealny prezent na urodziny, rocznicę, święta. Randka w Kuchni, warsztaty pizzy, degustacja wina. Zamów voucher telefonicznie lub mailowo." />
+        <title>Vouchery Podarunkowe \u2013 Pizzeria oSielsko | Prezent na każdą okazję</title>
+        <meta name="description" content="Vouchery podarunkowe Pizzeria oSielsko \u2014 idealny prezent na urodziny, rocznicę, święta. Randka w Kuchni, warsztaty pizzy, degustacja wina. Dodaj do koszyka i zamów online." />
         <link rel="canonical" href={`${DOMAIN}/vouchery`} />
       </Helmet>
 
@@ -68,23 +79,24 @@ const VoucheryPage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="font-body text-lg text-foreground/70 leading-relaxed mb-8"
             >
-              Podaruj bliskim coś więcej niż rzecz — podaruj przeżycie. Nasze vouchery to zaproszenie
+              Podaruj bliskim coś więcej niż rzecz \u2014 podaruj przeżycie. Nasze vouchery to zaproszenie
               do wspólnego gotowania, degustacji i niezapomnianych chwil w sercu włoskiej kuchni.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
-                🎁 Zamów voucher
+              <a href="#voucher-list" className="btn-primary text-base px-8 py-4">
+                \uD83C\uDF81 Wybierz voucher
               </a>
             </motion.div>
           </div>
         </section>
 
         {/* Voucher types */}
-        <section className="bg-background section-padding">
+        <section id="voucher-list" className="bg-background section-padding">
           <div className="container-custom">
             <AnimatedSection className="text-center mb-12">
               <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">Nasza oferta</p>
@@ -100,7 +112,7 @@ const VoucheryPage = () => {
                     <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
                       <img
                         src={v.image}
-                        alt={`Voucher ${v.title} – Pizzeria oSielsko`}
+                        alt={`Voucher ${v.title} \u2013 Pizzeria oSielsko`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
@@ -111,21 +123,34 @@ const VoucheryPage = () => {
                       <p className="font-body text-base text-foreground/70 leading-relaxed mb-6">{v.longDesc}</p>
                       <div className="space-y-3 mb-6">
                         <div className="flex items-start gap-2">
-                          <span className="text-primary font-bold text-sm mt-0.5">👤</span>
+                          <span className="text-primary font-bold text-sm mt-0.5">\uD83D\uDC64</span>
                           <div>
                             <p className="font-body text-sm font-semibold text-foreground">Dla kogo</p>
                             <p className="font-body text-sm text-foreground/60">{v.forWhom}</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2">
-                          <span className="text-primary font-bold text-sm mt-0.5">🎯</span>
+                          <span className="text-primary font-bold text-sm mt-0.5">\uD83C\uDFAF</span>
                           <div>
                             <p className="font-body text-sm font-semibold text-foreground">Na jaką okazję</p>
                             <p className="font-body text-sm text-foreground/60">{v.example}</p>
                           </div>
                         </div>
                       </div>
-                      <p className="font-data text-xs text-muted-foreground uppercase tracking-wider">Cena ustalana indywidualnie</p>
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                        <button
+                          onClick={() => handleAdd(v)}
+                          className={`btn-primary text-sm px-6 py-3 gap-2 transition-all duration-300 ${
+                            addedId === v.id ? "bg-accent hover:bg-accent" : ""
+                          }`}
+                        >
+                          <ShoppingBag className="w-4 h-4" />
+                          {addedId === v.id ? "Dodano!" : "Dodaj do koszyka"}
+                        </button>
+                        <span className="font-data text-xs text-muted-foreground uppercase tracking-wider">
+                          Cena ustalana indywidualnie
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -182,6 +207,12 @@ const VoucheryPage = () => {
                 </AnimatedSection>
               ))}
             </div>
+
+            <AnimatedSection className="text-center mt-8">
+              <Link to="/faq" className="font-body text-sm text-primary hover:underline">
+                Zobacz wszystkie pytania i odpowiedzi \u2192
+              </Link>
+            </AnimatedSection>
           </div>
         </section>
 
@@ -193,20 +224,21 @@ const VoucheryPage = () => {
                 Zamów voucher już dziś
               </h2>
               <p className="font-body text-base text-foreground/70 mb-8 leading-relaxed">
-                Skontaktuj się z nami telefonicznie lub mailowo — pomożemy wybrać idealny voucher i przygotujemy go specjalnie dla Ciebie.
+                Dodaj voucher do koszyka i wypełnij formularz \u2014 lub skontaktuj się z nami telefonicznie lub mailowo.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">📞 Zadzwoń: 500 384 100</a>
-                <a href="mailto:pizzasielsko@gmail.com" className="btn-ghost text-base px-8 py-4">✉️ Napisz do nas</a>
+                <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">\uD83D\uDCDE Zadzwoń: 500 384 100</a>
+                <a href="mailto:pizzasielsko@gmail.com" className="btn-ghost text-base px-8 py-4">\u2709\uFE0F Napisz do nas</a>
               </div>
               <div className="mt-8">
-                <Link to="/" className="font-body text-sm text-primary hover:underline">← Wróć na stronę główną</Link>
+                <Link to="/" className="font-body text-sm text-primary hover:underline">\u2190 Wróć na stronę główną</Link>
               </div>
             </AnimatedSection>
           </div>
         </section>
       </main>
 
+      <VoucherCartDrawer />
       <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
       <BackToTop />
       <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
