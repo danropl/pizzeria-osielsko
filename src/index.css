@@ -63,9 +63,9 @@
     background-image: repeating-linear-gradient(
       90deg,
       #FEFDE5 0px,
-      #FEFDE5 48px,
-      #FEF3BD 48px,
-      #FEF3BD 96px
+      #FEFDE5 40px,
+      #FEF3BD 40px,
+      #FEF3BD 80px
     );
     background-attachment: fixed;
   }

@@ -13,7 +13,7 @@ const amenities = [
 ];
 
 const HistoriaSection = () => (
-  <section id="historia" className="bg-[#FEFDE5] section-padding">
+  <section id="historia" className="bg-[#FEF3BD] section-padding">
     <div className="container-custom">
       <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
         {/* Images */}

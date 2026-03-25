@@ -20,7 +20,7 @@ const vouchers: Voucher[] = [
 ];
 
 const VoucherySection = () => (
-  <section id="vouchery" className="section-padding">
+  <section id="vouchery" className="bg-[#FEFDE5] section-padding">
     <div className="container-custom">
       <AnimatedSection className="text-center mb-12">
         <p className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3">Prezenty</p>
