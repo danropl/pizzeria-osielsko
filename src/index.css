@@ -53,7 +53,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground font-body;
+    @apply text-foreground font-body;
     text-wrap: pretty;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
