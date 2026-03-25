@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/", label: "Start", isHome: true },
   { href: "/eventy", label: "Eventy", isHome: false },
   { href: "/vouchery", label: "Vouchery", isHome: false },
+  { href: "/oferta-specjalna", label: "Oferta", isHome: false },
   { href: "/#kontakt", label: "Kontakt", isHome: true },
 ];
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
 import {
   Accordion,
@@ -78,6 +79,12 @@ const FAQSection = () => (
             </AccordionItem>
           ))}
         </Accordion>
+      </AnimatedSection>
+
+      <AnimatedSection className="text-center mt-10">
+        <Link to="/faq" className="btn-ghost text-sm px-6 py-3">
+          Zobacz wszystkie pytania \u2192
+        </Link>
       </AnimatedSection>
     </div>
   </section>

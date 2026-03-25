@@ -10,6 +10,8 @@ import NotFound from "./pages/NotFound.tsx";
 
 const VoucheryPage = lazy(() => import("./pages/VoucheryPage.tsx"));
 const EventyPage = lazy(() => import("./pages/EventyPage.tsx"));
+const FAQPage = lazy(() => import("./pages/FAQPage.tsx"));
+const OfertaSpecjalnaPage = lazy(() => import("./pages/OfertaSpecjalnaPage.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,8 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/vouchery" element={<VoucheryPage />} />
               <Route path="/eventy" element={<EventyPage />} />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/oferta-specjalna" element={<OfertaSpecjalnaPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
