@@ -141,7 +141,7 @@ const OfertaSpecjalnaPage = () => {
               </h2>
               <p className="font-body text-base text-foreground/70 mb-8 leading-relaxed">
                 Przygotujemy indywidualną ofertę dopasowaną do Twojego wydarzenia.
-                Zadzwoń lub napisz \u2014 chętnie pomożemy.
+                Zadzwoń lub napisz — chętnie pomożemy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
