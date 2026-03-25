@@ -305,7 +305,7 @@ const VoucherCartDrawer = () => {
                   form="voucher-form"
                   className="btn-primary w-full text-base py-3.5"
                 >
-                  Przejdź do płatności \u2192
+                  Przejdź do płatności →
                 </button>
               </div>
             )}
