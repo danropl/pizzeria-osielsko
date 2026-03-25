@@ -5,12 +5,12 @@ import logoImg from "@/assets/logo.svg";
 import { ORDER_URL } from "@/lib/constants";
 
 const navLinks = [
-  { href: "/", label: "Start", isHome: true },
-  { href: "/eventy", label: "Eventy", isHome: false },
-  { href: "/vouchery", label: "Sklep", isHome: false },
-  { href: "/oferta-specjalna", label: "Oferta", isHome: false },
-  { href: "/faq", label: "FAQ", isHome: false },
-  { href: "/#kontakt", label: "Kontakt", isHome: true },
+  { href: "/", label: "Start" },
+  { href: "/eventy", label: "Eventy" },
+  { href: "/vouchery", label: "Vouchery" },
+  { href: "/oferta-specjalna", label: "Oferta" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 interface Props {
