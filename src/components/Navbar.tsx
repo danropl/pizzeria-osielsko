@@ -133,7 +133,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="lg:hidden absolute top-full left-0 right-0 z-[1001] bg-background border-t border-border shadow-xl"
+            className="lg:hidden absolute top-full left-0 right-0 z-[1001] bg-[#FEFDE5] border-t border-border shadow-xl"
           >
             <nav className="p-5 flex flex-col gap-1" aria-label="Nawigacja mobilna">
               {navLinks.map((link) => (
