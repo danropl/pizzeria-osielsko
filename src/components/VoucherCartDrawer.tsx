@@ -287,7 +287,7 @@ const VoucherCartDrawer = () => {
                   onClick={() => setCheckoutStep("form")}
                   className="btn-primary w-full text-base py-3.5"
                 >
-                  Przejdź dalej \u2192
+                  Przejdź dalej →
                 </button>
               </div>
             )}
