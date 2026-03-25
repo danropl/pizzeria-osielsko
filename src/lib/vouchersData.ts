@@ -23,7 +23,7 @@ export const vouchers: VoucherItem[] = [
     image: heartPizzaImg,
     longDesc: "Podaruj bliskiej osobie wieczór pełen emocji i smaków. Wspólne gotowanie w kameralnej atmosferze, przy świecach i włoskiej muzyce. Razem przygotujecie kolację od podstaw — od wyrabiania ciasta, przez wybór składników, po wypiekanie pizzy w naszym piecu. To prezent, który zbliża i pozostawia wspomnienia.",
     forWhom: "Pary, małżeństwa, narzeczeni, osoby szukające romantycznego prezentu",
-    example: "Walentynki, rocznica ślubu, urodziny partnera, niespodzianka „bo Cię kocham"",
+    example: "Walentynki, rocznica ślubu, urodziny partnera, niespodzianka",
   },
   {
     id: "urodziny-pizzaiolo",

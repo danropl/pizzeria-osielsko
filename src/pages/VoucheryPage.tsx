@@ -22,7 +22,7 @@ const steps = [
 
 const faqs = [
   { q: "Czy voucher może być elektroniczny?", a: "Tak — voucher możemy przygotować w formie elektronicznej (PDF) lub eleganckiej kartki papierowej. Ustalamy to indywidualnie przy zamówieniu." },
-  { q: "Czy voucher można kupić jako prezent?", a: "Oczywiście! Vouchery to idealny prezent na urodziny, rocznicę, święta czy po prostu „bo Cię lubię". Przygotujemy go tak, żeby wyglądał wyjątkowo." },
+  { q: "Czy voucher można kupić jako prezent?", a: "Oczywiście! Vouchery to idealny prezent na urodziny, rocznicę, święta czy po prostu jako miły gest. Przygotujemy go tak, żeby wyglądał wyjątkowo." },
   { q: "Jak zamówić voucher?", a: "Skontaktuj się z nami telefonicznie (+48 500 384 100) lub mailowo (pizzasielsko@gmail.com). Pomożemy wybrać odpowiedni rodzaj i ustalić szczegóły." },
   { q: "Czy voucher ma termin ważności?", a: "Szczegóły dotyczące ważności ustalamy indywidualnie. Skontaktuj się z nami, a dobierzemy najlepsze rozwiązanie." },
   { q: "Czy można ustalić indywidualną wartość vouchera?", a: "Tak — chętnie przygotujemy voucher o indywidualnej wartości lub zakresie dopasowanym do Twoich potrzeb. Wystarczy się z nami skontaktować." },
