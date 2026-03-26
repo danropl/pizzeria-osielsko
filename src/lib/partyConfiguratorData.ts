@@ -67,10 +67,10 @@ export const budgetLevels: SelectableOption[] = [
 // Guest character
 export const guestCharacterOptions: SelectableOption[] = [
   { id: "family", label: "Rodzinne", desc: "Dorośli i dzieci", price: 0 },
-  { id: "kids-only", label: "Głównie dla dzieci", desc: "Zabawa i energia", price: 0 },
+  { id: "kids-only", label: "Głównie dla dzieci", desc: "Zabawa i energia", price: 29 },
   { id: "couples", label: "Dla par / kameralne", desc: "Romantycznie i spokojnie", price: 0 },
   { id: "friends", label: "Dla znajomych", desc: "Luźno i wesoło", price: 0 },
-  { id: "corporate", label: "Firmowe", desc: "Profesjonalnie i z klasą", price: 0 },
+  { id: "corporate", label: "Firmowe", desc: "Profesjonalnie i z klasą", price: 39 },
 ];
 
 // B. Pizzas (based on Dish menu)
