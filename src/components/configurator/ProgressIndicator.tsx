@@ -34,9 +34,9 @@ const ProgressIndicator = ({ currentStep, onStepClick }: Props) => (
               className={`flex items-center gap-1.5 ${isClickable ? "cursor-pointer" : "cursor-default"}`}
             >
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 shrink-0 ${
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-[400ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] shrink-0 ${
                   isActive
-                    ? "bg-primary text-primary-foreground shadow-md ring-2 ring-primary/30"
+                    ? "bg-primary text-primary-foreground shadow-md ring-2 ring-primary/30 scale-110"
                     : isDone
                       ? "bg-primary/20 text-primary"
                       : "bg-muted text-muted-foreground"
