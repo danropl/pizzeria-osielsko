@@ -153,7 +153,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         q: "Czy można zamówić online?",
-        a: "Tak — zamówienie online możesz złożyć przez nasz system zamówień dostępny na stronie. Przycisk „Zamów online" znajdziesz w nawigacji.",
+        a: 'Tak — zamówienie online możesz złożyć przez nasz system zamówień dostępny na stronie. Przycisk „Zamów online" znajdziesz w nawigacji.',
       },
       {
         q: "Czy pizza jest wypiekana w piecu opalanym drewnem?",
