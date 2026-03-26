@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Copy, Check, Share2 } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Copy, Check } from "lucide-react";
 import type { PartyState } from "@/pages/KonfiguratorImprezPage";
 import {
   partyTypes, durationOptions, spotOptions, deliveryModes, budgetLevels, guestCharacterOptions,
@@ -22,6 +22,17 @@ const line = (label: string, amount: number) =>
 
 const OrderSummary = ({ state, total }: Props) => {
   const [copied, setCopied] = useState(false);
+  const [flash, setFlash] = useState(false);
+  const prevTotal = useRef(total);
+
+  useEffect(() => {
+    if (prevTotal.current !== total) {
+      setFlash(true);
+      const t = setTimeout(() => setFlash(false), 600);
+      prevTotal.current = total;
+      return () => clearTimeout(t);
+    }
+  }, [total]);
 
   const pt = partyTypes.find(p => p.id === state.partyType);
   const dur = durationOptions.find(d => d.id === state.duration);
@@ -158,9 +169,9 @@ const OrderSummary = ({ state, total }: Props) => {
       </div>
 
       {/* Total */}
-      <div className="flex justify-between items-baseline">
+      <div className={`flex justify-between items-baseline rounded-xl px-3 py-2 -mx-3 transition-colors ${flash ? "animate-price-flash" : ""}`}>
         <span className="font-display text-base font-bold text-foreground">Szacunkowy koszt</span>
-        <span className="font-data text-2xl font-bold text-primary">{total} zł</span>
+        <span className="font-data text-2xl font-bold text-primary transition-all duration-300">{total} zł</span>
       </div>
 
       <p className="font-body text-xs text-muted-foreground mt-3 leading-relaxed">

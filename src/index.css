@@ -77,12 +77,18 @@
     @apply max-w-7xl mx-auto;
   }
   .card-warm {
-    @apply bg-card rounded-3xl border border-border/50 transition-all duration-300;
+    @apply bg-card rounded-3xl border border-border/50 transition-all duration-[400ms];
     box-shadow: var(--shadow-warm);
   }
   .card-warm:hover {
     box-shadow: var(--shadow-hover);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
+  }
+  .card-warm img {
+    @apply transition-transform duration-[600ms] ease-out;
+  }
+  .card-warm:hover img {
+    transform: scale(1.04);
   }
   .badge-tag {
     @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-data font-semibold uppercase tracking-wider shadow-md;
@@ -101,6 +107,22 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Reduced motion: disable all non-essential animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card-warm:hover {
+    transform: none;
+  }
+  .card-warm:hover img {
+    transform: none;
   }
 }
 
