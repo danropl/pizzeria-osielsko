@@ -169,9 +169,9 @@ const OrderSummary = ({ state, total }: Props) => {
       </div>
 
       {/* Total */}
-      <div className="flex justify-between items-baseline">
+      <div className={`flex justify-between items-baseline rounded-xl px-3 py-2 -mx-3 transition-colors ${flash ? "animate-price-flash" : ""}`}>
         <span className="font-display text-base font-bold text-foreground">Szacunkowy koszt</span>
-        <span className="font-data text-2xl font-bold text-primary">{total} zł</span>
+        <span className="font-data text-2xl font-bold text-primary transition-all duration-300">{total} zł</span>
       </div>
 
       <p className="font-body text-xs text-muted-foreground mt-3 leading-relaxed">
