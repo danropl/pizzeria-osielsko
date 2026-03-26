@@ -1,9 +1,11 @@
 import { create } from "zustand";
-import type { VoucherItem } from "./vouchersData";
+import type { VoucherItem, VoucherFormat } from "./vouchersData";
 
 export interface CartItem {
   voucher: VoucherItem;
   quantity: number;
+  selectedValue: number;
+  format: VoucherFormat;
 }
 
 export interface OrderFormData {
@@ -12,21 +14,21 @@ export interface OrderFormData {
   phone: string;
   recipientName: string;
   dedication: string;
-  format: "elektroniczny" | "papierowy";
+  deliveryMethod: "elektroniczny" | "odbiór osobisty";
+  preferredDate: string;
   notes: string;
 }
 
 interface CartStore {
   items: CartItem[];
-  isOpen: boolean;
-  checkoutStep: "cart" | "form" | "confirmation";
+  checkoutStep: "cart" | "form" | "preview" | "confirmation";
   formData: OrderFormData;
-  addItem: (voucher: VoucherItem) => void;
-  removeItem: (voucherId: string) => void;
-  updateQuantity: (voucherId: string, quantity: number) => void;
+  addItem: (voucher: VoucherItem, value: number, format: VoucherFormat) => void;
+  removeItem: (itemIndex: number) => void;
+  updateQuantity: (itemIndex: number, quantity: number) => void;
   clearCart: () => void;
-  setIsOpen: (open: boolean) => void;
-  setCheckoutStep: (step: "cart" | "form" | "confirmation") => void;
+  cartTotal: () => number;
+  setCheckoutStep: (step: "cart" | "form" | "preview" | "confirmation") => void;
   setFormData: (data: Partial<OrderFormData>) => void;
   resetForm: () => void;
 }
@@ -37,47 +39,49 @@ const defaultFormData: OrderFormData = {
   phone: "",
   recipientName: "",
   dedication: "",
-  format: "elektroniczny",
+  deliveryMethod: "elektroniczny",
+  preferredDate: "",
   notes: "",
 };
 
-export const useCartStore = create<CartStore>((set) => ({
+export const useCartStore = create<CartStore>((set, get) => ({
   items: [],
-  isOpen: false,
   checkoutStep: "cart",
   formData: { ...defaultFormData },
 
-  addItem: (voucher) =>
+  addItem: (voucher, value, format) =>
     set((state) => {
-      const existing = state.items.find((i) => i.voucher.id === voucher.id);
-      if (existing) {
-        return {
-          items: state.items.map((i) =>
-            i.voucher.id === voucher.id ? { ...i, quantity: i.quantity + 1 } : i
-          ),
-          isOpen: true,
-        };
+      // Check if same voucher+value+format exists
+      const idx = state.items.findIndex(
+        (i) => i.voucher.id === voucher.id && i.selectedValue === value && i.format === format
+      );
+      if (idx >= 0) {
+        const newItems = [...state.items];
+        newItems[idx] = { ...newItems[idx], quantity: newItems[idx].quantity + 1 };
+        return { items: newItems };
       }
-      return { items: [...state.items, { voucher, quantity: 1 }], isOpen: true };
+      return { items: [...state.items, { voucher, quantity: 1, selectedValue: value, format }] };
     }),
 
-  removeItem: (voucherId) =>
+  removeItem: (itemIndex) =>
     set((state) => ({
-      items: state.items.filter((i) => i.voucher.id !== voucherId),
+      items: state.items.filter((_, i) => i !== itemIndex),
     })),
 
-  updateQuantity: (voucherId, quantity) =>
+  updateQuantity: (itemIndex, quantity) =>
     set((state) => ({
       items:
         quantity <= 0
-          ? state.items.filter((i) => i.voucher.id !== voucherId)
-          : state.items.map((i) =>
-              i.voucher.id === voucherId ? { ...i, quantity } : i
-            ),
+          ? state.items.filter((_, i) => i !== itemIndex)
+          : state.items.map((item, i) => (i === itemIndex ? { ...item, quantity } : item)),
     })),
 
+  cartTotal: () => {
+    const { items } = get();
+    return items.reduce((sum, item) => sum + item.selectedValue * item.quantity, 0);
+  },
+
   clearCart: () => set({ items: [], checkoutStep: "cart", formData: { ...defaultFormData } }),
-  setIsOpen: (open) => set({ isOpen: open }),
   setCheckoutStep: (step) => set({ checkoutStep: step }),
   setFormData: (data) =>
     set((state) => ({ formData: { ...state.formData, ...data } })),

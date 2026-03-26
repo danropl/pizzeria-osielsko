@@ -12,47 +12,62 @@ export interface VoucherItem {
   longDesc: string;
   forWhom: string;
   example: string;
+  badge?: string;
+  occasion: string;
 }
+
+export const voucherValueTiers = [100, 150, 200, 300] as const;
+export const VOUCHER_MIN_CUSTOM = 50;
+export const VOUCHER_MAX_CUSTOM = 1000;
+
+export type VoucherFormat = "elektroniczny" | "papierowy";
 
 export const vouchers: VoucherItem[] = [
   {
     id: "randka-w-kuchni",
     emoji: "💑",
     title: "Randka w Kuchni",
-    contents: "Romantyczny prezent dla pary.",
+    contents: "Romantyczny wieczór dla dwojga — wspólne gotowanie pizzy przy świecach i włoskiej muzyce.",
     image: heartPizzaImg,
-    longDesc: "Podaruj bliskiej osobie wieczór pełen emocji i smaków. Wspólne gotowanie w kameralnej atmosferze, przy świecach i włoskiej muzyce. Razem przygotujecie kolację od podstaw — od wyrabiania ciasta, przez wybór składników, po wypiekanie pizzy w naszym piecu. To prezent, który zbliża i pozostawia wspomnienia.",
-    forWhom: "Pary, małżeństwa, narzeczeni, osoby szukające romantycznego prezentu",
-    example: "Walentynki, rocznica ślubu, urodziny partnera, niespodzianka",
+    longDesc: "Podaruj bliskiej osobie wieczór pełen emocji i smaków. Wspólne gotowanie w kameralnej atmosferze, przy świecach i włoskiej muzyce. Razem przygotujecie kolację od podstaw — od wyrabiania ciasta, przez wybór składników, po wypiekanie pizzy w naszym piecu.",
+    forWhom: "Pary, małżeństwa, narzeczeni",
+    example: "Walentynki, rocznica ślubu, urodziny partnera",
+    badge: "Najczęściej wybierany",
+    occasion: "randka",
   },
   {
     id: "urodziny-pizzaiolo",
     emoji: "🎂",
     title: "Urodziny Pizzaiolo",
-    contents: "Niezapomniane urodziny w klimacie włoskim.",
+    contents: "Niezapomniane urodziny dla dziecka — warsztaty pizzy, dekorowanie i wspólna zabawa.",
     image: eventKidsImg,
-    longDesc: "Voucher na wyjątkowe urodziny dla dziecka w naszej pizzerii. Mały jubilat i jego goście zakładają fartuszki, uczą się robić pizzę, dekorują ją samodzielnie i wspólnie jedzą. To urodziny pełne zabawy, kreatywności i prawdziwych włoskich smaków — bez stresu dla rodziców.",
-    forWhom: "Rodzice dzieci w wieku 4–12 lat, dziadkowie, osoby szukające prezentu dla dziecka",
-    example: "Urodziny, imieniny, nagroda za osiągnięcia, prezent od dziadków",
+    longDesc: "Voucher na wyjątkowe urodziny dla dziecka w naszej pizzerii. Mały jubilat i jego goście zakładają fartuszki, uczą się robić pizzę, dekorują ją samodzielnie i wspólnie jedzą.",
+    forWhom: "Rodzice dzieci w wieku 4–12 lat, dziadkowie",
+    example: "Urodziny, imieniny, prezent od dziadków",
+    badge: "Na prezent",
+    occasion: "prezent",
   },
   {
     id: "pizza-wino-sommelier",
     emoji: "🍷",
     title: "Pizza & Wino z Sommelierem",
-    contents: "Ekskluzywna degustacja dla koneserów.",
+    contents: "Ekskluzywna degustacja — włoskie wina dobrane do autorskiej pizzy przez sommeliera.",
     image: pizzasVarietyImg,
-    longDesc: "Elegancki voucher na wieczór degustacyjny prowadzony przez sommeliera. Obdarowana osoba pozna tajniki włoskiego wina w połączeniu z naszą autorską pizzą. Kilka starannie dobranych win, kolejne dania i opowieść o regionach winiarskich Włoch. Prezent dla osób ceniących smak i klasę.",
-    forWhom: "Koneserzy wina, pary szukające ekskluzywnego doświadczenia, klienci biznesowi",
-    example: "Prezent urodzinowy, podziękowanie dla partnera biznesowego, rocznica",
+    longDesc: "Elegancki voucher na wieczór degustacyjny prowadzony przez sommeliera. Kilka starannie dobranych win, kolejne dania i opowieść o regionach winiarskich Włoch.",
+    forWhom: "Koneserzy wina, pary, klienci biznesowi",
+    example: "Prezent urodzinowy, podziękowanie biznesowe, rocznica",
+    occasion: "kolacja",
   },
   {
     id: "wieczor-karaoke",
     emoji: "🎤",
     title: "Wieczór Karaoke",
-    contents: "Zabawa z włoskimi klasykami i pyszną pizzą.",
+    contents: "Muzyka, śmiech i pizza — wieczór pełen zabawy przy włoskich i światowych przebojach.",
     image: interior2Img,
-    longDesc: "Voucher na wieczór pełen muzyki, śmiechu i włoskiego temperamentu. Obdarowana osoba spędzi niezapomniany wieczór przy karaoke — śpiewając włoskie i światowe przeboje, jedząc pyszną pizzę prosto z pieca i popijając włoskie wino. Idealny prezent dla osób kochających zabawę.",
-    forWhom: "Grupy znajomych, osoby lubiące muzykę i imprezowy klimat, pary",
-    example: "Prezent urodzinowy, wieczór panieński/kawalerski, niespodzianka dla przyjaciela",
+    longDesc: "Voucher na wieczór pełen muzyki, śmiechu i włoskiego temperamentu. Śpiewanie, pyszna pizza prosto z pieca i włoskie wino.",
+    forWhom: "Grupy znajomych, pary, osoby lubiące muzykę",
+    example: "Urodziny, wieczór panieński, niespodzianka",
+    badge: "Elektroniczny od ręki",
+    occasion: "dowolna okazja",
   },
 ];
