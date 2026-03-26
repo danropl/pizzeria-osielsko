@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/", label: "Start" },
   { href: "/eventy", label: "Eventy" },
   { href: "/vouchery", label: "Vouchery" },
+  { href: "/konfigurator-imprez", label: "Imprezy" },
   { href: "/oferta-specjalna", label: "Oferta" },
   { href: "/faq", label: "FAQ" },
   { href: "/kontakt", label: "Kontakt" },
