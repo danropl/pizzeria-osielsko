@@ -100,6 +100,6 @@ export const cakeServicePrice = 25;
 export const extraAttractions: CheckboxOption[] = [
   { id: "karaoke", label: "Karaoke / muzyczny setup", price: 149 },
   { id: "photo-memory", label: "Zdjęcie pamiątkowe przy stoliku", price: 39 },
-  { id: "sto-lat", label: "Pakiet „Sto lat" dla solenizanta", price: 29 },
+  { id: "sto-lat", label: 'Pakiet „Sto lat" dla solenizanta', price: 29 },
   { id: "extra-hour", label: "Dodatkowa godzina obsługi", price: 120 },
 ];
