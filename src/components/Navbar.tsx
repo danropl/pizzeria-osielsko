@@ -72,13 +72,16 @@ const Navbar = ({ onOpenReservation }: Props) => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 bg-background ${
+    <motion.header
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 bg-background/95 backdrop-blur-md ${
         scrolled
           ? "shadow-[0_1px_0_0_hsl(var(--border)/0.4),0_4px_20px_-4px_rgba(0,0,0,0.08)]"
           : ""
       }`}
-      style={{ height: "76px" }}
+      animate={{
+        height: scrolled ? 64 : 76,
+      }}
+      transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <div className="container-custom h-full flex items-center justify-between px-4 lg:grid lg:grid-cols-[auto_1fr_auto] lg:px-8">
         {/* Logo */}
@@ -87,10 +90,12 @@ const Navbar = ({ onOpenReservation }: Props) => {
           className="flex items-center gap-2 group shrink-0"
           aria-label="Pizzeria oSielsko — strona główna"
         >
-          <img
+          <motion.img
             src={logoImg}
             alt="Pizzeria oSielsko – logo"
-            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="w-auto transition-transform duration-300 group-hover:scale-105"
+            animate={{ height: scrolled ? 40 : 48 }}
+            transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           />
         </Link>
 
@@ -151,7 +156,7 @@ const Navbar = ({ onOpenReservation }: Props) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 };
 
