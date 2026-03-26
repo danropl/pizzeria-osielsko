@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ShoppingBag, Plus, Minus, X, ArrowRight, ArrowLeft, Gift, Check, Sparkles, Heart, Clock } from "lucide-react";
@@ -520,6 +521,18 @@ const VoucheryPage = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Help links */}
+        <section className="bg-bg-dark py-10">
+          <div className="container-custom max-w-2xl mx-auto text-center">
+            <p className="font-body text-sm text-foreground/60 mb-3">Masz pytanie o vouchery?</p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link to="/faq" className="font-body text-sm text-primary font-semibold hover:underline">❓ Sprawdź FAQ</Link>
+              <Link to="/kontakt" className="font-body text-sm text-primary font-semibold hover:underline">📞 Skontaktuj się</Link>
+              <Link to="/eventy" className="font-body text-sm text-primary font-semibold hover:underline">🎉 Zobacz eventy</Link>
             </div>
           </div>
         </section>
