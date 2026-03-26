@@ -104,6 +104,13 @@
   }
 }
 
+/* Safe area for MobileBottomBar on mobile */
+@media (max-width: 1023px) {
+  main {
+    padding-bottom: 72px;
+  }
+}
+
 @keyframes marquee-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }

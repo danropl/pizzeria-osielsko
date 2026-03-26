@@ -147,24 +147,6 @@ const Navbar = ({ onOpenReservation }: Props) => {
           >
             <nav className="p-5 flex flex-col gap-1" aria-label="Nawigacja mobilna">
               {navLinks.map((link) => renderNavItem(link, true))}
-              <div className="flex gap-2 mt-3 pt-3 border-t border-border/30">
-                <button
-                  onClick={() => { setMobileOpen(false); onOpenReservation(); }}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-body font-semibold uppercase tracking-[0.06em] text-foreground/70 border border-border/60 rounded-xl transition-all duration-300 hover:text-primary hover:border-primary/40"
-                >
-                  <span className="text-sm">📞</span>
-                  Rezerwacja
-                </button>
-                <a
-                  href={ORDER_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-[13px] font-body font-bold uppercase tracking-[0.06em] bg-primary text-primary-foreground rounded-xl transition-all duration-300 hover:bg-[hsl(var(--primary-dark))]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Zamów online
-                </a>
-              </div>
             </nav>
           </motion.div>
         )}
