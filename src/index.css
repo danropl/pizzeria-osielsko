@@ -86,7 +86,8 @@
     transform: translateY(-3px);
   }
   .card-warm img {
-    @apply transition-transform duration-[600ms] ease-out;
+    @apply transition-transform ease-out;
+    transition-duration: 600ms;
   }
   .card-warm:hover img {
     transform: scale(1.04);
