@@ -1,0 +1,448 @@
+import { useState, useMemo } from "react";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import MobileBottomBar from "@/components/MobileBottomBar";
+import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
+import ReservationModal from "@/components/ReservationModal";
+import AnimatedSection from "@/components/AnimatedSection";
+import SectionBlock from "@/components/configurator/SectionBlock";
+import ItemQuantityRow from "@/components/configurator/ItemQuantityRow";
+import QuantitySelector from "@/components/configurator/QuantitySelector";
+import OrderSummary from "@/components/configurator/OrderSummary";
+
+import {
+  partyTypes, durationOptions, spotOptions, timeSlots,
+  pizzas, starters, drinks,
+  decorationPackages, personalizationExtras, cakeServicePrice, extraAttractions,
+} from "@/lib/partyConfiguratorData";
+
+const DOMAIN = "https://pizzeriaosielsko.pl";
+
+// ── State shape ──────────────────────────────────
+export interface PartyState {
+  partyType: string;
+  eventName: string;
+  date: string;
+  time: string;
+  adults: number;
+  kids: number;
+  duration: string;
+  spot: string;
+  pizzaQty: Record<string, number>;
+  starterQty: Record<string, number>;
+  drinkQty: Record<string, number>;
+  decorationPackage: string;
+  personalization: string[];
+  cakeService: boolean;
+  attractions: string[];
+  contactName: string;
+  contactEmail: string;
+  contactPhone: string;
+  contactNotes: string;
+  contactPriority: string;
+}
+
+const initial: PartyState = {
+  partyType: "",
+  eventName: "",
+  date: "",
+  time: "",
+  adults: 4,
+  kids: 0,
+  duration: "2h",
+  spot: "none",
+  pizzaQty: {},
+  starterQty: {},
+  drinkQty: {},
+  decorationPackage: "none",
+  personalization: [],
+  cakeService: false,
+  attractions: [],
+  contactName: "",
+  contactEmail: "",
+  contactPhone: "",
+  contactNotes: "",
+  contactPriority: "",
+};
+
+// ── Component ────────────────────────────────────
+const KonfiguratorImprezPage = () => {
+  const [s, setS] = useState<PartyState>(initial);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [reservationOpen, setReservationOpen] = useState(false);
+
+  const set = <K extends keyof PartyState>(key: K, val: PartyState[K]) =>
+    setS(prev => ({ ...prev, [key]: val }));
+
+  const setQty = (key: "pizzaQty" | "starterQty" | "drinkQty", id: string, v: number) =>
+    setS(prev => ({ ...prev, [key]: { ...prev[key], [id]: v } }));
+
+  const toggleArr = (key: "personalization" | "attractions", id: string) =>
+    setS(prev => ({
+      ...prev,
+      [key]: prev[key].includes(id) ? prev[key].filter(x => x !== id) : [...prev[key], id],
+    }));
+
+  // ── Price calculation ──
+  const total = useMemo(() => {
+    let sum = 0;
+    const pt = partyTypes.find(p => p.id === s.partyType);
+    if (pt) sum += pt.price;
+    const dur = durationOptions.find(d => d.id === s.duration);
+    if (dur) sum += dur.price;
+    const spot = spotOptions.find(sp => sp.id === s.spot);
+    if (spot) sum += spot.price;
+
+    pizzas.forEach(p => { sum += (s.pizzaQty[p.id] || 0) * p.price; });
+    starters.forEach(st => { sum += (s.starterQty[st.id] || 0) * st.price; });
+    drinks.forEach(d => { sum += (s.drinkQty[d.id] || 0) * d.price; });
+
+    const dec = decorationPackages.find(d => d.id === s.decorationPackage);
+    if (dec) sum += dec.price;
+
+    personalizationExtras.forEach(e => { if (s.personalization.includes(e.id)) sum += e.price; });
+    if (s.cakeService) sum += cakeServicePrice;
+    extraAttractions.forEach(e => { if (s.attractions.includes(e.id)) sum += e.price; });
+
+    return sum;
+  }, [s]);
+
+  const guestCount = s.adults + s.kids;
+  const recommendedPizzas = Math.max(1, Math.ceil(guestCount / 2.5));
+
+  // ── Helpers ──
+  const radioCard = (
+    options: { id: string; label: string; desc?: string; price: number }[],
+    value: string,
+    onChange: (id: string) => void,
+  ) => (
+    <div className="grid sm:grid-cols-2 gap-3">
+      {options.map(opt => (
+        <button
+          key={opt.id}
+          type="button"
+          onClick={() => onChange(opt.id)}
+          className={`text-left p-4 rounded-2xl border-2 transition-all duration-200 ${
+            value === opt.id
+              ? "border-primary bg-primary/5 shadow-md"
+              : "border-border/60 bg-card hover:border-primary/40"
+          }`}
+        >
+          <span className="font-body text-sm font-semibold text-foreground block">{opt.label}</span>
+          {opt.desc && <span className="font-body text-xs text-muted-foreground block mt-0.5">{opt.desc}</span>}
+          <span className="font-data text-xs font-bold text-primary mt-1 block">
+            {opt.price === 0 ? "w cenie" : `+${opt.price} zł`}
+          </span>
+        </button>
+      ))}
+    </div>
+  );
+
+  return (
+    <>
+      <Helmet>
+        <title>Konfigurator imprez – Pizzeria oSielsko | Zaplanuj przyjęcie</title>
+        <meta
+          name="description"
+          content="Zaplanuj imprezę w Pizzerii oSielsko — urodziny, spotkania, eventy firmowe. Skonfiguruj menu, dekoracje, atrakcje i sprawdź orientacyjny koszt online."
+        />
+        <link rel="canonical" href={`${DOMAIN}/konfigurator-imprez`} />
+      </Helmet>
+
+      <Navbar onOpenReservation={() => setReservationOpen(true)} />
+
+      <main>
+        {/* Hero */}
+        <section className="bg-bg-dark section-padding pt-32 md:pt-36">
+          <div className="container-custom text-center max-w-3xl mx-auto">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+              className="font-data text-xs font-semibold text-primary uppercase tracking-widest mb-3"
+            >
+              Zaplanuj swoje wydarzenie
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6"
+            >
+              Konfigurator imprez
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
+              className="font-body text-lg text-foreground/70 leading-relaxed"
+            >
+              Urodziny, wieczór ze znajomymi, spotkanie firmowe czy kolacja rocznicowa?
+              Dobierz typ imprezy, menu, dekoracje i atrakcje — od razu zobaczysz orientacyjny koszt.
+            </motion.p>
+          </div>
+        </section>
+
+        {/* Configurator */}
+        <section className="bg-background section-padding">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-[1fr_380px] gap-8 lg:gap-12 items-start">
+              {/* LEFT — form */}
+              <div>
+                {/* A. Basic info */}
+                <SectionBlock step="01" title="Typ imprezy" subtitle="Wybierz rodzaj wydarzenia">
+                  {radioCard(partyTypes, s.partyType, id => set("partyType", id))}
+                </SectionBlock>
+
+                <SectionBlock step="02" title="Szczegóły" subtitle="Określ datę, godzinę i liczbę gości">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Nazwa / okazja</label>
+                      <input
+                        type="text"
+                        placeholder="np. Urodziny Ani"
+                        value={s.eventName}
+                        onChange={e => set("eventName", e.target.value)}
+                        className="w-full px-4 py-2.5 rounded-xl border border-border bg-card font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      />
+                    </div>
+                    <div>
+                      <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Preferowana data</label>
+                      <input
+                        type="date"
+                        value={s.date}
+                        onChange={e => set("date", e.target.value)}
+                        className="w-full px-4 py-2.5 rounded-xl border border-border bg-card font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      />
+                    </div>
+                    <div>
+                      <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Godzina rozpoczęcia</label>
+                      <select
+                        value={s.time}
+                        onChange={e => set("time", e.target.value)}
+                        className="w-full px-4 py-2.5 rounded-xl border border-border bg-card font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      >
+                        <option value="">Wybierz godzinę</option>
+                        {timeSlots.map(t => <option key={t} value={t}>{t}</option>)}
+                      </select>
+                    </div>
+                    <div className="flex gap-6">
+                      <div className="flex-1">
+                        <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Dorośli</label>
+                        <QuantitySelector value={s.adults} onChange={v => set("adults", v)} min={1} max={40} />
+                      </div>
+                      <div className="flex-1">
+                        <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Dzieci</label>
+                        <QuantitySelector value={s.kids} onChange={v => set("kids", v)} min={0} max={30} />
+                      </div>
+                    </div>
+                  </div>
+                </SectionBlock>
+
+                <SectionBlock step="03" title="Czas i miejsce">
+                  <div className="space-y-5">
+                    <div>
+                      <p className="font-body text-sm font-semibold text-foreground mb-2">Czas trwania</p>
+                      {radioCard(durationOptions, s.duration, id => set("duration", id))}
+                    </div>
+                    <div>
+                      <p className="font-body text-sm font-semibold text-foreground mb-2">Preferowane miejsce</p>
+                      {radioCard(spotOptions, s.spot, id => set("spot", id))}
+                    </div>
+                  </div>
+                </SectionBlock>
+
+                {/* B. Pizzas */}
+                <SectionBlock step="04" title="Pizze" subtitle={`Rekomendacja dla ${guestCount} gości: ok. ${recommendedPizzas} pizz`}>
+                  <p className="font-body text-xs text-muted-foreground mb-3">Orientacyjnie 1 pizza wystarcza dla 2–3 osób</p>
+                  <div className="card-warm p-4">
+                    {pizzas.map(p => (
+                      <ItemQuantityRow
+                        key={p.id}
+                        name={p.name}
+                        desc={p.desc}
+                        price={p.price}
+                        qty={s.pizzaQty[p.id] || 0}
+                        onChange={v => setQty("pizzaQty", p.id, v)}
+                      />
+                    ))}
+                  </div>
+                </SectionBlock>
+
+                {/* C. Starters */}
+                <SectionBlock step="05" title="Dodatki i startery">
+                  <div className="card-warm p-4">
+                    {starters.map(st => (
+                      <ItemQuantityRow
+                        key={st.id}
+                        name={st.name}
+                        desc={st.desc}
+                        price={st.price}
+                        qty={s.starterQty[st.id] || 0}
+                        onChange={v => setQty("starterQty", st.id, v)}
+                      />
+                    ))}
+                  </div>
+                </SectionBlock>
+
+                {/* D. Drinks */}
+                <SectionBlock step="06" title="Napoje">
+                  <div className="card-warm p-4">
+                    {drinks.map(d => (
+                      <ItemQuantityRow
+                        key={d.id}
+                        name={d.name}
+                        desc={d.desc}
+                        price={d.price}
+                        qty={s.drinkQty[d.id] || 0}
+                        onChange={v => setQty("drinkQty", d.id, v)}
+                      />
+                    ))}
+                  </div>
+                </SectionBlock>
+
+                {/* E. Decorations */}
+                <SectionBlock step="07" title="Dekoracje i klimat">
+                  <div className="space-y-5">
+                    <div>
+                      <p className="font-body text-sm font-semibold text-foreground mb-2">Pakiet dekoracji</p>
+                      {radioCard(decorationPackages, s.decorationPackage, id => set("decorationPackage", id))}
+                    </div>
+
+                    <div>
+                      <p className="font-body text-sm font-semibold text-foreground mb-2">Personalizacja</p>
+                      <div className="grid sm:grid-cols-2 gap-3">
+                        {personalizationExtras.map(e => (
+                          <label
+                            key={e.id}
+                            className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+                              s.personalization.includes(e.id)
+                                ? "border-primary bg-primary/5"
+                                : "border-border/60 bg-card hover:border-primary/40"
+                            }`}
+                          >
+                            <input
+                              type="checkbox"
+                              checked={s.personalization.includes(e.id)}
+                              onChange={() => toggleArr("personalization", e.id)}
+                              className="sr-only"
+                            />
+                            <div className={`w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors ${
+                              s.personalization.includes(e.id) ? "bg-primary border-primary text-primary-foreground" : "border-border"
+                            }`}>
+                              {s.personalization.includes(e.id) && <span className="text-xs">✓</span>}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <span className="font-body text-sm text-foreground block">{e.label}</span>
+                              <span className="font-data text-xs font-bold text-primary">+{e.price} zł</span>
+                            </div>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+
+                    <label
+                      className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                        s.cakeService ? "border-primary bg-primary/5" : "border-border/60 bg-card hover:border-primary/40"
+                      }`}
+                    >
+                      <input type="checkbox" checked={s.cakeService} onChange={() => set("cakeService", !s.cakeService)} className="sr-only" />
+                      <div className={`w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors ${
+                        s.cakeService ? "bg-primary border-primary text-primary-foreground" : "border-border"
+                      }`}>
+                        {s.cakeService && <span className="text-xs">✓</span>}
+                      </div>
+                      <div>
+                        <span className="font-body text-sm font-semibold text-foreground block">Serwis własnego tortu</span>
+                        <span className="font-data text-xs font-bold text-primary">+{cakeServicePrice} zł</span>
+                      </div>
+                    </label>
+                  </div>
+                </SectionBlock>
+
+                {/* F. Attractions */}
+                <SectionBlock step="08" title="Atrakcje dodatkowe" subtitle="Opcjonalne — dodaj coś ekstra">
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {extraAttractions.map(e => (
+                      <label
+                        key={e.id}
+                        className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+                          s.attractions.includes(e.id)
+                            ? "border-primary bg-primary/5"
+                            : "border-border/60 bg-card hover:border-primary/40"
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={s.attractions.includes(e.id)}
+                          onChange={() => toggleArr("attractions", e.id)}
+                          className="sr-only"
+                        />
+                        <div className={`w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors ${
+                          s.attractions.includes(e.id) ? "bg-primary border-primary text-primary-foreground" : "border-border"
+                        }`}>
+                          {s.attractions.includes(e.id) && <span className="text-xs">✓</span>}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <span className="font-body text-sm text-foreground block">{e.label}</span>
+                          <span className="font-data text-xs font-bold text-primary">+{e.price} zł</span>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                </SectionBlock>
+
+                {/* G. Contact */}
+                <SectionBlock step="09" title="Dane kontaktowe" subtitle="Do przyszłej rezerwacji — bez zobowiązań">
+                  <div className="card-warm p-5 space-y-4">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Imię i nazwisko</label>
+                        <input type="text" value={s.contactName} onChange={e => set("contactName", e.target.value)}
+                          className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40" />
+                      </div>
+                      <div>
+                        <label className="font-body text-sm font-semibold text-foreground block mb-1.5">E-mail</label>
+                        <input type="email" value={s.contactEmail} onChange={e => set("contactEmail", e.target.value)}
+                          className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Telefon</label>
+                      <input type="tel" value={s.contactPhone} onChange={e => set("contactPhone", e.target.value)}
+                        className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40" />
+                    </div>
+                    <div>
+                      <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Uwagi organizacyjne</label>
+                      <textarea rows={3} value={s.contactNotes} onChange={e => set("contactNotes", e.target.value)}
+                        placeholder="Dodatkowe życzenia, alergie, pytania…"
+                        className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none" />
+                    </div>
+                    <div>
+                      <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Co jest dla Ciebie najważniejsze?</label>
+                      <textarea rows={2} value={s.contactPriority} onChange={e => set("contactPriority", e.target.value)}
+                        placeholder="np. Zabawa dla dzieci, elegancka oprawa, smaczne jedzenie…"
+                        className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none" />
+                    </div>
+                  </div>
+                </SectionBlock>
+              </div>
+
+              {/* RIGHT — sticky summary */}
+              <div className="lg:sticky lg:top-28">
+                <AnimatedSection>
+                  <OrderSummary state={s} total={total} />
+                </AnimatedSection>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
+      <BackToTop />
+      <MobileBottomBar onOpenReservation={() => setReservationOpen(true)} />
+      <PrivacyPolicyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
+      <ReservationModal open={reservationOpen} onClose={() => setReservationOpen(false)} />
+    </>
+  );
+};
+
+export default KonfiguratorImprezPage;

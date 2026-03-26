@@ -13,6 +13,7 @@ const EventyPage = lazy(() => import("./pages/EventyPage.tsx"));
 const FAQPage = lazy(() => import("./pages/FAQPage.tsx"));
 const OfertaSpecjalnaPage = lazy(() => import("./pages/OfertaSpecjalnaPage.tsx"));
 const KontaktPage = lazy(() => import("./pages/KontaktPage.tsx"));
+const KonfiguratorImprezPage = lazy(() => import("./pages/KonfiguratorImprezPage.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/oferta-specjalna" element={<OfertaSpecjalnaPage />} />
               <Route path="/kontakt" element={<KontaktPage />} />
+              <Route path="/konfigurator-imprez" element={<KonfiguratorImprezPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

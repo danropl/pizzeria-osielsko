@@ -144,12 +144,8 @@ const OfertaSpecjalnaPage = () => {
                 Zadzwoń lub napisz — chętnie pomożemy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+48500384100" className="btn-primary text-base px-8 py-4">
-                  📞 Zadzwoń: 500 384 100
-                </a>
-                <a href="mailto:pizzasielsko@gmail.com" className="btn-ghost text-base px-8 py-4">
-                  ✉️ Napisz do nas
-                </a>
+                <Link to="/konfigurator-imprez" className="btn-primary text-base px-8 py-4">🎉 Skonfiguruj imprezę</Link>
+                <a href="tel:+48500384100" className="btn-ghost text-base px-8 py-4">📞 Zadzwoń: 500 384 100</a>
               </div>
               <div className="mt-8">
                 <Link to="/" className="font-body text-sm text-primary hover:underline">
