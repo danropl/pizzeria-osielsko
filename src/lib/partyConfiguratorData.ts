@@ -19,6 +19,7 @@ export interface QuantityItem {
 export interface CheckboxOption {
   id: string;
   label: string;
+  desc?: string;
   price: number;
 }
 
@@ -48,6 +49,29 @@ export const spotOptions: SelectableOption[] = [
 
 // Time slots
 export const timeSlots = ["12:00", "14:00", "16:00", "18:00", "20:00"];
+
+// Delivery modes
+export const deliveryModes: SelectableOption[] = [
+  { id: "on-site", label: "Na miejscu", desc: "Impreza w naszej pizzerii", price: 0 },
+  { id: "pickup", label: "Odbiór własny", desc: "Przygotujemy wszystko do odbioru", price: 0 },
+  { id: "delivery", label: "Dowóz", desc: "Dostarczymy pod wskazany adres", price: 49 },
+];
+
+// Budget levels
+export const budgetLevels: SelectableOption[] = [
+  { id: "basic", label: "Basic", desc: "Smacznie i bez przepłacania", price: 0 },
+  { id: "standard", label: "Standard", desc: "Najczęściej wybierany — dobry balans", price: 0 },
+  { id: "premium", label: "Premium", desc: "Pełna oprawa na najwyższym poziomie", price: 0 },
+];
+
+// Guest character
+export const guestCharacterOptions: SelectableOption[] = [
+  { id: "family", label: "Rodzinne", desc: "Dorośli i dzieci", price: 0 },
+  { id: "kids-only", label: "Głównie dla dzieci", desc: "Zabawa i energia", price: 0 },
+  { id: "couples", label: "Dla par / kameralne", desc: "Romantycznie i spokojnie", price: 0 },
+  { id: "friends", label: "Dla znajomych", desc: "Luźno i wesoło", price: 0 },
+  { id: "corporate", label: "Firmowe", desc: "Profesjonalnie i z klasą", price: 0 },
+];
 
 // B. Pizzas (based on Dish menu)
 export const pizzas: QuantityItem[] = [
@@ -117,6 +141,69 @@ export const cakeServicePrice = 25;
 export const extraAttractions: CheckboxOption[] = [
   { id: "karaoke", label: "Karaoke / muzyczny setup", price: 149 },
   { id: "photo-memory", label: "Zdjęcie pamiątkowe przy stoliku", price: 39 },
-  { id: "sto-lat", label: 'Pakiet „Sto lat" dla solenizanta', price: 29 },
+  { id: "sto-lat", label: "Pakiet \u201ESto lat\u201D dla solenizanta", price: 29 },
   { id: "extra-hour", label: "Dodatkowa godzina obsługi", price: 120 },
 ];
+
+// G. Organizational options (informational checkboxes)
+export const organizationalOptions: CheckboxOption[] = [
+  { id: "own-cake", label: "Przyniosę własny tort", desc: "Podamy go na zastawie pizzerii", price: 25 },
+  { id: "allergies", label: "Alergie / dieta specjalna", desc: "Opiszę szczegóły w uwagach", price: 0 },
+  { id: "call-before", label: "Proszę o kontakt przed potwierdzeniem", desc: "Zadzwonimy, żeby omówić szczegóły", price: 0 },
+];
+
+// H. Recommended sets based on party type and guest count
+export interface RecommendedSet {
+  pizzas: { id: string; qty: number }[];
+  starters: { id: string; qty: number }[];
+  drinks: { id: string; qty: number }[];
+  decoration: string;
+}
+
+export function getRecommendedSet(guestCount: number, partyType: string): RecommendedSet {
+  const pizzaCount = Math.max(1, Math.ceil(guestCount / 2.5));
+  const drinkCount = Math.max(2, Math.ceil(guestCount / 3));
+
+  const basePizzas: { id: string; qty: number }[] = [];
+  const half = Math.ceil(pizzaCount / 2);
+  const rest = pizzaCount - half;
+
+  if (partyType === "kids") {
+    basePizzas.push({ id: "margharita", qty: half }, { id: "hawaii", qty: Math.max(1, rest) });
+    return {
+      pizzas: basePizzas,
+      starters: [{ id: "garlic-bread", qty: Math.max(1, Math.ceil(guestCount / 6)) }],
+      drinks: [{ id: "sok-cappy", qty: drinkCount }],
+      decoration: "kids-theme",
+    };
+  }
+
+  if (partyType === "corporate") {
+    basePizzas.push({ id: "margharita", qty: half }, { id: "parma", qty: Math.max(1, rest) });
+    return {
+      pizzas: basePizzas,
+      starters: [{ id: "antipasti", qty: Math.max(1, Math.ceil(guestCount / 8)) }],
+      drinks: [{ id: "sanpellegrino", qty: drinkCount }],
+      decoration: "premium",
+    };
+  }
+
+  if (partyType === "anniversary") {
+    basePizzas.push({ id: "truflowa", qty: half }, { id: "pera-noci", qty: Math.max(1, rest) });
+    return {
+      pizzas: basePizzas,
+      starters: [{ id: "burrata", qty: Math.max(1, Math.ceil(guestCount / 6)) }],
+      drinks: [{ id: "sanpellegrino", qty: drinkCount }],
+      decoration: "premium",
+    };
+  }
+
+  // default: friends / family
+  basePizzas.push({ id: "margharita", qty: half }, { id: "pepperoni", qty: Math.max(1, rest) });
+  return {
+    pizzas: basePizzas,
+    starters: [{ id: "bruschetta", qty: Math.max(1, Math.ceil(guestCount / 6)) }],
+    drinks: [{ id: "woda", qty: drinkCount }],
+    decoration: "basic",
+  };
+}
