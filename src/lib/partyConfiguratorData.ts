@@ -49,17 +49,35 @@ export const spotOptions: SelectableOption[] = [
 // Time slots
 export const timeSlots = ["12:00", "14:00", "16:00", "18:00", "20:00"];
 
-// B. Pizzas
+// B. Pizzas (based on Dish menu)
 export const pizzas: QuantityItem[] = [
-  { id: "margherita", name: "Margherita", desc: "Sos pomidorowy, mozzarella, bazylia", price: 32 },
-  { id: "capricciosa", name: "Capricciosa", desc: "Szynka, pieczarki, oliwki, mozzarella", price: 38 },
-  { id: "pepperoni", name: "Pepperoni", desc: "Pikantne pepperoni, mozzarella, sos", price: 40 },
-  { id: "vegetariana", name: "Vegetariana", desc: "Papryka, cukinia, bakłażan, oliwki", price: 39 },
-  { id: "prosciutto", name: "Prosciutto e Rucola", desc: "Szynka parmeńska, rukola, parmezan", price: 42 },
-  { id: "quattro", name: "Quattro Formaggi", desc: "Mozzarella, gorgonzola, parmezan, ricotta", price: 44 },
+  { id: "margharita", name: "Margharita", desc: "Sos pelati, mozzarella, bazylia", price: 31 },
+  { id: "funghi", name: "Funghi", desc: "Sos pelati, mozzarella, pieczarki", price: 36 },
+  { id: "vezuvio", name: "Vezuvio", desc: "Sos pelati, mozzarella, szynka", price: 38 },
+  { id: "capriciosa", name: "Capriciosa", desc: "Sos pelati, mozzarella, szynka, pieczarki", price: 40 },
+  { id: "hawaii", name: "Hawaii", desc: "Sos pelati, mozzarella, szynka, ananas", price: 40 },
+  { id: "venezia", name: "Venezia", desc: "Sos pelati, mozzarella, salami, pieczarki, oliwa z czosnkiem", price: 40 },
+  { id: "romana", name: "Romana", desc: "Sos pelati, mozzarella, boczek, pieczarki, cebula", price: 40 },
+  { id: "pepperoni", name: "Pepperoni", desc: "Sos pelati, mozzarella, salami pepperoni", price: 40 },
+  { id: "jalapeno", name: "Jalapeño", desc: "Sos pelati, mozzarella, boczek, cebula, papryka jalapeño", price: 40 },
+  { id: "pigal", name: "Pigal", desc: "Sos pelati, mozzarella, pieczarki, cebula, papryka, oliwki", price: 40 },
+  { id: "asparagi", name: "Asparagi", desc: "Sos śmietanowy, mozzarella, gorgonzola, szynka, szparagi, jajko", price: 40 },
+  { id: "feta", name: "Feta", desc: "Sos pelati, mozzarella, szynka, ser feta, pomidorki, oliwki, bazylia", price: 42 },
+  { id: "amerykanska", name: "Amerykańska", desc: "Sos pelati, mozzarella, szynka, pieczarki, kiełbasa, papryka", price: 42 },
+  { id: "miesna", name: "Mięsna", desc: "Sos pelati, mozzarella, szynka, salami, boczek", price: 42 },
+  { id: "prosciutto", name: "Prosciutto", desc: "Sos pelati, mozzarella, szynka, jajko, parmezan, bazylia", price: 42 },
+  { id: "4sery", name: "4 sery", desc: "Sos pelati, mozzarella, gorgonzola, ricotta, parmezan", price: 42 },
+  { id: "bbq-chicken", name: "Barbecue Chicken", desc: "Sos BBQ, mozzarella, kurczak, cebula, papryka, pieprz", price: 42 },
+  { id: "parma", name: "Parma", desc: "Sos pelati, mozzarella, szynka dojrzewająca, pomidorki, parmezan, rukola", price: 44 },
+  { id: "olive-carciofi", name: "Olive e carciofi", desc: "Sos pelati, mozzarella, pieczarki, szynka, karczochy, oliwki", price: 44 },
+  { id: "pera-noci", name: "Pera e noci", desc: "Sos pelati, mozzarella, gorgonzola, gruszka, orzechy włoskie, rukola", price: 44 },
+  { id: "firmowa", name: "Firmowa", desc: "Sos pelati, mozzarella, chorizo, jalapeño, papryka, cebula", price: 44 },
+  { id: "truflowa", name: "Pizza Truflowa", desc: "Krem truflowy, spianata – piccante salami, mascarpone", price: 44 },
+  { id: "nduja", name: "Pizza Nduja", desc: "Sos pelati, mozzarella, gorgonzola, oliwki, nduja, cebula", price: 44 },
+  { id: "carbonara", name: "Carbonara", desc: "Sos śmietanowy, mozzarella, boczek, gorgonzola, cebula, jajko, parmezan", price: 44 },
 ];
 
-// C. Starters
+// C. Starters (menu imprezowe — poza kartą Dish)
 export const starters: QuantityItem[] = [
   { id: "bruschetta", name: "Bruschetta", desc: "Grzanka z pomidorami i bazylią", price: 24 },
   { id: "garlic-bread", name: "Pieczywo czosnkowe", desc: "Z masłem czosnkowym i ziołami", price: 18 },
@@ -68,13 +86,12 @@ export const starters: QuantityItem[] = [
   { id: "burrata", name: "Burrata na półmisku", desc: "Z pomidorami i bazylią", price: 34 },
 ];
 
-// D. Drinks
+// D. Drinks (based on Dish menu)
 export const drinks: QuantityItem[] = [
-  { id: "lemonade", name: "Lemoniada 1 l", desc: "Domowa, cytrusowa", price: 18 },
-  { id: "cola", name: "Coca-Cola 1 l", desc: "Klasyczna", price: 12 },
-  { id: "water", name: "Woda gazowana 1 l", desc: "Naturalna, gazowana", price: 10 },
-  { id: "juice", name: "Sok pomarańczowy 1 l", desc: "Świeżo wyciskany", price: 14 },
-  { id: "prosecco", name: "Prosecco", desc: "Włoskie, wytrawne", price: 69 },
+  { id: "sok-cappy", name: "Sok Cappy 0,25/0,33 l", desc: "Sok owocowy", price: 6 },
+  { id: "woda", name: "Woda (butelka) 0,33 l", desc: "Woda mineralna", price: 6 },
+  { id: "sanpellegrino", name: "Sanpellegrino 0,33 l", desc: "Woda gazowana premium", price: 9 },
+  { id: "piwo-bezalk", name: "Piwo bezalkoholowe 0,5 l", desc: "Piwo bezalkoholowe", price: 12 },
 ];
 
 // E. Decoration packages
