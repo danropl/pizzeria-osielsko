@@ -352,22 +352,22 @@ const VoucheryPage = () => {
                         <form onSubmit={handleSubmitForm} id="voucher-form" className="space-y-4">
                           <p className="font-data text-xs text-muted-foreground uppercase tracking-wider">Twoje dane</p>
                           <div>
-                            <label className="block font-body text-sm font-semibold text-foreground mb-1">Imię i nazwisko *</label>
-                            <input type="text" required maxLength={100} value={formData.name}
+                            <label htmlFor="v-name" className="block font-body text-sm font-semibold text-foreground mb-1">Imię i nazwisko *</label>
+                            <input id="v-name" type="text" required maxLength={100} value={formData.name}
                               onChange={(e) => setFormData({ name: e.target.value })}
                               className="w-full px-3.5 py-2.5 rounded-xl border border-border/60 bg-card text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
                               placeholder="Jan Kowalski" />
                           </div>
                           <div>
-                            <label className="block font-body text-sm font-semibold text-foreground mb-1">E-mail *</label>
-                            <input type="email" required maxLength={255} value={formData.email}
+                            <label htmlFor="v-email" className="block font-body text-sm font-semibold text-foreground mb-1">E-mail *</label>
+                            <input id="v-email" type="email" required maxLength={255} value={formData.email}
                               onChange={(e) => setFormData({ email: e.target.value })}
                               className="w-full px-3.5 py-2.5 rounded-xl border border-border/60 bg-card text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
                               placeholder="jan@example.com" />
                           </div>
                           <div>
-                            <label className="block font-body text-sm font-semibold text-foreground mb-1">Telefon *</label>
-                            <input type="tel" required maxLength={20} value={formData.phone}
+                            <label htmlFor="v-phone" className="block font-body text-sm font-semibold text-foreground mb-1">Telefon *</label>
+                            <input id="v-phone" type="tel" required maxLength={20} value={formData.phone}
                               onChange={(e) => setFormData({ phone: e.target.value })}
                               className="w-full px-3.5 py-2.5 rounded-xl border border-border/60 bg-card text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
                               placeholder="+48 500 000 000" />
