@@ -377,15 +377,15 @@ const VoucheryPage = () => {
                             <p className="font-data text-xs text-muted-foreground uppercase tracking-wider mb-3">Szczegóły prezentu</p>
                           </div>
                           <div>
-                            <label className="block font-body text-sm font-semibold text-foreground mb-1">Imię obdarowanego</label>
-                            <input type="text" maxLength={100} value={formData.recipientName}
+                            <label htmlFor="v-recipient" className="block font-body text-sm font-semibold text-foreground mb-1">Imię obdarowanego</label>
+                            <input id="v-recipient" type="text" maxLength={100} value={formData.recipientName}
                               onChange={(e) => setFormData({ recipientName: e.target.value })}
                               className="w-full px-3.5 py-2.5 rounded-xl border border-border/60 bg-card text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
                               placeholder="Anna" />
                           </div>
                           <div>
-                            <label className="block font-body text-sm font-semibold text-foreground mb-1">Dedykacja</label>
-                            <textarea maxLength={500} rows={2} value={formData.dedication}
+                            <label htmlFor="v-dedication" className="block font-body text-sm font-semibold text-foreground mb-1">Dedykacja</label>
+                            <textarea id="v-dedication" maxLength={500} rows={2} value={formData.dedication}
                               onChange={(e) => setFormData({ dedication: e.target.value })}
                               className="w-full px-3.5 py-2.5 rounded-xl border border-border/60 bg-card text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all resize-none"
                               placeholder="Wszystkiego najlepszego!" />

@@ -432,30 +432,30 @@ const KonfiguratorImprezPage = () => {
                         <div className="card-warm p-5 space-y-4">
                           <div className="grid sm:grid-cols-2 gap-4">
                             <div>
-                              <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Imię i nazwisko</label>
-                              <input type="text" value={s.contactName} onChange={e => set("contactName", e.target.value)}
+                              <label htmlFor="k-name" className="font-body text-sm font-semibold text-foreground block mb-1.5">Imię i nazwisko</label>
+                              <input id="k-name" type="text" value={s.contactName} onChange={e => set("contactName", e.target.value)}
                                 className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40" />
                             </div>
                             <div>
-                              <label className="font-body text-sm font-semibold text-foreground block mb-1.5">E-mail</label>
-                              <input type="email" value={s.contactEmail} onChange={e => set("contactEmail", e.target.value)}
+                              <label htmlFor="k-email" className="font-body text-sm font-semibold text-foreground block mb-1.5">E-mail</label>
+                              <input id="k-email" type="email" value={s.contactEmail} onChange={e => set("contactEmail", e.target.value)}
                                 className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40" />
                             </div>
                           </div>
                           <div>
-                            <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Telefon</label>
-                            <input type="tel" value={s.contactPhone} onChange={e => set("contactPhone", e.target.value)}
+                            <label htmlFor="k-phone" className="font-body text-sm font-semibold text-foreground block mb-1.5">Telefon</label>
+                            <input id="k-phone" type="tel" value={s.contactPhone} onChange={e => set("contactPhone", e.target.value)}
                               className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40" />
                           </div>
                           <div>
-                            <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Uwagi organizacyjne</label>
-                            <textarea rows={3} value={s.contactNotes} onChange={e => set("contactNotes", e.target.value)}
+                            <label htmlFor="k-notes" className="font-body text-sm font-semibold text-foreground block mb-1.5">Uwagi organizacyjne</label>
+                            <textarea id="k-notes" rows={3} value={s.contactNotes} onChange={e => set("contactNotes", e.target.value)}
                               placeholder="Dodatkowe życzenia, alergie, pytania…"
                               className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none" />
                           </div>
                           <div>
-                            <label className="font-body text-sm font-semibold text-foreground block mb-1.5">Co jest dla Ciebie najważniejsze?</label>
-                            <textarea rows={2} value={s.contactPriority} onChange={e => set("contactPriority", e.target.value)}
+                            <label htmlFor="k-priority" className="font-body text-sm font-semibold text-foreground block mb-1.5">Co jest dla Ciebie najważniejsze?</label>
+                            <textarea id="k-priority" rows={2} value={s.contactPriority} onChange={e => set("contactPriority", e.target.value)}
                               placeholder="np. Zabawa dla dzieci, elegancka oprawa, smaczne jedzenie…"
                               className="w-full px-4 py-2.5 rounded-xl border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none" />
                           </div>
