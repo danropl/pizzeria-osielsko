@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Copy, Check, Share2 } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Copy, Check } from "lucide-react";
 import type { PartyState } from "@/pages/KonfiguratorImprezPage";
 import {
   partyTypes, durationOptions, spotOptions, deliveryModes, budgetLevels, guestCharacterOptions,
