@@ -121,7 +121,7 @@ const FAQPage = () => {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
               <input
                 type="text"
-                placeholder="Szukaj pytania, np. „voucher", „urodziny", „rezerwacja"…"
+                placeholder='Szukaj pytania, np. "voucher", "urodziny", "rezerwacja"…'
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-12 pr-10 py-4 rounded-2xl border border-border/60 bg-card font-body text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/40 transition-shadow shadow-sm"
