@@ -84,6 +84,8 @@ const KonfiguratorImprezPage = () => {
   const [s, setS] = useState<PartyState>(initial);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [reservationOpen, setReservationOpen] = useState(false);
+  const [activeStep, setActiveStep] = useState(1);
+  const TOTAL_STEPS = 6;
 
   const set = <K extends keyof PartyState>(key: K, val: PartyState[K]) =>
     setS(prev => ({ ...prev, [key]: val }));
@@ -114,6 +116,16 @@ const KonfiguratorImprezPage = () => {
     }));
   };
 
+  const goNext = useCallback(() => {
+    setActiveStep(prev => Math.min(prev + 1, TOTAL_STEPS));
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  const goBack = useCallback(() => {
+    setActiveStep(prev => Math.max(prev - 1, 1));
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   // ── Price calculation ──
   const total = useMemo(() => {
     let sum = 0;
@@ -125,6 +137,10 @@ const KonfiguratorImprezPage = () => {
     if (spot) sum += spot.price;
     const delivery = deliveryModes.find(d => d.id === s.deliveryMode);
     if (delivery) sum += delivery.price;
+    const budget = budgetLevels.find(b => b.id === s.budgetLevel);
+    if (budget) sum += budget.price;
+    const gc = guestCharacterOptions.find(g => g.id === s.guestCharacter);
+    if (gc) sum += gc.price;
 
     pizzas.forEach(p => { sum += (s.pizzaQty[p.id] || 0) * p.price; });
     starters.forEach(st => { sum += (s.starterQty[st.id] || 0) * st.price; });
@@ -143,17 +159,6 @@ const KonfiguratorImprezPage = () => {
 
   const guestCount = s.adults + s.kids;
   const recommendedPizzas = Math.max(1, Math.ceil(guestCount / 2.5));
-
-  // Determine current progress step
-  const currentStep = useMemo(() => {
-    if (!s.partyType) return 1;
-    if (!s.date && !s.time) return 2;
-    const hasPizzas = Object.values(s.pizzaQty).some(v => v > 0);
-    if (!hasPizzas) return 3;
-    if (s.decorationPackage === "none" && s.personalization.length === 0 && s.attractions.length === 0) return 4;
-    if (!s.contactName) return 5;
-    return 6;
-  }, [s]);
 
   // ── Radio card helper ──
   const radioCard = (
