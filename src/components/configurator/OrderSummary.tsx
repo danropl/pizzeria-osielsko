@@ -36,7 +36,7 @@ const OrderSummary = ({ state, total }: Props) => {
   const drinkLines = drinks.filter(d => (state.drinkQty[d.id] || 0) > 0);
   const selectedPersonalization = personalizationExtras.filter(e => state.personalization.includes(e.id));
   const selectedAttractions = extraAttractions.filter(e => state.attractions.includes(e.id));
-  const selectedOrgOptions = organizationalOptions.filter(e => state.orgOptions.includes(e.id));
+  const selectedOrgOptions = organizationalOptions.filter(e => (state.orgOptions || []).includes(e.id));
 
   const totalPizzas = pizzas.reduce((sum, p) => sum + (state.pizzaQty[p.id] || 0), 0);
   const guestCount = state.adults + state.kids;
