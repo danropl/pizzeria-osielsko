@@ -13,6 +13,7 @@ const EventyPage = lazy(() => import("./pages/EventyPage.tsx"));
 const FAQPage = lazy(() => import("./pages/FAQPage.tsx"));
 const OfertaSpecjalnaPage = lazy(() => import("./pages/OfertaSpecjalnaPage.tsx"));
 const KontaktPage = lazy(() => import("./pages/KontaktPage.tsx"));
+const KonfiguratorImprezPage = lazy(() => import("./pages/KonfiguratorImprezPage.tsx"));
 
 const queryClient = new QueryClient();
 
