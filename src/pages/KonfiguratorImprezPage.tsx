@@ -266,7 +266,7 @@ const KonfiguratorImprezPage = () => {
             <motion.div
               initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <ProgressIndicator currentStep={currentStep} />
+              <ProgressIndicator currentStep={activeStep} onStepClick={(step) => { setActiveStep(step); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
             </motion.div>
           </div>
         </section>
