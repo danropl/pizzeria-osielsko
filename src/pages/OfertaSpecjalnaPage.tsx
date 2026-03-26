@@ -147,8 +147,13 @@ const OfertaSpecjalnaPage = () => {
                 <Link to="/konfigurator-imprez" className="btn-primary text-base px-8 py-4">🎉 Skonfiguruj imprezę</Link>
                 <a href="tel:+48500384100" className="btn-ghost text-base px-8 py-4">📞 Zadzwoń: 500 384 100</a>
               </div>
-              <div className="mt-8">
-                <Link to="/" className="font-body text-sm text-primary hover:underline">
+              <div className="flex flex-wrap gap-4 justify-center mt-6">
+                <Link to="/vouchery" className="font-body text-sm text-primary hover:underline">🎁 Kup voucher</Link>
+                <Link to="/kontakt" className="font-body text-sm text-primary hover:underline">📞 Kontakt</Link>
+                <Link to="/faq" className="font-body text-sm text-primary hover:underline">❓ FAQ</Link>
+              </div>
+              <div className="mt-6">
+                <Link to="/" className="font-body text-sm text-primary/60 hover:underline">
                   ← Wróć na stronę główną
                 </Link>
               </div>
