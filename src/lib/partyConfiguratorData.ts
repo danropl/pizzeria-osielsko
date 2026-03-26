@@ -60,8 +60,8 @@ export const deliveryModes: SelectableOption[] = [
 // Budget levels
 export const budgetLevels: SelectableOption[] = [
   { id: "basic", label: "Basic", desc: "Smacznie i bez przepłacania", price: 0 },
-  { id: "standard", label: "Standard", desc: "Najczęściej wybierany — dobry balans", price: 0 },
-  { id: "premium", label: "Premium", desc: "Pełna oprawa na najwyższym poziomie", price: 0 },
+  { id: "standard", label: "Standard", desc: "Najczęściej wybierany — dobry balans", price: 59 },
+  { id: "premium", label: "Premium", desc: "Pełna oprawa na najwyższym poziomie", price: 149 },
 ];
 
 // Guest character
