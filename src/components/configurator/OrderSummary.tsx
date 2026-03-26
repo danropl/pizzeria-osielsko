@@ -22,6 +22,17 @@ const line = (label: string, amount: number) =>
 
 const OrderSummary = ({ state, total }: Props) => {
   const [copied, setCopied] = useState(false);
+  const [flash, setFlash] = useState(false);
+  const prevTotal = useRef(total);
+
+  useEffect(() => {
+    if (prevTotal.current !== total) {
+      setFlash(true);
+      const t = setTimeout(() => setFlash(false), 600);
+      prevTotal.current = total;
+      return () => clearTimeout(t);
+    }
+  }, [total]);
 
   const pt = partyTypes.find(p => p.id === state.partyType);
   const dur = durationOptions.find(d => d.id === state.duration);
