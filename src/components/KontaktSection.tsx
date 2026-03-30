@@ -33,9 +33,9 @@ const KontaktSection = () => {
           </h2>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-[40%_60%] gap-8">
-          <AnimatedSection className="space-y-6">
-            <div className="card-warm p-6 space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8">
+          <AnimatedSection className="space-y-6 min-w-0">
+            <div className="card-warm p-4 sm:p-6 space-y-4">
               <div className="flex items-start gap-3">
                 <span className="text-xl">📍</span>
                 <div>
@@ -97,12 +97,12 @@ const KontaktSection = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.15} className="space-y-3">
-            <div className="w-full aspect-[4/3] lg:aspect-auto lg:h-full min-h-[400px] rounded-3xl overflow-hidden border border-border/30">
+            <div className="w-full aspect-[4/3] lg:aspect-auto lg:h-full min-h-[250px] sm:min-h-[400px] rounded-3xl overflow-hidden border border-border/30">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1200!2d18.0846522!3d53.1844016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470310d52334fe87%3A0x7c12a88e5b166e26!2sPizzeria%20oSIELSKO!5e0!3m2!1spl!2spl!4v1710000000000"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "400px" }}
+                style={{ border: 0, minHeight: "250px" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
