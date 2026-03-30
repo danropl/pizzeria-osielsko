@@ -33,9 +33,9 @@ const KontaktSection = () => {
           </h2>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-[40%_60%] gap-8">
-          <AnimatedSection className="space-y-6">
-            <div className="card-warm p-6 space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8">
+          <AnimatedSection className="space-y-6 min-w-0">
+            <div className="card-warm p-4 sm:p-6 space-y-4">
               <div className="flex items-start gap-3">
                 <span className="text-xl">📍</span>
                 <div>
