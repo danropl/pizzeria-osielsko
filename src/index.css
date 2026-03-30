@@ -74,7 +74,7 @@
     @apply px-4 sm:px-6 lg:px-8 py-16 md:py-24;
   }
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   .card-warm {
     @apply bg-card rounded-3xl border border-border/50 transition-all;

@@ -14,8 +14,8 @@ const amenities = [
 
 const HistoriaSection = () => (
   <section id="historia" className="bg-bg-dark section-padding">
-    <div className="container-custom">
-      <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
+      <div className="container-custom overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
         {/* Images */}
         <AnimatedSection className="space-y-4">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
